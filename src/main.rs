@@ -1,4 +1,4 @@
-#![deny(rust_2018_idioms, warnings)]
+// #![deny(rust_2018_idioms, warnings)]
 #![deny(clippy::all, clippy::pedantic)]
 #![allow(
 	clippy::cyclomatic_complexity,
@@ -12,6 +12,9 @@
 mod fixups;
 mod supported_version;
 mod swagger20;
+mod templates;
+
+use askama::Template;
 
 struct Error(Box<dyn std::error::Error>, backtrace::Backtrace);
 
@@ -28,6 +31,26 @@ impl std::fmt::Debug for Error {
 		Ok(())
 	}
 }
+
+trait AskamaTemplateExt: Template {
+	fn render_into2<W>(&self, writer: &mut W) -> askama::Result<()> where W: std::io::Write {
+		struct WriteAdapter<W>(W);
+
+		impl<W> std::fmt::Write for WriteAdapter<W> where W: std::io::Write {
+			fn write_str(&mut self, s: &str) -> std::fmt::Result {
+				std::io::Write::write_all(&mut self.0, s.as_bytes()).map_err(|_| std::fmt::Error)
+			}
+
+			fn write_fmt(&mut self, args: std::fmt::Arguments<'_>) -> std::fmt::Result {
+				std::io::Write::write_fmt(&mut self.0, args).map_err(|_| std::fmt::Error)
+			}
+		}
+
+		Template::render_into(self, &mut WriteAdapter(writer))
+	}
+}
+
+impl<T> AskamaTemplateExt for T where T: Template { }
 
 fn main() -> Result<(), Error> {
 	{
@@ -130,16 +153,191 @@ fn run(supported_version: supported_version::SupportedVersion, out_dir_base: &st
 		log::trace!("Working on {} ...", definition_path);
 
 		with_file_for_type(&definition_path, &out_dir, &replace_namespaces, |parent_mod_rs, mut file, type_name, type_ref_path| {
-			writeln!(file, "// Generated from definition {}", definition_path)?;
-			writeln!(file)?;
-
-			if let Some(description) = &definition.description {
-				for line in get_comment_text(description, "") {
-					writeln!(file, "///{}", line)?;
-				}
-			}
-
 			let can_be_default = can_be_default(&definition.kind, &spec)?;
+
+			let common = self::templates::TypeCommon {
+				definition_path,
+				description_comment_text: definition.description.as_ref().map(AsRef::as_ref),
+				type_name: &type_name,
+			};
+
+			let type_template = match &definition.kind {
+				swagger20::SchemaKind::Properties(properties) => {
+					let (properties, resource_metadata, metadata_property_ty) = {
+						use std::fmt::Write;
+
+						let mut result = Vec::with_capacity(properties.len());
+
+						let single_group_version_kind =
+							definition.kubernetes_group_kind_versions.as_ref()
+							.and_then(|group_version_kinds| {
+								if group_version_kinds.len() == 1 {
+									Some(&group_version_kinds[0])
+								}
+								else {
+									None
+								}
+							});
+						let mut has_api_version = false;
+						let mut has_kind = false;
+						let mut metadata_property_ty = None;
+
+						for (name, (schema, required)) in properties {
+							if name.0 == "apiVersion" && single_group_version_kind.is_some() {
+								has_api_version = true;
+								continue;
+							}
+
+							if name.0 == "kind" && single_group_version_kind.is_some() {
+								has_kind = true;
+								continue;
+							}
+
+							let field_name = get_rust_ident(&name);
+
+							let mut field_type_name = String::new();
+
+							if !required {
+								write!(field_type_name, "Option<")?;
+							}
+
+							let type_name = get_rust_type(&schema.kind, &replace_namespaces, mod_root)?;
+
+							if name.0 == "metadata" {
+								metadata_property_ty = Some((*required, type_name.clone()));
+							}
+
+							// Fix cases of infinite recursion
+							if let swagger20::SchemaKind::Ref(ref ref_path) = schema.kind {
+								match (&**definition_path, &**name, &**ref_path) {
+									(
+										"io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaProps",
+										"not",
+										"io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaProps",
+									) => write!(field_type_name, "Box<{}>", type_name)?,
+
+									_ => write!(field_type_name, "{}", type_name)?,
+								}
+							}
+							else {
+								write!(field_type_name, "{}", type_name)?;
+							};
+
+							if !required {
+								write!(field_type_name, ">")?;
+							}
+
+							result.push(self::templates::TypeProperty {
+								name,
+								schema,
+								required: *required,
+								field_name,
+								field_type_name,
+							});
+						}
+
+						let resource_metadata = match (has_api_version, has_kind) {
+							(true, true) => {
+								let single_group_version_kind = single_group_version_kind.unwrap();
+								if single_group_version_kind.group == "" {
+									Some((
+										std::borrow::Cow::Borrowed(&*single_group_version_kind.version),
+										"",
+										&*single_group_version_kind.kind,
+										&*single_group_version_kind.version,
+									))
+								}
+								else {
+									Some((
+										std::borrow::Cow::Owned(format!("{}/{}", single_group_version_kind.group, single_group_version_kind.version)),
+										&*single_group_version_kind.group,
+										&*single_group_version_kind.kind,
+										&*single_group_version_kind.version,
+									))
+								}
+							},
+							(false, false) => None,
+							(true, false) => return Err(format!("{} has an apiVersion property but not a kind property", definition_path).into()),
+							(false, true) => return Err(format!("{} has a kind property but not an apiVersion property", definition_path).into()),
+						};
+
+						(result, resource_metadata, metadata_property_ty)
+					};
+
+					self::templates::Type::Properties(self::templates::TypeProperties {
+						common: &common,
+						can_be_default,
+						properties,
+					})
+				},
+
+				swagger20::SchemaKind::Ref(_) => return Err(format!("{} is a Ref", definition_path).into()),
+
+				swagger20::SchemaKind::Ty(swagger20::Type::IntOrString) => {
+					num_generated_structs += 1;
+
+					self::templates::Type::IntOrString(self::templates::TypeIntOrString {
+						common: &common,
+					})
+				},
+
+				swagger20::SchemaKind::Ty(swagger20::Type::JSONSchemaPropsOrArray) => {
+					num_generated_structs += 1;
+
+					let json_schema_props_type_name =
+						get_fully_qualified_type_name(
+							&swagger20::RefPath("io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaProps".to_string()),
+							&replace_namespaces,
+							mod_root)?;
+
+					self::templates::Type::JSONSchemaPropsOrArray(self::templates::TypeJSONSchemaPropsOrArray {
+						common: &common,
+						json_schema_props_type_name,
+					})
+				},
+
+				swagger20::SchemaKind::Ty(swagger20::Type::JSONSchemaPropsOrBool) => {
+					num_generated_structs += 1;
+
+					let json_schema_props_type_name =
+						get_fully_qualified_type_name(
+							&swagger20::RefPath("io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaProps".to_string()),
+							&replace_namespaces,
+							mod_root)?;
+
+					self::templates::Type::JSONSchemaPropsOrBool(self::templates::TypeJSONSchemaPropsOrBool {
+						common: &common,
+						json_schema_props_type_name,
+					})
+				},
+
+				swagger20::SchemaKind::Ty(swagger20::Type::JSONSchemaPropsOrStringArray) => {
+					num_generated_structs += 1;
+
+					let json_schema_props_type_name =
+						get_fully_qualified_type_name(
+							&swagger20::RefPath("io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaProps".to_string()),
+							&replace_namespaces,
+							mod_root)?;
+
+					self::templates::Type::JSONSchemaPropsOrStringArray(self::templates::TypeJSONSchemaPropsOrStringArray {
+						common: &common,
+						json_schema_props_type_name,
+					})
+				},
+
+				swagger20::SchemaKind::Ty(_) => {
+					num_generated_type_aliases += 1;
+
+					self::templates::Type::Alias(self::templates::TypeAlias {
+						common: &common,
+						inner_type_name: get_rust_type(&definition.kind, &replace_namespaces, mod_root)?,
+						can_be_default,
+					})
+				},
+			};
+
+			type_template.render_into2(&mut file)?;
 
 			match &definition.kind {
 				swagger20::SchemaKind::Properties(properties) => {
@@ -251,35 +449,6 @@ fn run(supported_version: supported_version::SupportedVersion, out_dir_base: &st
 
 						(result, resource_metadata, metadata_property_ty)
 					};
-
-					write!(file, "#[derive(Clone, Debug")?;
-
-					if can_be_default {
-						write!(file, ", Default")?;
-					}
-
-					writeln!(file, ", PartialEq)]")?;
-
-					writeln!(file, "pub struct {} {{", type_name)?;
-
-					for (i, Property { schema, field_name, field_type_name, .. }) in properties.iter().enumerate() {
-						if i > 0 {
-							writeln!(file)?;
-						}
-
-						if let Some(ref description) = schema.description {
-							for line in get_comment_text(description, "") {
-								writeln!(file, "    ///{}", line)?;
-							}
-						}
-
-						write!(file, "    pub {}: ", field_name)?;
-
-						write!(file, "{}", field_type_name)?;
-
-						writeln!(file, ",")?;
-					}
-					writeln!(file, "}}")?;
 
 					if let Some(kubernetes_group_kind_versions) = &definition.kubernetes_group_kind_versions {
 						let mut kubernetes_group_kind_versions: Vec<_> = kubernetes_group_kind_versions.iter().collect();
@@ -517,195 +686,13 @@ fn run(supported_version: supported_version::SupportedVersion, out_dir_base: &st
 
 				swagger20::SchemaKind::Ref(_) => return Err(format!("{} is a Ref", definition_path).into()),
 
-				swagger20::SchemaKind::Ty(swagger20::Type::IntOrString) => {
-					writeln!(file, "#[derive(Clone, Debug, Eq, PartialEq)]")?;
-					writeln!(file, "pub enum {} {{", type_name)?;
-					writeln!(file, "    Int(i32),")?;
-					writeln!(file, "    String(String),")?;
-					writeln!(file, "}}")?;
-					writeln!(file)?;
-					writeln!(file, "impl Default for {} {{", type_name)?;
-					writeln!(file, "    fn default() -> Self {{")?;
-					writeln!(file, "        {}::Int(0)", type_name)?;
-					writeln!(file, "    }}")?;
-					writeln!(file, "}}")?;
-					writeln!(file)?;
-					writeln!(file, "impl<'de> serde::Deserialize<'de> for {} {{", type_name)?;
-					writeln!(file, "    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error> where D: serde::Deserializer<'de> {{")?;
-					writeln!(file, "        struct Visitor;")?;
-					writeln!(file)?;
-					writeln!(file, "        impl<'de> serde::de::Visitor<'de> for Visitor {{")?;
-					writeln!(file, "            type Value = {};", type_name)?;
-					writeln!(file)?;
-					writeln!(file, "            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {{")?;
-					writeln!(file, r#"                write!(formatter, "enum {}")"#, type_name)?;
-					writeln!(file, "            }}")?;
-					writeln!(file)?;
-					writeln!(file, "            fn visit_i32<E>(self, v: i32) -> Result<Self::Value, E> where E: serde::de::Error {{")?;
-					writeln!(file, "                Ok({}::Int(v))", type_name)?;
-					writeln!(file, "            }}")?;
-					writeln!(file)?;
-					writeln!(file, "            fn visit_i64<E>(self, v: i64) -> Result<Self::Value, E> where E: serde::de::Error {{")?;
-					writeln!(file, "                if v < std::i32::MIN as i64 || v > std::i32::MAX as i64 {{")?;
-					writeln!(file, r#"                    return Err(serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &"a 32-bit integer"));"#)?;
-					writeln!(file, "                }}")?;
-					writeln!(file)?;
-					writeln!(file, "                Ok({}::Int(v as i32))", type_name)?;
-					writeln!(file, "            }}")?;
-					writeln!(file)?;
-					writeln!(file, "            fn visit_u64<E>(self, v: u64) -> Result<Self::Value, E> where E: serde::de::Error {{")?;
-					writeln!(file, "                if v > std::i32::MAX as u64 {{")?;
-					writeln!(file, r#"                    return Err(serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &"a 32-bit integer"));"#)?;
-					writeln!(file, "                }}")?;
-					writeln!(file)?;
-					writeln!(file, "                Ok({}::Int(v as i32))", type_name)?;
-					writeln!(file, "            }}")?;
-					writeln!(file)?;
-					writeln!(file, "            fn visit_str<E>(self, v: &str) -> Result<Self::Value, E> where E: serde::de::Error {{")?;
-					writeln!(file, "                self.visit_string(v.to_string())")?;
-					writeln!(file, "            }}")?;
-					writeln!(file)?;
-					writeln!(file, "            fn visit_string<E>(self, v: String) -> Result<Self::Value, E> where E: serde::de::Error {{")?;
-					writeln!(file, "                Ok({}::String(v))", type_name)?;
-					writeln!(file, "            }}")?;
-					writeln!(file, "        }}")?;
-					writeln!(file)?;
-					writeln!(file, "        deserializer.deserialize_any(Visitor)")?;
-					writeln!(file, "    }}")?;
-					writeln!(file, "}}")?;
-					writeln!(file)?;
-					writeln!(file, "impl serde::Serialize for {} {{", type_name)?;
-					writeln!(file, "    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error> where S: serde::Serializer {{")?;
-					writeln!(file, "        match self {{")?;
-					writeln!(file, "            {}::Int(i) => i.serialize(serializer),", type_name)?;
-					writeln!(file, "            {}::String(s) => s.serialize(serializer),", type_name)?;
-					writeln!(file, "        }}")?;
-					writeln!(file, "    }}")?;
-					writeln!(file, "}}")?;
+				swagger20::SchemaKind::Ty(swagger20::Type::IntOrString) => (),
 
-					num_generated_structs += 1;
-				},
+				swagger20::SchemaKind::Ty(swagger20::Type::JSONSchemaPropsOrArray) |
+				swagger20::SchemaKind::Ty(swagger20::Type::JSONSchemaPropsOrBool) |
+				swagger20::SchemaKind::Ty(swagger20::Type::JSONSchemaPropsOrStringArray) => (),
 
-				swagger20::SchemaKind::Ty(ty @ swagger20::Type::JSONSchemaPropsOrArray) |
-				swagger20::SchemaKind::Ty(ty @ swagger20::Type::JSONSchemaPropsOrBool) |
-				swagger20::SchemaKind::Ty(ty @ swagger20::Type::JSONSchemaPropsOrStringArray) => {
-					let json_schema_props_type_name =
-						get_fully_qualified_type_name(
-							&swagger20::RefPath("io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaProps".to_string()),
-							&replace_namespaces,
-							mod_root)?;
-
-					writeln!(file, "#[derive(Clone, Debug, PartialEq)]")?;
-					writeln!(file, "pub enum {} {{", type_name)?;
-					writeln!(file, "    Schema(Box<{}>),", json_schema_props_type_name)?; // Box to fix infinite recursion
-					match ty {
-						swagger20::Type::JSONSchemaPropsOrArray => writeln!(file, "    Schemas(Vec<{}>),", json_schema_props_type_name)?,
-						swagger20::Type::JSONSchemaPropsOrBool => writeln!(file, "    Bool(bool),")?,
-						swagger20::Type::JSONSchemaPropsOrStringArray => writeln!(file, "    Strings(Vec<String>),")?,
-						_ => unreachable!(),
-					}
-					writeln!(file, "}}")?;
-					writeln!(file)?;
-					writeln!(file, "impl<'de> serde::Deserialize<'de> for {} {{", type_name)?;
-					writeln!(file, "    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error> where D: serde::Deserializer<'de> {{")?;
-					writeln!(file, "        struct Visitor;")?;
-					writeln!(file)?;
-					writeln!(file, "        impl<'de> serde::de::Visitor<'de> for Visitor {{")?;
-					writeln!(file, "            type Value = {};", type_name)?;
-					writeln!(file)?;
-					writeln!(file, "            fn expecting(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {{")?;
-					writeln!(file, r#"                write!(f, "enum {}")"#, type_name)?;
-					writeln!(file, "            }}")?;
-					writeln!(file)?;
-					writeln!(file, "            fn visit_map<A>(self, map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {{")?;
-					writeln!(file, "                Ok({}::Schema(serde::de::Deserialize::deserialize(serde::de::value::MapAccessDeserializer::new(map))?))", type_name)?;
-					writeln!(file, "            }}")?;
-					writeln!(file)?;
-
-					match ty {
-						swagger20::Type::JSONSchemaPropsOrArray => {
-							writeln!(file, "            fn visit_seq<A>(self, seq: A) -> Result<Self::Value, A::Error> where A: serde::de::SeqAccess<'de> {{")?;
-							writeln!(file, "                Ok({}::Schemas(serde::de::Deserialize::deserialize(serde::de::value::SeqAccessDeserializer::new(seq))?))", type_name)?;
-							writeln!(file, "            }}")?;
-						},
-
-						swagger20::Type::JSONSchemaPropsOrBool => {
-							writeln!(file, "            fn visit_bool<E>(self, v: bool) -> Result<Self::Value, E> where E: serde::de::Error {{")?;
-							writeln!(file, "                Ok({}::Bool(v))", type_name)?;
-							writeln!(file, "            }}")?;
-						},
-
-						swagger20::Type::JSONSchemaPropsOrStringArray => {
-							writeln!(file, "            fn visit_seq<A>(self, seq: A) -> Result<Self::Value, A::Error> where A: serde::de::SeqAccess<'de> {{")?;
-							writeln!(file, "                Ok({}::Strings(serde::de::Deserialize::deserialize(serde::de::value::SeqAccessDeserializer::new(seq))?))", type_name)?;
-							writeln!(file, "            }}")?;
-						},
-
-						_ => unreachable!(),
-					}
-
-					writeln!(file, "        }}")?;
-					writeln!(file)?;
-					writeln!(file, "        deserializer.deserialize_any(Visitor)")?;
-					writeln!(file, "    }}")?;
-					writeln!(file, "}}")?;
-					writeln!(file)?;
-					writeln!(file, "impl serde::Serialize for {} {{", type_name)?;
-					writeln!(file, "    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error> where S: serde::Serializer {{")?;
-					writeln!(file, "        match self {{")?;
-					writeln!(file, "            {}::Schema(value) => value.serialize(serializer),", type_name)?;
-
-					match ty {
-						swagger20::Type::JSONSchemaPropsOrArray => writeln!(file, "            {}::Schemas(value) => value.serialize(serializer),", type_name)?,
-						swagger20::Type::JSONSchemaPropsOrBool => writeln!(file, "            {}::Bool(value) => value.serialize(serializer),", type_name)?,
-						swagger20::Type::JSONSchemaPropsOrStringArray => writeln!(file, "            {}::Strings(value) => value.serialize(serializer),", type_name)?,
-						_ => unreachable!(),
-					}
-
-					writeln!(file, "        }}")?;
-					writeln!(file, "    }}")?;
-					writeln!(file, "}}")?;
-
-					num_generated_structs += 1;
-				},
-
-				swagger20::SchemaKind::Ty(_) => {
-					write!(file, "#[derive(Clone, Debug, ")?;
-					if can_be_default {
-						write!(file, "Default, ")?;
-					}
-					writeln!(file, "PartialEq)]")?;
-
-					writeln!(file, "pub struct {}(pub {});", type_name, get_rust_type(&definition.kind, &replace_namespaces, mod_root)?)?;
-					writeln!(file)?;
-					writeln!(file, "impl<'de> serde::Deserialize<'de> for {} {{", type_name)?;
-					writeln!(file, "    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error> where D: serde::Deserializer<'de> {{")?;
-					writeln!(file, "        struct Visitor;")?;
-					writeln!(file)?;
-					writeln!(file, "        impl<'de> serde::de::Visitor<'de> for Visitor {{")?;
-					writeln!(file, "            type Value = {};", type_name)?;
-					writeln!(file)?;
-					writeln!(file, "            fn expecting(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {{")?;
-					writeln!(file, r#"                write!(f, "{}")"#, type_name)?;
-					writeln!(file, "            }}")?;
-					writeln!(file)?;
-					writeln!(file, "            fn visit_newtype_struct<D>(self, deserializer: D) -> Result<Self::Value, D::Error> where D: serde::Deserializer<'de> {{")?;
-					writeln!(file, "                Ok({}(serde::Deserialize::deserialize(deserializer)?))", type_name)?;
-					writeln!(file, "            }}")?;
-					writeln!(file, "        }}")?;
-					writeln!(file)?;
-					writeln!(file, r#"        deserializer.deserialize_newtype_struct("{}", Visitor)"#, type_name)?;
-					writeln!(file, "    }}")?;
-					writeln!(file, "}}")?;
-					writeln!(file)?;
-					writeln!(file, "impl serde::Serialize for {} {{", type_name)?;
-					writeln!(file, "    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error> where S: serde::Serializer {{")?;
-					writeln!(file, r#"        serializer.serialize_newtype_struct("{}", &self.0)"#, type_name)?;
-					writeln!(file, "    }}")?;
-					writeln!(file, "}}")?;
-
-					num_generated_type_aliases += 1;
-				},
+				swagger20::SchemaKind::Ty(_) => (),
 			}
 
 			log::trace!("OK");
