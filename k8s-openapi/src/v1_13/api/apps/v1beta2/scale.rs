@@ -25,12 +25,12 @@ impl Scale {
     /// # Arguments
     ///
     /// * `name`
-    ///
     ///     name of the Scale
+
     ///
     /// * `namespace`
-    ///
     ///     object name and auth scope, such as for teams and projects
+
     ///
     /// * `body`
     ///
@@ -50,53 +50,11 @@ impl Scale {
         let __url = format!("/apis/apps/v1beta2/namespaces/{namespace}/deployments/{name}/scale?", name = name, namespace = namespace);
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
         }
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::patch(__url);
-        let __body = serde_json::to_vec(&body).map_err(crate::RequestError::Json)?;
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`Scale::patch_namespaced_deployment_scale`](./struct.Scale.html#method.patch_namespaced_deployment_scale)
-#[derive(Debug, Default)]
-pub struct PatchNamespacedDeploymentScaleOptional<'a> {
-    /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
-    pub dry_run: Option<&'a str>,
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`Scale::patch_namespaced_deployment_scale`](./struct.Scale.html#method.patch_namespaced_deployment_scale)
-#[derive(Debug)]
-pub enum PatchNamespacedDeploymentScaleResponse {
-    Ok(crate::v1_13::api::apps::v1beta2::Scale),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for PatchNamespacedDeploymentScaleResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((PatchNamespacedDeploymentScaleResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((PatchNamespacedDeploymentScaleResponse::Unauthorized, 0)),
-            _ => Ok((PatchNamespacedDeploymentScaleResponse::Other, 0)),
-        }
-    }
-}
-
 // Generated from operation patchAppsV1beta2NamespacedReplicaSetScale
 
 impl Scale {
@@ -107,12 +65,12 @@ impl Scale {
     /// # Arguments
     ///
     /// * `name`
-    ///
     ///     name of the Scale
+
     ///
     /// * `namespace`
-    ///
     ///     object name and auth scope, such as for teams and projects
+
     ///
     /// * `body`
     ///
@@ -132,53 +90,11 @@ impl Scale {
         let __url = format!("/apis/apps/v1beta2/namespaces/{namespace}/replicasets/{name}/scale?", name = name, namespace = namespace);
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
         }
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::patch(__url);
-        let __body = serde_json::to_vec(&body).map_err(crate::RequestError::Json)?;
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`Scale::patch_namespaced_replica_set_scale`](./struct.Scale.html#method.patch_namespaced_replica_set_scale)
-#[derive(Debug, Default)]
-pub struct PatchNamespacedReplicaSetScaleOptional<'a> {
-    /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
-    pub dry_run: Option<&'a str>,
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`Scale::patch_namespaced_replica_set_scale`](./struct.Scale.html#method.patch_namespaced_replica_set_scale)
-#[derive(Debug)]
-pub enum PatchNamespacedReplicaSetScaleResponse {
-    Ok(crate::v1_13::api::apps::v1beta2::Scale),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for PatchNamespacedReplicaSetScaleResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((PatchNamespacedReplicaSetScaleResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((PatchNamespacedReplicaSetScaleResponse::Unauthorized, 0)),
-            _ => Ok((PatchNamespacedReplicaSetScaleResponse::Other, 0)),
-        }
-    }
-}
-
 // Generated from operation patchAppsV1beta2NamespacedStatefulSetScale
 
 impl Scale {
@@ -189,12 +105,12 @@ impl Scale {
     /// # Arguments
     ///
     /// * `name`
-    ///
     ///     name of the Scale
+
     ///
     /// * `namespace`
-    ///
     ///     object name and auth scope, such as for teams and projects
+
     ///
     /// * `body`
     ///
@@ -214,53 +130,11 @@ impl Scale {
         let __url = format!("/apis/apps/v1beta2/namespaces/{namespace}/statefulsets/{name}/scale?", name = name, namespace = namespace);
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
         }
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::patch(__url);
-        let __body = serde_json::to_vec(&body).map_err(crate::RequestError::Json)?;
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`Scale::patch_namespaced_stateful_set_scale`](./struct.Scale.html#method.patch_namespaced_stateful_set_scale)
-#[derive(Debug, Default)]
-pub struct PatchNamespacedStatefulSetScaleOptional<'a> {
-    /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
-    pub dry_run: Option<&'a str>,
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`Scale::patch_namespaced_stateful_set_scale`](./struct.Scale.html#method.patch_namespaced_stateful_set_scale)
-#[derive(Debug)]
-pub enum PatchNamespacedStatefulSetScaleResponse {
-    Ok(crate::v1_13::api::apps::v1beta2::Scale),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for PatchNamespacedStatefulSetScaleResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((PatchNamespacedStatefulSetScaleResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((PatchNamespacedStatefulSetScaleResponse::Unauthorized, 0)),
-            _ => Ok((PatchNamespacedStatefulSetScaleResponse::Other, 0)),
-        }
-    }
-}
-
 // Generated from operation readAppsV1beta2NamespacedDeploymentScale
 
 impl Scale {
@@ -271,11 +145,10 @@ impl Scale {
     /// # Arguments
     ///
     /// * `name`
-    ///
     ///     name of the Scale
+
     ///
     /// * `namespace`
-    ///
     ///     object name and auth scope, such as for teams and projects
     ///
     /// * `optional`
@@ -292,48 +165,9 @@ impl Scale {
         let __url = format!("/apis/apps/v1beta2/namespaces/{namespace}/deployments/{name}/scale?", name = name, namespace = namespace);
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::get(__url);
-        let __body = vec![];
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`Scale::read_namespaced_deployment_scale`](./struct.Scale.html#method.read_namespaced_deployment_scale)
-#[derive(Debug, Default)]
-pub struct ReadNamespacedDeploymentScaleOptional<'a> {
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`Scale::read_namespaced_deployment_scale`](./struct.Scale.html#method.read_namespaced_deployment_scale)
-#[derive(Debug)]
-pub enum ReadNamespacedDeploymentScaleResponse {
-    Ok(crate::v1_13::api::apps::v1beta2::Scale),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for ReadNamespacedDeploymentScaleResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((ReadNamespacedDeploymentScaleResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((ReadNamespacedDeploymentScaleResponse::Unauthorized, 0)),
-            _ => Ok((ReadNamespacedDeploymentScaleResponse::Other, 0)),
-        }
-    }
-}
-
 // Generated from operation readAppsV1beta2NamespacedReplicaSetScale
 
 impl Scale {
@@ -344,11 +178,10 @@ impl Scale {
     /// # Arguments
     ///
     /// * `name`
-    ///
     ///     name of the Scale
+
     ///
     /// * `namespace`
-    ///
     ///     object name and auth scope, such as for teams and projects
     ///
     /// * `optional`
@@ -365,48 +198,9 @@ impl Scale {
         let __url = format!("/apis/apps/v1beta2/namespaces/{namespace}/replicasets/{name}/scale?", name = name, namespace = namespace);
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::get(__url);
-        let __body = vec![];
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`Scale::read_namespaced_replica_set_scale`](./struct.Scale.html#method.read_namespaced_replica_set_scale)
-#[derive(Debug, Default)]
-pub struct ReadNamespacedReplicaSetScaleOptional<'a> {
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`Scale::read_namespaced_replica_set_scale`](./struct.Scale.html#method.read_namespaced_replica_set_scale)
-#[derive(Debug)]
-pub enum ReadNamespacedReplicaSetScaleResponse {
-    Ok(crate::v1_13::api::apps::v1beta2::Scale),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for ReadNamespacedReplicaSetScaleResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((ReadNamespacedReplicaSetScaleResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((ReadNamespacedReplicaSetScaleResponse::Unauthorized, 0)),
-            _ => Ok((ReadNamespacedReplicaSetScaleResponse::Other, 0)),
-        }
-    }
-}
-
 // Generated from operation readAppsV1beta2NamespacedStatefulSetScale
 
 impl Scale {
@@ -417,11 +211,10 @@ impl Scale {
     /// # Arguments
     ///
     /// * `name`
-    ///
     ///     name of the Scale
+
     ///
     /// * `namespace`
-    ///
     ///     object name and auth scope, such as for teams and projects
     ///
     /// * `optional`
@@ -438,48 +231,9 @@ impl Scale {
         let __url = format!("/apis/apps/v1beta2/namespaces/{namespace}/statefulsets/{name}/scale?", name = name, namespace = namespace);
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::get(__url);
-        let __body = vec![];
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`Scale::read_namespaced_stateful_set_scale`](./struct.Scale.html#method.read_namespaced_stateful_set_scale)
-#[derive(Debug, Default)]
-pub struct ReadNamespacedStatefulSetScaleOptional<'a> {
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`Scale::read_namespaced_stateful_set_scale`](./struct.Scale.html#method.read_namespaced_stateful_set_scale)
-#[derive(Debug)]
-pub enum ReadNamespacedStatefulSetScaleResponse {
-    Ok(crate::v1_13::api::apps::v1beta2::Scale),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for ReadNamespacedStatefulSetScaleResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((ReadNamespacedStatefulSetScaleResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((ReadNamespacedStatefulSetScaleResponse::Unauthorized, 0)),
-            _ => Ok((ReadNamespacedStatefulSetScaleResponse::Other, 0)),
-        }
-    }
-}
-
 // Generated from operation replaceAppsV1beta2NamespacedDeploymentScale
 
 impl Scale {
@@ -490,12 +244,12 @@ impl Scale {
     /// # Arguments
     ///
     /// * `name`
-    ///
     ///     name of the Scale
+
     ///
     /// * `namespace`
-    ///
     ///     object name and auth scope, such as for teams and projects
+
     ///
     /// * `body`
     ///
@@ -515,62 +269,11 @@ impl Scale {
         let __url = format!("/apis/apps/v1beta2/namespaces/{namespace}/deployments/{name}/scale?", name = name, namespace = namespace);
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
         }
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::put(__url);
-        let __body = serde_json::to_vec(&body).map_err(crate::RequestError::Json)?;
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`Scale::replace_namespaced_deployment_scale`](./struct.Scale.html#method.replace_namespaced_deployment_scale)
-#[derive(Debug, Default)]
-pub struct ReplaceNamespacedDeploymentScaleOptional<'a> {
-    /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
-    pub dry_run: Option<&'a str>,
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`Scale::replace_namespaced_deployment_scale`](./struct.Scale.html#method.replace_namespaced_deployment_scale)
-#[derive(Debug)]
-pub enum ReplaceNamespacedDeploymentScaleResponse {
-    Ok(crate::v1_13::api::apps::v1beta2::Scale),
-    Created(crate::v1_13::api::apps::v1beta2::Scale),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for ReplaceNamespacedDeploymentScaleResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((ReplaceNamespacedDeploymentScaleResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::CREATED => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((ReplaceNamespacedDeploymentScaleResponse::Created(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((ReplaceNamespacedDeploymentScaleResponse::Unauthorized, 0)),
-            _ => Ok((ReplaceNamespacedDeploymentScaleResponse::Other, 0)),
-        }
-    }
-}
-
 // Generated from operation replaceAppsV1beta2NamespacedReplicaSetScale
 
 impl Scale {
@@ -581,12 +284,12 @@ impl Scale {
     /// # Arguments
     ///
     /// * `name`
-    ///
     ///     name of the Scale
+
     ///
     /// * `namespace`
-    ///
     ///     object name and auth scope, such as for teams and projects
+
     ///
     /// * `body`
     ///
@@ -606,62 +309,11 @@ impl Scale {
         let __url = format!("/apis/apps/v1beta2/namespaces/{namespace}/replicasets/{name}/scale?", name = name, namespace = namespace);
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
         }
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::put(__url);
-        let __body = serde_json::to_vec(&body).map_err(crate::RequestError::Json)?;
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`Scale::replace_namespaced_replica_set_scale`](./struct.Scale.html#method.replace_namespaced_replica_set_scale)
-#[derive(Debug, Default)]
-pub struct ReplaceNamespacedReplicaSetScaleOptional<'a> {
-    /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
-    pub dry_run: Option<&'a str>,
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`Scale::replace_namespaced_replica_set_scale`](./struct.Scale.html#method.replace_namespaced_replica_set_scale)
-#[derive(Debug)]
-pub enum ReplaceNamespacedReplicaSetScaleResponse {
-    Ok(crate::v1_13::api::apps::v1beta2::Scale),
-    Created(crate::v1_13::api::apps::v1beta2::Scale),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for ReplaceNamespacedReplicaSetScaleResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((ReplaceNamespacedReplicaSetScaleResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::CREATED => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((ReplaceNamespacedReplicaSetScaleResponse::Created(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((ReplaceNamespacedReplicaSetScaleResponse::Unauthorized, 0)),
-            _ => Ok((ReplaceNamespacedReplicaSetScaleResponse::Other, 0)),
-        }
-    }
-}
-
 // Generated from operation replaceAppsV1beta2NamespacedStatefulSetScale
 
 impl Scale {
@@ -672,12 +324,12 @@ impl Scale {
     /// # Arguments
     ///
     /// * `name`
-    ///
     ///     name of the Scale
+
     ///
     /// * `namespace`
-    ///
     ///     object name and auth scope, such as for teams and projects
+
     ///
     /// * `body`
     ///
@@ -697,62 +349,11 @@ impl Scale {
         let __url = format!("/apis/apps/v1beta2/namespaces/{namespace}/statefulsets/{name}/scale?", name = name, namespace = namespace);
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
         }
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::put(__url);
-        let __body = serde_json::to_vec(&body).map_err(crate::RequestError::Json)?;
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`Scale::replace_namespaced_stateful_set_scale`](./struct.Scale.html#method.replace_namespaced_stateful_set_scale)
-#[derive(Debug, Default)]
-pub struct ReplaceNamespacedStatefulSetScaleOptional<'a> {
-    /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
-    pub dry_run: Option<&'a str>,
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`Scale::replace_namespaced_stateful_set_scale`](./struct.Scale.html#method.replace_namespaced_stateful_set_scale)
-#[derive(Debug)]
-pub enum ReplaceNamespacedStatefulSetScaleResponse {
-    Ok(crate::v1_13::api::apps::v1beta2::Scale),
-    Created(crate::v1_13::api::apps::v1beta2::Scale),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for ReplaceNamespacedStatefulSetScaleResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((ReplaceNamespacedStatefulSetScaleResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::CREATED => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((ReplaceNamespacedStatefulSetScaleResponse::Created(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((ReplaceNamespacedStatefulSetScaleResponse::Unauthorized, 0)),
-            _ => Ok((ReplaceNamespacedStatefulSetScaleResponse::Other, 0)),
-        }
-    }
-}
-
 // End apps/v1beta2/Scale
 
 impl crate::Resource for Scale {

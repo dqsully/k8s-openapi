@@ -32,8 +32,6 @@ pub use self::azure_file_volume_source::{
 mod binding;
 pub use self::binding::{
     Binding,
-    CreateNamespacedBindingOptional, CreateNamespacedBindingResponse,
-    CreateNamespacedPodBindingOptional, CreateNamespacedPodBindingResponse,
 };
 
 mod csi_persistent_volume_source;
@@ -79,8 +77,6 @@ pub use self::component_condition::{
 mod component_status;
 pub use self::component_status::{
     ComponentStatus,
-    ListComponentStatusOptional, ListComponentStatusResponse,
-    ReadComponentStatusOptional, ReadComponentStatusResponse,
 };
 
 mod component_status_list;
@@ -91,17 +87,6 @@ pub use self::component_status_list::{
 mod config_map;
 pub use self::config_map::{
     ConfigMap,
-    CreateNamespacedConfigMapOptional, CreateNamespacedConfigMapResponse,
-    DeleteCollectionNamespacedConfigMapOptional, DeleteCollectionNamespacedConfigMapResponse,
-    DeleteNamespacedConfigMapOptional, DeleteNamespacedConfigMapResponse,
-    ListConfigMapForAllNamespacesOptional, ListConfigMapForAllNamespacesResponse,
-    ListNamespacedConfigMapOptional, ListNamespacedConfigMapResponse,
-    PatchNamespacedConfigMapOptional, PatchNamespacedConfigMapResponse,
-    ReadNamespacedConfigMapOptional, ReadNamespacedConfigMapResponse,
-    ReplaceNamespacedConfigMapOptional, ReplaceNamespacedConfigMapResponse,
-    WatchConfigMapListForAllNamespacesOptional, WatchConfigMapListForAllNamespacesResponse,
-    WatchNamespacedConfigMapOptional, WatchNamespacedConfigMapResponse,
-    WatchNamespacedConfigMapListOptional, WatchNamespacedConfigMapListResponse,
 };
 
 mod config_map_env_source;
@@ -217,17 +202,6 @@ pub use self::endpoint_subset::{
 mod endpoints;
 pub use self::endpoints::{
     Endpoints,
-    CreateNamespacedEndpointsOptional, CreateNamespacedEndpointsResponse,
-    DeleteCollectionNamespacedEndpointsOptional, DeleteCollectionNamespacedEndpointsResponse,
-    DeleteNamespacedEndpointsOptional, DeleteNamespacedEndpointsResponse,
-    ListEndpointsForAllNamespacesOptional, ListEndpointsForAllNamespacesResponse,
-    ListNamespacedEndpointsOptional, ListNamespacedEndpointsResponse,
-    PatchNamespacedEndpointsOptional, PatchNamespacedEndpointsResponse,
-    ReadNamespacedEndpointsOptional, ReadNamespacedEndpointsResponse,
-    ReplaceNamespacedEndpointsOptional, ReplaceNamespacedEndpointsResponse,
-    WatchEndpointsListForAllNamespacesOptional, WatchEndpointsListForAllNamespacesResponse,
-    WatchNamespacedEndpointsOptional, WatchNamespacedEndpointsResponse,
-    WatchNamespacedEndpointsListOptional, WatchNamespacedEndpointsListResponse,
 };
 
 mod endpoints_list;
@@ -253,17 +227,6 @@ pub use self::env_var_source::{
 mod event;
 pub use self::event::{
     Event,
-    CreateNamespacedEventOptional, CreateNamespacedEventResponse,
-    DeleteCollectionNamespacedEventOptional, DeleteCollectionNamespacedEventResponse,
-    DeleteNamespacedEventOptional, DeleteNamespacedEventResponse,
-    ListEventForAllNamespacesOptional, ListEventForAllNamespacesResponse,
-    ListNamespacedEventOptional, ListNamespacedEventResponse,
-    PatchNamespacedEventOptional, PatchNamespacedEventResponse,
-    ReadNamespacedEventOptional, ReadNamespacedEventResponse,
-    ReplaceNamespacedEventOptional, ReplaceNamespacedEventResponse,
-    WatchEventListForAllNamespacesOptional, WatchEventListForAllNamespacesResponse,
-    WatchNamespacedEventOptional, WatchNamespacedEventResponse,
-    WatchNamespacedEventListOptional, WatchNamespacedEventListResponse,
 };
 
 mod event_list;
@@ -374,17 +337,6 @@ pub use self::lifecycle::{
 mod limit_range;
 pub use self::limit_range::{
     LimitRange,
-    CreateNamespacedLimitRangeOptional, CreateNamespacedLimitRangeResponse,
-    DeleteCollectionNamespacedLimitRangeOptional, DeleteCollectionNamespacedLimitRangeResponse,
-    DeleteNamespacedLimitRangeOptional, DeleteNamespacedLimitRangeResponse,
-    ListLimitRangeForAllNamespacesOptional, ListLimitRangeForAllNamespacesResponse,
-    ListNamespacedLimitRangeOptional, ListNamespacedLimitRangeResponse,
-    PatchNamespacedLimitRangeOptional, PatchNamespacedLimitRangeResponse,
-    ReadNamespacedLimitRangeOptional, ReadNamespacedLimitRangeResponse,
-    ReplaceNamespacedLimitRangeOptional, ReplaceNamespacedLimitRangeResponse,
-    WatchLimitRangeListForAllNamespacesOptional, WatchLimitRangeListForAllNamespacesResponse,
-    WatchNamespacedLimitRangeOptional, WatchNamespacedLimitRangeResponse,
-    WatchNamespacedLimitRangeListOptional, WatchNamespacedLimitRangeListResponse,
 };
 
 mod limit_range_item;
@@ -430,18 +382,6 @@ pub use self::nfs_volume_source::{
 mod namespace;
 pub use self::namespace::{
     Namespace,
-    CreateNamespaceOptional, CreateNamespaceResponse,
-    DeleteNamespaceOptional, DeleteNamespaceResponse,
-    ListNamespaceOptional, ListNamespaceResponse,
-    PatchNamespaceOptional, PatchNamespaceResponse,
-    PatchNamespaceStatusOptional, PatchNamespaceStatusResponse,
-    ReadNamespaceOptional, ReadNamespaceResponse,
-    ReadNamespaceStatusOptional, ReadNamespaceStatusResponse,
-    ReplaceNamespaceOptional, ReplaceNamespaceResponse,
-    ReplaceNamespaceFinalizeOptional, ReplaceNamespaceFinalizeResponse,
-    ReplaceNamespaceStatusOptional, ReplaceNamespaceStatusResponse,
-    WatchNamespaceOptional, WatchNamespaceResponse,
-    WatchNamespaceListOptional, WatchNamespaceListResponse,
 };
 
 mod namespace_list;
@@ -462,28 +402,6 @@ pub use self::namespace_status::{
 mod node;
 pub use self::node::{
     Node,
-    ConnectDeleteNodeProxyOptional, ConnectDeleteNodeProxyResponse,
-    ConnectDeleteNodeProxyWithPathOptional, ConnectDeleteNodeProxyWithPathResponse,
-    ConnectGetNodeProxyOptional, ConnectGetNodeProxyResponse,
-    ConnectGetNodeProxyWithPathOptional, ConnectGetNodeProxyWithPathResponse,
-    ConnectPatchNodeProxyOptional, ConnectPatchNodeProxyResponse,
-    ConnectPatchNodeProxyWithPathOptional, ConnectPatchNodeProxyWithPathResponse,
-    ConnectPostNodeProxyOptional, ConnectPostNodeProxyResponse,
-    ConnectPostNodeProxyWithPathOptional, ConnectPostNodeProxyWithPathResponse,
-    ConnectPutNodeProxyOptional, ConnectPutNodeProxyResponse,
-    ConnectPutNodeProxyWithPathOptional, ConnectPutNodeProxyWithPathResponse,
-    CreateNodeOptional, CreateNodeResponse,
-    DeleteCollectionNodeOptional, DeleteCollectionNodeResponse,
-    DeleteNodeOptional, DeleteNodeResponse,
-    ListNodeOptional, ListNodeResponse,
-    PatchNodeOptional, PatchNodeResponse,
-    PatchNodeStatusOptional, PatchNodeStatusResponse,
-    ReadNodeOptional, ReadNodeResponse,
-    ReadNodeStatusOptional, ReadNodeStatusResponse,
-    ReplaceNodeOptional, ReplaceNodeResponse,
-    ReplaceNodeStatusOptional, ReplaceNodeStatusResponse,
-    WatchNodeOptional, WatchNodeResponse,
-    WatchNodeListOptional, WatchNodeListResponse,
 };
 
 mod node_address;
@@ -564,37 +482,11 @@ pub use self::object_reference::{
 mod persistent_volume;
 pub use self::persistent_volume::{
     PersistentVolume,
-    CreatePersistentVolumeOptional, CreatePersistentVolumeResponse,
-    DeleteCollectionPersistentVolumeOptional, DeleteCollectionPersistentVolumeResponse,
-    DeletePersistentVolumeOptional, DeletePersistentVolumeResponse,
-    ListPersistentVolumeOptional, ListPersistentVolumeResponse,
-    PatchPersistentVolumeOptional, PatchPersistentVolumeResponse,
-    PatchPersistentVolumeStatusOptional, PatchPersistentVolumeStatusResponse,
-    ReadPersistentVolumeOptional, ReadPersistentVolumeResponse,
-    ReadPersistentVolumeStatusOptional, ReadPersistentVolumeStatusResponse,
-    ReplacePersistentVolumeOptional, ReplacePersistentVolumeResponse,
-    ReplacePersistentVolumeStatusOptional, ReplacePersistentVolumeStatusResponse,
-    WatchPersistentVolumeOptional, WatchPersistentVolumeResponse,
-    WatchPersistentVolumeListOptional, WatchPersistentVolumeListResponse,
 };
 
 mod persistent_volume_claim;
 pub use self::persistent_volume_claim::{
     PersistentVolumeClaim,
-    CreateNamespacedPersistentVolumeClaimOptional, CreateNamespacedPersistentVolumeClaimResponse,
-    DeleteCollectionNamespacedPersistentVolumeClaimOptional, DeleteCollectionNamespacedPersistentVolumeClaimResponse,
-    DeleteNamespacedPersistentVolumeClaimOptional, DeleteNamespacedPersistentVolumeClaimResponse,
-    ListNamespacedPersistentVolumeClaimOptional, ListNamespacedPersistentVolumeClaimResponse,
-    ListPersistentVolumeClaimForAllNamespacesOptional, ListPersistentVolumeClaimForAllNamespacesResponse,
-    PatchNamespacedPersistentVolumeClaimOptional, PatchNamespacedPersistentVolumeClaimResponse,
-    PatchNamespacedPersistentVolumeClaimStatusOptional, PatchNamespacedPersistentVolumeClaimStatusResponse,
-    ReadNamespacedPersistentVolumeClaimOptional, ReadNamespacedPersistentVolumeClaimResponse,
-    ReadNamespacedPersistentVolumeClaimStatusOptional, ReadNamespacedPersistentVolumeClaimStatusResponse,
-    ReplaceNamespacedPersistentVolumeClaimOptional, ReplaceNamespacedPersistentVolumeClaimResponse,
-    ReplaceNamespacedPersistentVolumeClaimStatusOptional, ReplaceNamespacedPersistentVolumeClaimStatusResponse,
-    WatchNamespacedPersistentVolumeClaimOptional, WatchNamespacedPersistentVolumeClaimResponse,
-    WatchNamespacedPersistentVolumeClaimListOptional, WatchNamespacedPersistentVolumeClaimListResponse,
-    WatchPersistentVolumeClaimListForAllNamespacesOptional, WatchPersistentVolumeClaimListForAllNamespacesResponse,
 };
 
 mod persistent_volume_claim_condition;
@@ -645,37 +537,6 @@ pub use self::photon_persistent_disk_volume_source::{
 mod pod;
 pub use self::pod::{
     Pod,
-    ConnectDeleteNamespacedPodProxyOptional, ConnectDeleteNamespacedPodProxyResponse,
-    ConnectDeleteNamespacedPodProxyWithPathOptional, ConnectDeleteNamespacedPodProxyWithPathResponse,
-    ConnectGetNamespacedPodAttachOptional, ConnectGetNamespacedPodAttachResponse,
-    ConnectGetNamespacedPodExecOptional, ConnectGetNamespacedPodExecResponse,
-    ConnectGetNamespacedPodPortforwardOptional, ConnectGetNamespacedPodPortforwardResponse,
-    ConnectGetNamespacedPodProxyOptional, ConnectGetNamespacedPodProxyResponse,
-    ConnectGetNamespacedPodProxyWithPathOptional, ConnectGetNamespacedPodProxyWithPathResponse,
-    ConnectPatchNamespacedPodProxyOptional, ConnectPatchNamespacedPodProxyResponse,
-    ConnectPatchNamespacedPodProxyWithPathOptional, ConnectPatchNamespacedPodProxyWithPathResponse,
-    ConnectPostNamespacedPodAttachOptional, ConnectPostNamespacedPodAttachResponse,
-    ConnectPostNamespacedPodExecOptional, ConnectPostNamespacedPodExecResponse,
-    ConnectPostNamespacedPodPortforwardOptional, ConnectPostNamespacedPodPortforwardResponse,
-    ConnectPostNamespacedPodProxyOptional, ConnectPostNamespacedPodProxyResponse,
-    ConnectPostNamespacedPodProxyWithPathOptional, ConnectPostNamespacedPodProxyWithPathResponse,
-    ConnectPutNamespacedPodProxyOptional, ConnectPutNamespacedPodProxyResponse,
-    ConnectPutNamespacedPodProxyWithPathOptional, ConnectPutNamespacedPodProxyWithPathResponse,
-    CreateNamespacedPodOptional, CreateNamespacedPodResponse,
-    DeleteCollectionNamespacedPodOptional, DeleteCollectionNamespacedPodResponse,
-    DeleteNamespacedPodOptional, DeleteNamespacedPodResponse,
-    ListNamespacedPodOptional, ListNamespacedPodResponse,
-    ListPodForAllNamespacesOptional, ListPodForAllNamespacesResponse,
-    PatchNamespacedPodOptional, PatchNamespacedPodResponse,
-    PatchNamespacedPodStatusOptional, PatchNamespacedPodStatusResponse,
-    ReadNamespacedPodOptional, ReadNamespacedPodResponse,
-    ReadNamespacedPodLogOptional, ReadNamespacedPodLogResponse,
-    ReadNamespacedPodStatusOptional, ReadNamespacedPodStatusResponse,
-    ReplaceNamespacedPodOptional, ReplaceNamespacedPodResponse,
-    ReplaceNamespacedPodStatusOptional, ReplaceNamespacedPodStatusResponse,
-    WatchNamespacedPodOptional, WatchNamespacedPodResponse,
-    WatchNamespacedPodListOptional, WatchNamespacedPodListResponse,
-    WatchPodListForAllNamespacesOptional, WatchPodListForAllNamespacesResponse,
 };
 
 mod pod_affinity;
@@ -736,17 +597,6 @@ pub use self::pod_status::{
 mod pod_template;
 pub use self::pod_template::{
     PodTemplate,
-    CreateNamespacedPodTemplateOptional, CreateNamespacedPodTemplateResponse,
-    DeleteCollectionNamespacedPodTemplateOptional, DeleteCollectionNamespacedPodTemplateResponse,
-    DeleteNamespacedPodTemplateOptional, DeleteNamespacedPodTemplateResponse,
-    ListNamespacedPodTemplateOptional, ListNamespacedPodTemplateResponse,
-    ListPodTemplateForAllNamespacesOptional, ListPodTemplateForAllNamespacesResponse,
-    PatchNamespacedPodTemplateOptional, PatchNamespacedPodTemplateResponse,
-    ReadNamespacedPodTemplateOptional, ReadNamespacedPodTemplateResponse,
-    ReplaceNamespacedPodTemplateOptional, ReplaceNamespacedPodTemplateResponse,
-    WatchNamespacedPodTemplateOptional, WatchNamespacedPodTemplateResponse,
-    WatchNamespacedPodTemplateListOptional, WatchNamespacedPodTemplateListResponse,
-    WatchPodTemplateListForAllNamespacesOptional, WatchPodTemplateListForAllNamespacesResponse,
 };
 
 mod pod_template_list;
@@ -797,20 +647,6 @@ pub use self::rbd_volume_source::{
 mod replication_controller;
 pub use self::replication_controller::{
     ReplicationController,
-    CreateNamespacedReplicationControllerOptional, CreateNamespacedReplicationControllerResponse,
-    DeleteCollectionNamespacedReplicationControllerOptional, DeleteCollectionNamespacedReplicationControllerResponse,
-    DeleteNamespacedReplicationControllerOptional, DeleteNamespacedReplicationControllerResponse,
-    ListNamespacedReplicationControllerOptional, ListNamespacedReplicationControllerResponse,
-    ListReplicationControllerForAllNamespacesOptional, ListReplicationControllerForAllNamespacesResponse,
-    PatchNamespacedReplicationControllerOptional, PatchNamespacedReplicationControllerResponse,
-    PatchNamespacedReplicationControllerStatusOptional, PatchNamespacedReplicationControllerStatusResponse,
-    ReadNamespacedReplicationControllerOptional, ReadNamespacedReplicationControllerResponse,
-    ReadNamespacedReplicationControllerStatusOptional, ReadNamespacedReplicationControllerStatusResponse,
-    ReplaceNamespacedReplicationControllerOptional, ReplaceNamespacedReplicationControllerResponse,
-    ReplaceNamespacedReplicationControllerStatusOptional, ReplaceNamespacedReplicationControllerStatusResponse,
-    WatchNamespacedReplicationControllerOptional, WatchNamespacedReplicationControllerResponse,
-    WatchNamespacedReplicationControllerListOptional, WatchNamespacedReplicationControllerListResponse,
-    WatchReplicationControllerListForAllNamespacesOptional, WatchReplicationControllerListForAllNamespacesResponse,
 };
 
 mod replication_controller_condition;
@@ -841,20 +677,6 @@ pub use self::resource_field_selector::{
 mod resource_quota;
 pub use self::resource_quota::{
     ResourceQuota,
-    CreateNamespacedResourceQuotaOptional, CreateNamespacedResourceQuotaResponse,
-    DeleteCollectionNamespacedResourceQuotaOptional, DeleteCollectionNamespacedResourceQuotaResponse,
-    DeleteNamespacedResourceQuotaOptional, DeleteNamespacedResourceQuotaResponse,
-    ListNamespacedResourceQuotaOptional, ListNamespacedResourceQuotaResponse,
-    ListResourceQuotaForAllNamespacesOptional, ListResourceQuotaForAllNamespacesResponse,
-    PatchNamespacedResourceQuotaOptional, PatchNamespacedResourceQuotaResponse,
-    PatchNamespacedResourceQuotaStatusOptional, PatchNamespacedResourceQuotaStatusResponse,
-    ReadNamespacedResourceQuotaOptional, ReadNamespacedResourceQuotaResponse,
-    ReadNamespacedResourceQuotaStatusOptional, ReadNamespacedResourceQuotaStatusResponse,
-    ReplaceNamespacedResourceQuotaOptional, ReplaceNamespacedResourceQuotaResponse,
-    ReplaceNamespacedResourceQuotaStatusOptional, ReplaceNamespacedResourceQuotaStatusResponse,
-    WatchNamespacedResourceQuotaOptional, WatchNamespacedResourceQuotaResponse,
-    WatchNamespacedResourceQuotaListOptional, WatchNamespacedResourceQuotaListResponse,
-    WatchResourceQuotaListForAllNamespacesOptional, WatchResourceQuotaListForAllNamespacesResponse,
 };
 
 mod resource_quota_list;
@@ -905,17 +727,6 @@ pub use self::scoped_resource_selector_requirement::{
 mod secret;
 pub use self::secret::{
     Secret,
-    CreateNamespacedSecretOptional, CreateNamespacedSecretResponse,
-    DeleteCollectionNamespacedSecretOptional, DeleteCollectionNamespacedSecretResponse,
-    DeleteNamespacedSecretOptional, DeleteNamespacedSecretResponse,
-    ListNamespacedSecretOptional, ListNamespacedSecretResponse,
-    ListSecretForAllNamespacesOptional, ListSecretForAllNamespacesResponse,
-    PatchNamespacedSecretOptional, PatchNamespacedSecretResponse,
-    ReadNamespacedSecretOptional, ReadNamespacedSecretResponse,
-    ReplaceNamespacedSecretOptional, ReplaceNamespacedSecretResponse,
-    WatchNamespacedSecretOptional, WatchNamespacedSecretResponse,
-    WatchNamespacedSecretListOptional, WatchNamespacedSecretListResponse,
-    WatchSecretListForAllNamespacesOptional, WatchSecretListForAllNamespacesResponse,
 };
 
 mod secret_env_source;
@@ -956,45 +767,11 @@ pub use self::security_context::{
 mod service;
 pub use self::service::{
     Service,
-    ConnectDeleteNamespacedServiceProxyOptional, ConnectDeleteNamespacedServiceProxyResponse,
-    ConnectDeleteNamespacedServiceProxyWithPathOptional, ConnectDeleteNamespacedServiceProxyWithPathResponse,
-    ConnectGetNamespacedServiceProxyOptional, ConnectGetNamespacedServiceProxyResponse,
-    ConnectGetNamespacedServiceProxyWithPathOptional, ConnectGetNamespacedServiceProxyWithPathResponse,
-    ConnectPatchNamespacedServiceProxyOptional, ConnectPatchNamespacedServiceProxyResponse,
-    ConnectPatchNamespacedServiceProxyWithPathOptional, ConnectPatchNamespacedServiceProxyWithPathResponse,
-    ConnectPostNamespacedServiceProxyOptional, ConnectPostNamespacedServiceProxyResponse,
-    ConnectPostNamespacedServiceProxyWithPathOptional, ConnectPostNamespacedServiceProxyWithPathResponse,
-    ConnectPutNamespacedServiceProxyOptional, ConnectPutNamespacedServiceProxyResponse,
-    ConnectPutNamespacedServiceProxyWithPathOptional, ConnectPutNamespacedServiceProxyWithPathResponse,
-    CreateNamespacedServiceOptional, CreateNamespacedServiceResponse,
-    DeleteNamespacedServiceOptional, DeleteNamespacedServiceResponse,
-    ListNamespacedServiceOptional, ListNamespacedServiceResponse,
-    ListServiceForAllNamespacesOptional, ListServiceForAllNamespacesResponse,
-    PatchNamespacedServiceOptional, PatchNamespacedServiceResponse,
-    PatchNamespacedServiceStatusOptional, PatchNamespacedServiceStatusResponse,
-    ReadNamespacedServiceOptional, ReadNamespacedServiceResponse,
-    ReadNamespacedServiceStatusOptional, ReadNamespacedServiceStatusResponse,
-    ReplaceNamespacedServiceOptional, ReplaceNamespacedServiceResponse,
-    ReplaceNamespacedServiceStatusOptional, ReplaceNamespacedServiceStatusResponse,
-    WatchNamespacedServiceOptional, WatchNamespacedServiceResponse,
-    WatchNamespacedServiceListOptional, WatchNamespacedServiceListResponse,
-    WatchServiceListForAllNamespacesOptional, WatchServiceListForAllNamespacesResponse,
 };
 
 mod service_account;
 pub use self::service_account::{
     ServiceAccount,
-    CreateNamespacedServiceAccountOptional, CreateNamespacedServiceAccountResponse,
-    DeleteCollectionNamespacedServiceAccountOptional, DeleteCollectionNamespacedServiceAccountResponse,
-    DeleteNamespacedServiceAccountOptional, DeleteNamespacedServiceAccountResponse,
-    ListNamespacedServiceAccountOptional, ListNamespacedServiceAccountResponse,
-    ListServiceAccountForAllNamespacesOptional, ListServiceAccountForAllNamespacesResponse,
-    PatchNamespacedServiceAccountOptional, PatchNamespacedServiceAccountResponse,
-    ReadNamespacedServiceAccountOptional, ReadNamespacedServiceAccountResponse,
-    ReplaceNamespacedServiceAccountOptional, ReplaceNamespacedServiceAccountResponse,
-    WatchNamespacedServiceAccountOptional, WatchNamespacedServiceAccountResponse,
-    WatchNamespacedServiceAccountListOptional, WatchNamespacedServiceAccountListResponse,
-    WatchServiceAccountListForAllNamespacesOptional, WatchServiceAccountListForAllNamespacesResponse,
 };
 
 mod service_account_list;

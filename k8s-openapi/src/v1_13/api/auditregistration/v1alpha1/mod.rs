@@ -2,15 +2,6 @@
 mod audit_sink;
 pub use self::audit_sink::{
     AuditSink,
-    CreateAuditSinkOptional, CreateAuditSinkResponse,
-    DeleteAuditSinkOptional, DeleteAuditSinkResponse,
-    DeleteCollectionAuditSinkOptional, DeleteCollectionAuditSinkResponse,
-    ListAuditSinkOptional, ListAuditSinkResponse,
-    PatchAuditSinkOptional, PatchAuditSinkResponse,
-    ReadAuditSinkOptional, ReadAuditSinkResponse,
-    ReplaceAuditSinkOptional, ReplaceAuditSinkResponse,
-    WatchAuditSinkOptional, WatchAuditSinkResponse,
-    WatchAuditSinkListOptional, WatchAuditSinkListResponse,
 };
 
 mod audit_sink_list;

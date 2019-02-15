@@ -161,7 +161,7 @@ fn run(supported_version: supported_version::SupportedVersion, out_dir_base: &st
 				type_name: &type_name,
 			};
 
-			let type_template = match &definition.kind {
+			match &definition.kind {
 				swagger20::SchemaKind::Properties(properties) => {
 					let (properties, resource_metadata, metadata_property_ty) = {
 						use std::fmt::Write;
@@ -264,80 +264,185 @@ fn run(supported_version: supported_version::SupportedVersion, out_dir_base: &st
 						(result, resource_metadata, metadata_property_ty)
 					};
 
-					self::templates::Type::Properties(self::templates::TypeProperties {
+					let mut operation_groups: std::collections::BTreeMap<_, _> = Default::default();
+					if let Some(kubernetes_group_kind_versions) = &definition.kubernetes_group_kind_versions {
+						let mut kubernetes_group_kind_versions: Vec<_> = kubernetes_group_kind_versions.iter().collect();
+						kubernetes_group_kind_versions.sort();
+						for kubernetes_group_kind_version in kubernetes_group_kind_versions {
+							if let Some(operations) = operations.remove(&Some(kubernetes_group_kind_version)) {
+								operation_groups.insert(kubernetes_group_kind_version, operations);
+							}
+						}
+					}
+
+					let type_template = self::templates::TypePropertiesPre {
 						common: &common,
 						can_be_default,
 						properties,
-					})
+						resource_metadata,
+						metadata_property_ty,
+					};
+
+					type_template.render_into2(&mut file)?;
+
+					for (kubernetes_group_kind_version, operations) in operation_groups {
+						let operations_group_pre_template = self::templates::OperationsGroupPre {
+							kubernetes_group_kind_version,
+						};
+
+						operations_group_pre_template.render_into2(&mut file)?;
+
+						for (path, path_item, operation) in operations {
+							let mut parameters: Vec<_> = path_item.parameters.iter().collect();
+							for parameter in &operation.parameters {
+								if let Some(p) = parameters.iter_mut().find(|p| p.name == parameter.name) {
+									std::mem::replace(p, parameter);
+									continue;
+								}
+
+								parameters.push(parameter);
+							}
+
+							let mut previous_parameters: std::collections::HashSet<_> = Default::default();
+							let parameters: Result<Vec<_>, Error> =
+								parameters.into_iter()
+								.filter_map(|parameter| {
+									match (operation.method, parameter.location) {
+										// GET and DELETE appear to duplicate the parameters in the body and querystring, so just ignore the body
+										(swagger20::Method::Delete, swagger20::ParameterLocation::Body) |
+										(swagger20::Method::Get, swagger20::ParameterLocation::Body) => return None,
+
+										_ => (),
+									}
+
+									let mut parameter_name = get_rust_ident(&parameter.name);
+									while previous_parameters.contains(&parameter_name) {
+										parameter_name = format!("{}_", parameter_name).into();
+									}
+									previous_parameters.insert(parameter_name.clone());
+
+									let parameter_type = match get_rust_borrow_type(&parameter.schema.kind, replace_namespaces, mod_root) {
+										Ok(parameter_type) => parameter_type,
+										Err(err) => return Some(Err(err)),
+									};
+
+									Some(Ok((parameter_name, parameter_type, parameter)))
+								})
+								.collect();
+							let mut parameters = parameters?;
+							parameters.sort_by(|(_, _, parameter1), (_, _, parameter2)| {
+								(match (parameter1.location, parameter2.location) {
+									(location1, location2) if location1 == location2 => std::cmp::Ordering::Equal,
+									(swagger20::ParameterLocation::Path, _) |
+									(swagger20::ParameterLocation::Body, swagger20::ParameterLocation::Query) => std::cmp::Ordering::Less,
+									_ => std::cmp::Ordering::Greater,
+								})
+								.then_with(|| parameter1.name.cmp(&parameter2.name))
+							});
+							let parameters = parameters;
+
+							let operation_template = self::templates::Operation::new(
+								kubernetes_group_kind_version,
+								path,
+								path_item,
+								operation,
+								Some((&type_name, &type_ref_path, parent_mod_rs)),
+								&parameters,
+							)?;
+
+							operation_template.render_into2(&mut file)?;
+						}
+
+						let operations_group_post_template = self::templates::OperationsGroupPost {
+							kubernetes_group_kind_version,
+						};
+
+						operations_group_post_template.render_into2(&mut file)?;
+					}
+
+					let type_template = self::templates::TypePropertiesPost {
+					};
+
+					type_template.render_into2(&mut file)?;
+
+					num_generated_structs += 1;
 				},
 
 				swagger20::SchemaKind::Ref(_) => return Err(format!("{} is a Ref", definition_path).into()),
 
 				swagger20::SchemaKind::Ty(swagger20::Type::IntOrString) => {
-					num_generated_structs += 1;
-
-					self::templates::Type::IntOrString(self::templates::TypeIntOrString {
+					let type_template = self::templates::TypeIntOrString {
 						common: &common,
-					})
+					};
+
+					type_template.render_into2(&mut file)?;
+
+					num_generated_structs += 1;
 				},
 
 				swagger20::SchemaKind::Ty(swagger20::Type::JSONSchemaPropsOrArray) => {
-					num_generated_structs += 1;
-
 					let json_schema_props_type_name =
 						get_fully_qualified_type_name(
 							&swagger20::RefPath("io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaProps".to_string()),
 							&replace_namespaces,
 							mod_root)?;
 
-					self::templates::Type::JSONSchemaPropsOrArray(self::templates::TypeJSONSchemaPropsOrArray {
+					let type_template = self::templates::TypeJSONSchemaPropsOrArray {
 						common: &common,
 						json_schema_props_type_name,
-					})
+					};
+
+					type_template.render_into2(&mut file)?;
+
+					num_generated_structs += 1;
 				},
 
 				swagger20::SchemaKind::Ty(swagger20::Type::JSONSchemaPropsOrBool) => {
-					num_generated_structs += 1;
-
 					let json_schema_props_type_name =
 						get_fully_qualified_type_name(
 							&swagger20::RefPath("io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaProps".to_string()),
 							&replace_namespaces,
 							mod_root)?;
 
-					self::templates::Type::JSONSchemaPropsOrBool(self::templates::TypeJSONSchemaPropsOrBool {
+					let type_template = self::templates::TypeJSONSchemaPropsOrBool {
 						common: &common,
 						json_schema_props_type_name,
-					})
+					};
+
+					type_template.render_into2(&mut file)?;
+
+					num_generated_structs += 1;
 				},
 
 				swagger20::SchemaKind::Ty(swagger20::Type::JSONSchemaPropsOrStringArray) => {
-					num_generated_structs += 1;
-
 					let json_schema_props_type_name =
 						get_fully_qualified_type_name(
 							&swagger20::RefPath("io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaProps".to_string()),
 							&replace_namespaces,
 							mod_root)?;
 
-					self::templates::Type::JSONSchemaPropsOrStringArray(self::templates::TypeJSONSchemaPropsOrStringArray {
+					let type_template = self::templates::TypeJSONSchemaPropsOrStringArray {
 						common: &common,
 						json_schema_props_type_name,
-					})
+					};
+
+					type_template.render_into2(&mut file)?;
+
+					num_generated_structs += 1;
 				},
 
 				swagger20::SchemaKind::Ty(_) => {
-					num_generated_type_aliases += 1;
-
-					self::templates::Type::Alias(self::templates::TypeAlias {
+					let type_template = self::templates::TypeAlias {
 						common: &common,
 						inner_type_name: get_rust_type(&definition.kind, &replace_namespaces, mod_root)?,
 						can_be_default,
-					})
-				},
-			};
+					};
 
-			type_template.render_into2(&mut file)?;
+					type_template.render_into2(&mut file)?;
+
+					num_generated_type_aliases += 1;
+				},
+			}
 
 			match &definition.kind {
 				swagger20::SchemaKind::Properties(properties) => {

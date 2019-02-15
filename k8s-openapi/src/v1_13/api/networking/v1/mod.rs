@@ -7,17 +7,6 @@ pub use self::ip_block::{
 mod network_policy;
 pub use self::network_policy::{
     NetworkPolicy,
-    CreateNamespacedNetworkPolicyOptional, CreateNamespacedNetworkPolicyResponse,
-    DeleteCollectionNamespacedNetworkPolicyOptional, DeleteCollectionNamespacedNetworkPolicyResponse,
-    DeleteNamespacedNetworkPolicyOptional, DeleteNamespacedNetworkPolicyResponse,
-    ListNamespacedNetworkPolicyOptional, ListNamespacedNetworkPolicyResponse,
-    ListNetworkPolicyForAllNamespacesOptional, ListNetworkPolicyForAllNamespacesResponse,
-    PatchNamespacedNetworkPolicyOptional, PatchNamespacedNetworkPolicyResponse,
-    ReadNamespacedNetworkPolicyOptional, ReadNamespacedNetworkPolicyResponse,
-    ReplaceNamespacedNetworkPolicyOptional, ReplaceNamespacedNetworkPolicyResponse,
-    WatchNamespacedNetworkPolicyOptional, WatchNamespacedNetworkPolicyResponse,
-    WatchNamespacedNetworkPolicyListOptional, WatchNamespacedNetworkPolicyListResponse,
-    WatchNetworkPolicyListForAllNamespacesOptional, WatchNetworkPolicyListForAllNamespacesResponse,
 };
 
 mod network_policy_egress_rule;

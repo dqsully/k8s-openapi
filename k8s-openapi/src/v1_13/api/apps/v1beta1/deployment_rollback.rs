@@ -25,12 +25,12 @@ impl DeploymentRollback {
     /// # Arguments
     ///
     /// * `name`
-    ///
     ///     name of the DeploymentRollback
+
     ///
     /// * `namespace`
-    ///
     ///     object name and auth scope, such as for teams and projects
+
     ///
     /// * `body`
     ///
@@ -51,76 +51,13 @@ impl DeploymentRollback {
         let __url = format!("/apis/apps/v1beta1/namespaces/{namespace}/deployments/{name}/rollback?", name = name, namespace = namespace);
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
         }
         if let Some(include_uninitialized) = include_uninitialized {
-            __query_pairs.append_pair("includeUninitialized", &include_uninitialized.to_string());
         }
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::post(__url);
-        let __body = serde_json::to_vec(&body).map_err(crate::RequestError::Json)?;
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`DeploymentRollback::create_namespaced_deployment_rollback`](./struct.DeploymentRollback.html#method.create_namespaced_deployment_rollback)
-#[derive(Debug, Default)]
-pub struct CreateNamespacedDeploymentRollbackOptional<'a> {
-    /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
-    pub dry_run: Option<&'a str>,
-    /// If IncludeUninitialized is specified, the object may be returned without completing initialization.
-    pub include_uninitialized: Option<bool>,
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`DeploymentRollback::create_namespaced_deployment_rollback`](./struct.DeploymentRollback.html#method.create_namespaced_deployment_rollback)
-#[derive(Debug)]
-pub enum CreateNamespacedDeploymentRollbackResponse {
-    Ok(crate::v1_13::apimachinery::pkg::apis::meta::v1::Status),
-    Created(crate::v1_13::apimachinery::pkg::apis::meta::v1::Status),
-    Accepted(crate::v1_13::apimachinery::pkg::apis::meta::v1::Status),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for CreateNamespacedDeploymentRollbackResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((CreateNamespacedDeploymentRollbackResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::CREATED => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((CreateNamespacedDeploymentRollbackResponse::Created(result), buf.len()))
-            },
-            http::StatusCode::ACCEPTED => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((CreateNamespacedDeploymentRollbackResponse::Accepted(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((CreateNamespacedDeploymentRollbackResponse::Unauthorized, 0)),
-            _ => Ok((CreateNamespacedDeploymentRollbackResponse::Other, 0)),
-        }
-    }
-}
-
 // End apps/v1beta1/DeploymentRollback
 
 impl crate::Resource for DeploymentRollback {

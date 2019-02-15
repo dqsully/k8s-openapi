@@ -2,19 +2,6 @@
 mod certificate_signing_request;
 pub use self::certificate_signing_request::{
     CertificateSigningRequest,
-    CreateCertificateSigningRequestOptional, CreateCertificateSigningRequestResponse,
-    DeleteCertificateSigningRequestOptional, DeleteCertificateSigningRequestResponse,
-    DeleteCollectionCertificateSigningRequestOptional, DeleteCollectionCertificateSigningRequestResponse,
-    ListCertificateSigningRequestOptional, ListCertificateSigningRequestResponse,
-    PatchCertificateSigningRequestOptional, PatchCertificateSigningRequestResponse,
-    PatchCertificateSigningRequestStatusOptional, PatchCertificateSigningRequestStatusResponse,
-    ReadCertificateSigningRequestOptional, ReadCertificateSigningRequestResponse,
-    ReadCertificateSigningRequestStatusOptional, ReadCertificateSigningRequestStatusResponse,
-    ReplaceCertificateSigningRequestOptional, ReplaceCertificateSigningRequestResponse,
-    ReplaceCertificateSigningRequestApprovalOptional, ReplaceCertificateSigningRequestApprovalResponse,
-    ReplaceCertificateSigningRequestStatusOptional, ReplaceCertificateSigningRequestStatusResponse,
-    WatchCertificateSigningRequestOptional, WatchCertificateSigningRequestResponse,
-    WatchCertificateSigningRequestListOptional, WatchCertificateSigningRequestListResponse,
 };
 
 mod certificate_signing_request_condition;

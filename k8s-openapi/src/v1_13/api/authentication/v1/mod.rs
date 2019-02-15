@@ -2,7 +2,6 @@
 mod token_review;
 pub use self::token_review::{
     TokenReview,
-    CreateTokenReviewOptional, CreateTokenReviewResponse,
 };
 
 mod token_review_spec;

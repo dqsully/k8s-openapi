@@ -2,15 +2,6 @@
 mod mutating_webhook_configuration;
 pub use self::mutating_webhook_configuration::{
     MutatingWebhookConfiguration,
-    CreateMutatingWebhookConfigurationOptional, CreateMutatingWebhookConfigurationResponse,
-    DeleteCollectionMutatingWebhookConfigurationOptional, DeleteCollectionMutatingWebhookConfigurationResponse,
-    DeleteMutatingWebhookConfigurationOptional, DeleteMutatingWebhookConfigurationResponse,
-    ListMutatingWebhookConfigurationOptional, ListMutatingWebhookConfigurationResponse,
-    PatchMutatingWebhookConfigurationOptional, PatchMutatingWebhookConfigurationResponse,
-    ReadMutatingWebhookConfigurationOptional, ReadMutatingWebhookConfigurationResponse,
-    ReplaceMutatingWebhookConfigurationOptional, ReplaceMutatingWebhookConfigurationResponse,
-    WatchMutatingWebhookConfigurationOptional, WatchMutatingWebhookConfigurationResponse,
-    WatchMutatingWebhookConfigurationListOptional, WatchMutatingWebhookConfigurationListResponse,
 };
 
 mod mutating_webhook_configuration_list;
@@ -31,15 +22,6 @@ pub use self::service_reference::{
 mod validating_webhook_configuration;
 pub use self::validating_webhook_configuration::{
     ValidatingWebhookConfiguration,
-    CreateValidatingWebhookConfigurationOptional, CreateValidatingWebhookConfigurationResponse,
-    DeleteCollectionValidatingWebhookConfigurationOptional, DeleteCollectionValidatingWebhookConfigurationResponse,
-    DeleteValidatingWebhookConfigurationOptional, DeleteValidatingWebhookConfigurationResponse,
-    ListValidatingWebhookConfigurationOptional, ListValidatingWebhookConfigurationResponse,
-    PatchValidatingWebhookConfigurationOptional, PatchValidatingWebhookConfigurationResponse,
-    ReadValidatingWebhookConfigurationOptional, ReadValidatingWebhookConfigurationResponse,
-    ReplaceValidatingWebhookConfigurationOptional, ReplaceValidatingWebhookConfigurationResponse,
-    WatchValidatingWebhookConfigurationOptional, WatchValidatingWebhookConfigurationResponse,
-    WatchValidatingWebhookConfigurationListOptional, WatchValidatingWebhookConfigurationListResponse,
 };
 
 mod validating_webhook_configuration_list;

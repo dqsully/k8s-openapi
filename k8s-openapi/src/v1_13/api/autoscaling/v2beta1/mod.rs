@@ -17,20 +17,6 @@ pub use self::external_metric_status::{
 mod horizontal_pod_autoscaler;
 pub use self::horizontal_pod_autoscaler::{
     HorizontalPodAutoscaler,
-    CreateNamespacedHorizontalPodAutoscalerOptional, CreateNamespacedHorizontalPodAutoscalerResponse,
-    DeleteCollectionNamespacedHorizontalPodAutoscalerOptional, DeleteCollectionNamespacedHorizontalPodAutoscalerResponse,
-    DeleteNamespacedHorizontalPodAutoscalerOptional, DeleteNamespacedHorizontalPodAutoscalerResponse,
-    ListHorizontalPodAutoscalerForAllNamespacesOptional, ListHorizontalPodAutoscalerForAllNamespacesResponse,
-    ListNamespacedHorizontalPodAutoscalerOptional, ListNamespacedHorizontalPodAutoscalerResponse,
-    PatchNamespacedHorizontalPodAutoscalerOptional, PatchNamespacedHorizontalPodAutoscalerResponse,
-    PatchNamespacedHorizontalPodAutoscalerStatusOptional, PatchNamespacedHorizontalPodAutoscalerStatusResponse,
-    ReadNamespacedHorizontalPodAutoscalerOptional, ReadNamespacedHorizontalPodAutoscalerResponse,
-    ReadNamespacedHorizontalPodAutoscalerStatusOptional, ReadNamespacedHorizontalPodAutoscalerStatusResponse,
-    ReplaceNamespacedHorizontalPodAutoscalerOptional, ReplaceNamespacedHorizontalPodAutoscalerResponse,
-    ReplaceNamespacedHorizontalPodAutoscalerStatusOptional, ReplaceNamespacedHorizontalPodAutoscalerStatusResponse,
-    WatchHorizontalPodAutoscalerListForAllNamespacesOptional, WatchHorizontalPodAutoscalerListForAllNamespacesResponse,
-    WatchNamespacedHorizontalPodAutoscalerOptional, WatchNamespacedHorizontalPodAutoscalerResponse,
-    WatchNamespacedHorizontalPodAutoscalerListOptional, WatchNamespacedHorizontalPodAutoscalerListResponse,
 };
 
 mod horizontal_pod_autoscaler_condition;

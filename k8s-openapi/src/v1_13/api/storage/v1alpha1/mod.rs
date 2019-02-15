@@ -2,15 +2,6 @@
 mod volume_attachment;
 pub use self::volume_attachment::{
     VolumeAttachment,
-    CreateVolumeAttachmentOptional, CreateVolumeAttachmentResponse,
-    DeleteCollectionVolumeAttachmentOptional, DeleteCollectionVolumeAttachmentResponse,
-    DeleteVolumeAttachmentOptional, DeleteVolumeAttachmentResponse,
-    ListVolumeAttachmentOptional, ListVolumeAttachmentResponse,
-    PatchVolumeAttachmentOptional, PatchVolumeAttachmentResponse,
-    ReadVolumeAttachmentOptional, ReadVolumeAttachmentResponse,
-    ReplaceVolumeAttachmentOptional, ReplaceVolumeAttachmentResponse,
-    WatchVolumeAttachmentOptional, WatchVolumeAttachmentResponse,
-    WatchVolumeAttachmentListOptional, WatchVolumeAttachmentListResponse,
 };
 
 mod volume_attachment_list;

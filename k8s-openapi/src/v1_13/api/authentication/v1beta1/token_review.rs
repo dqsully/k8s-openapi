@@ -40,76 +40,13 @@ impl TokenReview {
         let __url = format!("/apis/authentication.k8s.io/v1beta1/tokenreviews?");
         let mut __query_pairs = url::form_urlencoded::Serializer::new(__url);
         if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
         }
         if let Some(include_uninitialized) = include_uninitialized {
-            __query_pairs.append_pair("includeUninitialized", &include_uninitialized.to_string());
         }
         if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
         }
         let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::post(__url);
-        let __body = serde_json::to_vec(&body).map_err(crate::RequestError::Json)?;
-        __request.body(__body).map_err(crate::RequestError::Http)
-    }
 }
-
-/// Optional parameters of [`TokenReview::create_token_review`](./struct.TokenReview.html#method.create_token_review)
-#[derive(Debug, Default)]
-pub struct CreateTokenReviewOptional<'a> {
-    /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
-    pub dry_run: Option<&'a str>,
-    /// If IncludeUninitialized is specified, the object may be returned without completing initialization.
-    pub include_uninitialized: Option<bool>,
-    /// If 'true', then the output is pretty printed.
-    pub pretty: Option<&'a str>,
-}
-
-/// Parses the HTTP response of [`TokenReview::create_token_review`](./struct.TokenReview.html#method.create_token_review)
-#[derive(Debug)]
-pub enum CreateTokenReviewResponse {
-    Ok(crate::v1_13::api::authentication::v1beta1::TokenReview),
-    Created(crate::v1_13::api::authentication::v1beta1::TokenReview),
-    Accepted(crate::v1_13::api::authentication::v1beta1::TokenReview),
-    Unauthorized,
-    Other,
-}
-
-impl crate::Response for CreateTokenReviewResponse {
-    fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
-        match status_code {
-            http::StatusCode::OK => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((CreateTokenReviewResponse::Ok(result), buf.len()))
-            },
-            http::StatusCode::CREATED => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((CreateTokenReviewResponse::Created(result), buf.len()))
-            },
-            http::StatusCode::ACCEPTED => {
-                let result = match serde_json::from_slice(buf) {
-                    Ok(value) => value,
-                    Err(ref err) if err.is_eof() => return Err(crate::ResponseError::NeedMoreData),
-                    Err(err) => return Err(crate::ResponseError::Json(err)),
-                };
-                Ok((CreateTokenReviewResponse::Accepted(result), buf.len()))
-            },
-            http::StatusCode::UNAUTHORIZED => Ok((CreateTokenReviewResponse::Unauthorized, 0)),
-            _ => Ok((CreateTokenReviewResponse::Other, 0)),
-        }
-    }
-}
-
 // End authentication.k8s.io/v1beta1/TokenReview
 
 impl crate::Resource for TokenReview {

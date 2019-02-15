@@ -2,18 +2,6 @@
 mod api_service;
 pub use self::api_service::{
     APIService,
-    CreateAPIServiceOptional, CreateAPIServiceResponse,
-    DeleteAPIServiceOptional, DeleteAPIServiceResponse,
-    DeleteCollectionAPIServiceOptional, DeleteCollectionAPIServiceResponse,
-    ListAPIServiceOptional, ListAPIServiceResponse,
-    PatchAPIServiceOptional, PatchAPIServiceResponse,
-    PatchAPIServiceStatusOptional, PatchAPIServiceStatusResponse,
-    ReadAPIServiceOptional, ReadAPIServiceResponse,
-    ReadAPIServiceStatusOptional, ReadAPIServiceStatusResponse,
-    ReplaceAPIServiceOptional, ReplaceAPIServiceResponse,
-    ReplaceAPIServiceStatusOptional, ReplaceAPIServiceStatusResponse,
-    WatchAPIServiceOptional, WatchAPIServiceResponse,
-    WatchAPIServiceListOptional, WatchAPIServiceListResponse,
 };
 
 mod api_service_condition;

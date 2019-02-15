@@ -2,20 +2,6 @@
 mod cron_job;
 pub use self::cron_job::{
     CronJob,
-    CreateNamespacedCronJobOptional, CreateNamespacedCronJobResponse,
-    DeleteCollectionNamespacedCronJobOptional, DeleteCollectionNamespacedCronJobResponse,
-    DeleteNamespacedCronJobOptional, DeleteNamespacedCronJobResponse,
-    ListCronJobForAllNamespacesOptional, ListCronJobForAllNamespacesResponse,
-    ListNamespacedCronJobOptional, ListNamespacedCronJobResponse,
-    PatchNamespacedCronJobOptional, PatchNamespacedCronJobResponse,
-    PatchNamespacedCronJobStatusOptional, PatchNamespacedCronJobStatusResponse,
-    ReadNamespacedCronJobOptional, ReadNamespacedCronJobResponse,
-    ReadNamespacedCronJobStatusOptional, ReadNamespacedCronJobStatusResponse,
-    ReplaceNamespacedCronJobOptional, ReplaceNamespacedCronJobResponse,
-    ReplaceNamespacedCronJobStatusOptional, ReplaceNamespacedCronJobStatusResponse,
-    WatchCronJobListForAllNamespacesOptional, WatchCronJobListForAllNamespacesResponse,
-    WatchNamespacedCronJobOptional, WatchNamespacedCronJobResponse,
-    WatchNamespacedCronJobListOptional, WatchNamespacedCronJobListResponse,
 };
 
 mod cron_job_list;

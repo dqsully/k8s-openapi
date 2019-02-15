@@ -2,17 +2,6 @@
 mod pod_preset;
 pub use self::pod_preset::{
     PodPreset,
-    CreateNamespacedPodPresetOptional, CreateNamespacedPodPresetResponse,
-    DeleteCollectionNamespacedPodPresetOptional, DeleteCollectionNamespacedPodPresetResponse,
-    DeleteNamespacedPodPresetOptional, DeleteNamespacedPodPresetResponse,
-    ListNamespacedPodPresetOptional, ListNamespacedPodPresetResponse,
-    ListPodPresetForAllNamespacesOptional, ListPodPresetForAllNamespacesResponse,
-    PatchNamespacedPodPresetOptional, PatchNamespacedPodPresetResponse,
-    ReadNamespacedPodPresetOptional, ReadNamespacedPodPresetResponse,
-    ReplaceNamespacedPodPresetOptional, ReplaceNamespacedPodPresetResponse,
-    WatchNamespacedPodPresetOptional, WatchNamespacedPodPresetResponse,
-    WatchNamespacedPodPresetListOptional, WatchNamespacedPodPresetListResponse,
-    WatchPodPresetListForAllNamespacesOptional, WatchPodPresetListForAllNamespacesResponse,
 };
 
 mod pod_preset_list;

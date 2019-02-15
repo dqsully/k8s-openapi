@@ -7,29 +7,11 @@ pub use self::aggregation_rule::{
 mod cluster_role;
 pub use self::cluster_role::{
     ClusterRole,
-    CreateClusterRoleOptional, CreateClusterRoleResponse,
-    DeleteClusterRoleOptional, DeleteClusterRoleResponse,
-    DeleteCollectionClusterRoleOptional, DeleteCollectionClusterRoleResponse,
-    ListClusterRoleOptional, ListClusterRoleResponse,
-    PatchClusterRoleOptional, PatchClusterRoleResponse,
-    ReadClusterRoleOptional, ReadClusterRoleResponse,
-    ReplaceClusterRoleOptional, ReplaceClusterRoleResponse,
-    WatchClusterRoleOptional, WatchClusterRoleResponse,
-    WatchClusterRoleListOptional, WatchClusterRoleListResponse,
 };
 
 mod cluster_role_binding;
 pub use self::cluster_role_binding::{
     ClusterRoleBinding,
-    CreateClusterRoleBindingOptional, CreateClusterRoleBindingResponse,
-    DeleteClusterRoleBindingOptional, DeleteClusterRoleBindingResponse,
-    DeleteCollectionClusterRoleBindingOptional, DeleteCollectionClusterRoleBindingResponse,
-    ListClusterRoleBindingOptional, ListClusterRoleBindingResponse,
-    PatchClusterRoleBindingOptional, PatchClusterRoleBindingResponse,
-    ReadClusterRoleBindingOptional, ReadClusterRoleBindingResponse,
-    ReplaceClusterRoleBindingOptional, ReplaceClusterRoleBindingResponse,
-    WatchClusterRoleBindingOptional, WatchClusterRoleBindingResponse,
-    WatchClusterRoleBindingListOptional, WatchClusterRoleBindingListResponse,
 };
 
 mod cluster_role_binding_list;
@@ -50,33 +32,11 @@ pub use self::policy_rule::{
 mod role;
 pub use self::role::{
     Role,
-    CreateNamespacedRoleOptional, CreateNamespacedRoleResponse,
-    DeleteCollectionNamespacedRoleOptional, DeleteCollectionNamespacedRoleResponse,
-    DeleteNamespacedRoleOptional, DeleteNamespacedRoleResponse,
-    ListNamespacedRoleOptional, ListNamespacedRoleResponse,
-    ListRoleForAllNamespacesOptional, ListRoleForAllNamespacesResponse,
-    PatchNamespacedRoleOptional, PatchNamespacedRoleResponse,
-    ReadNamespacedRoleOptional, ReadNamespacedRoleResponse,
-    ReplaceNamespacedRoleOptional, ReplaceNamespacedRoleResponse,
-    WatchNamespacedRoleOptional, WatchNamespacedRoleResponse,
-    WatchNamespacedRoleListOptional, WatchNamespacedRoleListResponse,
-    WatchRoleListForAllNamespacesOptional, WatchRoleListForAllNamespacesResponse,
 };
 
 mod role_binding;
 pub use self::role_binding::{
     RoleBinding,
-    CreateNamespacedRoleBindingOptional, CreateNamespacedRoleBindingResponse,
-    DeleteCollectionNamespacedRoleBindingOptional, DeleteCollectionNamespacedRoleBindingResponse,
-    DeleteNamespacedRoleBindingOptional, DeleteNamespacedRoleBindingResponse,
-    ListNamespacedRoleBindingOptional, ListNamespacedRoleBindingResponse,
-    ListRoleBindingForAllNamespacesOptional, ListRoleBindingForAllNamespacesResponse,
-    PatchNamespacedRoleBindingOptional, PatchNamespacedRoleBindingResponse,
-    ReadNamespacedRoleBindingOptional, ReadNamespacedRoleBindingResponse,
-    ReplaceNamespacedRoleBindingOptional, ReplaceNamespacedRoleBindingResponse,
-    WatchNamespacedRoleBindingOptional, WatchNamespacedRoleBindingResponse,
-    WatchNamespacedRoleBindingListOptional, WatchNamespacedRoleBindingListResponse,
-    WatchRoleBindingListForAllNamespacesOptional, WatchRoleBindingListForAllNamespacesResponse,
 };
 
 mod role_binding_list;
