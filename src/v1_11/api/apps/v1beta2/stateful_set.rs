@@ -19,6 +19,7 @@ pub struct StatefulSet {
 
 // Generated from operation createAppsV1beta2NamespacedStatefulSet
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// create a StatefulSet
     ///
@@ -63,6 +64,7 @@ impl StatefulSet {
 }
 
 /// Optional parameters of [`StatefulSet::create_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedStatefulSetOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -70,6 +72,7 @@ pub struct CreateNamespacedStatefulSetOptional<'a> {
 }
 
 /// Use `<CreateNamespacedStatefulSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::create_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedStatefulSetResponse {
     Ok(crate::v1_11::api::apps::v1beta2::StatefulSet),
@@ -78,6 +81,7 @@ pub enum CreateNamespacedStatefulSetResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedStatefulSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -125,6 +129,7 @@ impl crate::Response for CreateNamespacedStatefulSetResponse {
 
 // Generated from operation deleteAppsV1beta2CollectionNamespacedStatefulSet
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// delete collection of StatefulSet
     ///
@@ -166,6 +171,7 @@ impl StatefulSet {
 }
 
 /// Use `<DeleteCollectionNamespacedStatefulSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::delete_collection_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedStatefulSetResponse {
     OkStatus(crate::v1_11::apimachinery::pkg::apis::meta::v1::Status),
@@ -173,6 +179,7 @@ pub enum DeleteCollectionNamespacedStatefulSetResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedStatefulSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -217,6 +224,7 @@ impl crate::Response for DeleteCollectionNamespacedStatefulSetResponse {
 
 // Generated from operation deleteAppsV1beta2NamespacedStatefulSet
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// delete a StatefulSet
     ///
@@ -256,6 +264,7 @@ impl StatefulSet {
 }
 
 /// Use `<DeleteNamespacedStatefulSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::delete_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedStatefulSetResponse {
     OkStatus(crate::v1_11::apimachinery::pkg::apis::meta::v1::Status),
@@ -263,6 +272,7 @@ pub enum DeleteNamespacedStatefulSetResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedStatefulSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -307,6 +317,7 @@ impl crate::Response for DeleteNamespacedStatefulSetResponse {
 
 // Generated from operation listAppsV1beta2NamespacedStatefulSet
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// list or watch objects of kind StatefulSet
     ///
@@ -344,12 +355,14 @@ impl StatefulSet {
 }
 
 /// Use `<ListNamespacedStatefulSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::list_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedStatefulSetResponse {
     Ok(crate::v1_11::api::apps::v1beta2::StatefulSetList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedStatefulSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -381,6 +394,7 @@ impl crate::Response for ListNamespacedStatefulSetResponse {
 
 // Generated from operation listAppsV1beta2StatefulSetForAllNamespaces
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// list or watch objects of kind StatefulSet
     ///
@@ -411,12 +425,14 @@ impl StatefulSet {
 }
 
 /// Use `<ListStatefulSetForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::list_stateful_set_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListStatefulSetForAllNamespacesResponse {
     Ok(crate::v1_11::api::apps::v1beta2::StatefulSetList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListStatefulSetForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -448,6 +464,7 @@ impl crate::Response for ListStatefulSetForAllNamespacesResponse {
 
 // Generated from operation patchAppsV1beta2NamespacedStatefulSet
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// partially update the specified StatefulSet
     ///
@@ -497,12 +514,14 @@ impl StatefulSet {
 }
 
 /// Use `<PatchNamespacedStatefulSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::patch_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedStatefulSetResponse {
     Ok(crate::v1_11::api::apps::v1beta2::StatefulSet),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedStatefulSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -534,6 +553,7 @@ impl crate::Response for PatchNamespacedStatefulSetResponse {
 
 // Generated from operation patchAppsV1beta2NamespacedStatefulSetStatus
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// partially update status of the specified StatefulSet
     ///
@@ -583,12 +603,14 @@ impl StatefulSet {
 }
 
 /// Use `<PatchNamespacedStatefulSetStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::patch_namespaced_stateful_set_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedStatefulSetStatusResponse {
     Ok(crate::v1_11::api::apps::v1beta2::StatefulSet),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedStatefulSetStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -620,6 +642,7 @@ impl crate::Response for PatchNamespacedStatefulSetStatusResponse {
 
 // Generated from operation readAppsV1beta2NamespacedStatefulSet
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// read the specified StatefulSet
     ///
@@ -674,6 +697,7 @@ impl StatefulSet {
 }
 
 /// Optional parameters of [`StatefulSet::read_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedStatefulSetOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -685,12 +709,14 @@ pub struct ReadNamespacedStatefulSetOptional<'a> {
 }
 
 /// Use `<ReadNamespacedStatefulSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::read_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedStatefulSetResponse {
     Ok(crate::v1_11::api::apps::v1beta2::StatefulSet),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedStatefulSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -722,6 +748,7 @@ impl crate::Response for ReadNamespacedStatefulSetResponse {
 
 // Generated from operation readAppsV1beta2NamespacedStatefulSetStatus
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// read status of the specified StatefulSet
     ///
@@ -768,6 +795,7 @@ impl StatefulSet {
 }
 
 /// Optional parameters of [`StatefulSet::read_namespaced_stateful_set_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedStatefulSetStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -775,12 +803,14 @@ pub struct ReadNamespacedStatefulSetStatusOptional<'a> {
 }
 
 /// Use `<ReadNamespacedStatefulSetStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::read_namespaced_stateful_set_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedStatefulSetStatusResponse {
     Ok(crate::v1_11::api::apps::v1beta2::StatefulSet),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedStatefulSetStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -812,6 +842,7 @@ impl crate::Response for ReadNamespacedStatefulSetStatusResponse {
 
 // Generated from operation replaceAppsV1beta2NamespacedStatefulSet
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// replace the specified StatefulSet
     ///
@@ -862,6 +893,7 @@ impl StatefulSet {
 }
 
 /// Optional parameters of [`StatefulSet::replace_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedStatefulSetOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -869,6 +901,7 @@ pub struct ReplaceNamespacedStatefulSetOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedStatefulSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::replace_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedStatefulSetResponse {
     Ok(crate::v1_11::api::apps::v1beta2::StatefulSet),
@@ -876,6 +909,7 @@ pub enum ReplaceNamespacedStatefulSetResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedStatefulSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -915,6 +949,7 @@ impl crate::Response for ReplaceNamespacedStatefulSetResponse {
 
 // Generated from operation replaceAppsV1beta2NamespacedStatefulSetStatus
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// replace status of the specified StatefulSet
     ///
@@ -965,6 +1000,7 @@ impl StatefulSet {
 }
 
 /// Optional parameters of [`StatefulSet::replace_namespaced_stateful_set_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedStatefulSetStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -972,6 +1008,7 @@ pub struct ReplaceNamespacedStatefulSetStatusOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedStatefulSetStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::replace_namespaced_stateful_set_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedStatefulSetStatusResponse {
     Ok(crate::v1_11::api::apps::v1beta2::StatefulSet),
@@ -979,6 +1016,7 @@ pub enum ReplaceNamespacedStatefulSetStatusResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedStatefulSetStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1018,6 +1056,7 @@ impl crate::Response for ReplaceNamespacedStatefulSetStatusResponse {
 
 // Generated from operation watchAppsV1beta2NamespacedStatefulSet
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// list or watch objects of kind StatefulSet
     ///
@@ -1055,12 +1094,14 @@ impl StatefulSet {
 }
 
 /// Use `<WatchNamespacedStatefulSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::watch_namespaced_stateful_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedStatefulSetResponse {
     Ok(crate::v1_11::apimachinery::pkg::apis::meta::v1::WatchEvent<StatefulSet>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedStatefulSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1094,6 +1135,7 @@ impl crate::Response for WatchNamespacedStatefulSetResponse {
 
 // Generated from operation watchAppsV1beta2StatefulSetForAllNamespaces
 
+#[cfg(feature = "api")]
 impl StatefulSet {
     /// list or watch objects of kind StatefulSet
     ///
@@ -1124,12 +1166,14 @@ impl StatefulSet {
 }
 
 /// Use `<WatchStatefulSetForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`StatefulSet::watch_stateful_set_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchStatefulSetForAllNamespacesResponse {
     Ok(crate::v1_11::apimachinery::pkg::apis::meta::v1::WatchEvent<StatefulSet>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchStatefulSetForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

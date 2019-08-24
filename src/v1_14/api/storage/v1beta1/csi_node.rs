@@ -14,6 +14,7 @@ pub struct CSINode {
 
 // Generated from operation createStorageV1beta1CSINode
 
+#[cfg(feature = "api")]
 impl CSINode {
     /// create a CSINode
     ///
@@ -59,6 +60,7 @@ impl CSINode {
 }
 
 /// Optional parameters of [`CSINode::create_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateCSINodeOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -70,6 +72,7 @@ pub struct CreateCSINodeOptional<'a> {
 }
 
 /// Use `<CreateCSINodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSINode::create_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateCSINodeResponse {
     Ok(crate::v1_14::api::storage::v1beta1::CSINode),
@@ -78,6 +81,7 @@ pub enum CreateCSINodeResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateCSINodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -125,6 +129,7 @@ impl crate::Response for CreateCSINodeResponse {
 
 // Generated from operation deleteStorageV1beta1CSINode
 
+#[cfg(feature = "api")]
 impl CSINode {
     /// delete a CSINode
     ///
@@ -158,6 +163,7 @@ impl CSINode {
 }
 
 /// Use `<DeleteCSINodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSINode::delete_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCSINodeResponse {
     OkStatus(crate::v1_14::apimachinery::pkg::apis::meta::v1::Status),
@@ -166,6 +172,7 @@ pub enum DeleteCSINodeResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCSINodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -218,6 +225,7 @@ impl crate::Response for DeleteCSINodeResponse {
 
 // Generated from operation deleteStorageV1beta1CollectionCSINode
 
+#[cfg(feature = "api")]
 impl CSINode {
     /// delete collection of CSINode
     ///
@@ -252,6 +260,7 @@ impl CSINode {
 }
 
 /// Use `<DeleteCollectionCSINodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSINode::delete_collection_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionCSINodeResponse {
     OkStatus(crate::v1_14::apimachinery::pkg::apis::meta::v1::Status),
@@ -259,6 +268,7 @@ pub enum DeleteCollectionCSINodeResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionCSINodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -303,6 +313,7 @@ impl crate::Response for DeleteCollectionCSINodeResponse {
 
 // Generated from operation listStorageV1beta1CSINode
 
+#[cfg(feature = "api")]
 impl CSINode {
     /// list or watch objects of kind CSINode
     ///
@@ -333,12 +344,14 @@ impl CSINode {
 }
 
 /// Use `<ListCSINodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSINode::list_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListCSINodeResponse {
     Ok(crate::v1_14::api::storage::v1beta1::CSINodeList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListCSINodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -370,6 +383,7 @@ impl crate::Response for ListCSINodeResponse {
 
 // Generated from operation patchStorageV1beta1CSINode
 
+#[cfg(feature = "api")]
 impl CSINode {
     /// partially update the specified CSINode
     ///
@@ -413,12 +427,14 @@ impl CSINode {
 }
 
 /// Use `<PatchCSINodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSINode::patch_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchCSINodeResponse {
     Ok(crate::v1_14::api::storage::v1beta1::CSINode),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchCSINodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -450,6 +466,7 @@ impl crate::Response for PatchCSINodeResponse {
 
 // Generated from operation readStorageV1beta1CSINode
 
+#[cfg(feature = "api")]
 impl CSINode {
     /// read the specified CSINode
     ///
@@ -498,6 +515,7 @@ impl CSINode {
 }
 
 /// Optional parameters of [`CSINode::read_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadCSINodeOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'. Deprecated. Planned for removal in 1.18.
@@ -509,12 +527,14 @@ pub struct ReadCSINodeOptional<'a> {
 }
 
 /// Use `<ReadCSINodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSINode::read_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadCSINodeResponse {
     Ok(crate::v1_14::api::storage::v1beta1::CSINode),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadCSINodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -546,6 +566,7 @@ impl crate::Response for ReadCSINodeResponse {
 
 // Generated from operation replaceStorageV1beta1CSINode
 
+#[cfg(feature = "api")]
 impl CSINode {
     /// replace the specified CSINode
     ///
@@ -598,6 +619,7 @@ impl CSINode {
 }
 
 /// Optional parameters of [`CSINode::replace_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceCSINodeOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -609,6 +631,7 @@ pub struct ReplaceCSINodeOptional<'a> {
 }
 
 /// Use `<ReplaceCSINodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSINode::replace_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceCSINodeResponse {
     Ok(crate::v1_14::api::storage::v1beta1::CSINode),
@@ -616,6 +639,7 @@ pub enum ReplaceCSINodeResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceCSINodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -655,6 +679,7 @@ impl crate::Response for ReplaceCSINodeResponse {
 
 // Generated from operation watchStorageV1beta1CSINode
 
+#[cfg(feature = "api")]
 impl CSINode {
     /// list or watch objects of kind CSINode
     ///
@@ -685,12 +710,14 @@ impl CSINode {
 }
 
 /// Use `<WatchCSINodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSINode::watch_csi_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchCSINodeResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::WatchEvent<CSINode>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchCSINodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

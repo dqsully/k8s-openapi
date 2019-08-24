@@ -17,6 +17,7 @@ pub struct ControllerRevision {
 
 // Generated from operation createAppsV1beta1NamespacedControllerRevision
 
+#[cfg(feature = "api")]
 impl ControllerRevision {
     /// create a ControllerRevision
     ///
@@ -61,6 +62,7 @@ impl ControllerRevision {
 }
 
 /// Optional parameters of [`ControllerRevision::create_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedControllerRevisionOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -68,12 +70,14 @@ pub struct CreateNamespacedControllerRevisionOptional<'a> {
 }
 
 /// Use `<CreateNamespacedControllerRevisionResponse as Response>::try_from_parts` to parse the HTTP response body of [`ControllerRevision::create_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedControllerRevisionResponse {
     Ok(crate::v1_8::api::apps::v1beta1::ControllerRevision),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedControllerRevisionResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -105,6 +109,7 @@ impl crate::Response for CreateNamespacedControllerRevisionResponse {
 
 // Generated from operation deleteAppsV1beta1CollectionNamespacedControllerRevision
 
+#[cfg(feature = "api")]
 impl ControllerRevision {
     /// delete collection of ControllerRevision
     ///
@@ -146,6 +151,7 @@ impl ControllerRevision {
 }
 
 /// Use `<DeleteCollectionNamespacedControllerRevisionResponse as Response>::try_from_parts` to parse the HTTP response body of [`ControllerRevision::delete_collection_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedControllerRevisionResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -153,6 +159,7 @@ pub enum DeleteCollectionNamespacedControllerRevisionResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedControllerRevisionResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -197,6 +204,7 @@ impl crate::Response for DeleteCollectionNamespacedControllerRevisionResponse {
 
 // Generated from operation deleteAppsV1beta1NamespacedControllerRevision
 
+#[cfg(feature = "api")]
 impl ControllerRevision {
     /// delete a ControllerRevision
     ///
@@ -236,6 +244,7 @@ impl ControllerRevision {
 }
 
 /// Use `<DeleteNamespacedControllerRevisionResponse as Response>::try_from_parts` to parse the HTTP response body of [`ControllerRevision::delete_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedControllerRevisionResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -243,6 +252,7 @@ pub enum DeleteNamespacedControllerRevisionResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedControllerRevisionResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -287,6 +297,7 @@ impl crate::Response for DeleteNamespacedControllerRevisionResponse {
 
 // Generated from operation listAppsV1beta1ControllerRevisionForAllNamespaces
 
+#[cfg(feature = "api")]
 impl ControllerRevision {
     /// list or watch objects of kind ControllerRevision
     ///
@@ -317,12 +328,14 @@ impl ControllerRevision {
 }
 
 /// Use `<ListControllerRevisionForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`ControllerRevision::list_controller_revision_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListControllerRevisionForAllNamespacesResponse {
     Ok(crate::v1_8::api::apps::v1beta1::ControllerRevisionList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListControllerRevisionForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -354,6 +367,7 @@ impl crate::Response for ListControllerRevisionForAllNamespacesResponse {
 
 // Generated from operation listAppsV1beta1NamespacedControllerRevision
 
+#[cfg(feature = "api")]
 impl ControllerRevision {
     /// list or watch objects of kind ControllerRevision
     ///
@@ -391,12 +405,14 @@ impl ControllerRevision {
 }
 
 /// Use `<ListNamespacedControllerRevisionResponse as Response>::try_from_parts` to parse the HTTP response body of [`ControllerRevision::list_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedControllerRevisionResponse {
     Ok(crate::v1_8::api::apps::v1beta1::ControllerRevisionList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedControllerRevisionResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -428,6 +444,7 @@ impl crate::Response for ListNamespacedControllerRevisionResponse {
 
 // Generated from operation patchAppsV1beta1NamespacedControllerRevision
 
+#[cfg(feature = "api")]
 impl ControllerRevision {
     /// partially update the specified ControllerRevision
     ///
@@ -477,12 +494,14 @@ impl ControllerRevision {
 }
 
 /// Use `<PatchNamespacedControllerRevisionResponse as Response>::try_from_parts` to parse the HTTP response body of [`ControllerRevision::patch_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedControllerRevisionResponse {
     Ok(crate::v1_8::api::apps::v1beta1::ControllerRevision),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedControllerRevisionResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -514,6 +533,7 @@ impl crate::Response for PatchNamespacedControllerRevisionResponse {
 
 // Generated from operation readAppsV1beta1NamespacedControllerRevision
 
+#[cfg(feature = "api")]
 impl ControllerRevision {
     /// read the specified ControllerRevision
     ///
@@ -568,6 +588,7 @@ impl ControllerRevision {
 }
 
 /// Optional parameters of [`ControllerRevision::read_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedControllerRevisionOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -579,12 +600,14 @@ pub struct ReadNamespacedControllerRevisionOptional<'a> {
 }
 
 /// Use `<ReadNamespacedControllerRevisionResponse as Response>::try_from_parts` to parse the HTTP response body of [`ControllerRevision::read_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedControllerRevisionResponse {
     Ok(crate::v1_8::api::apps::v1beta1::ControllerRevision),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedControllerRevisionResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -616,6 +639,7 @@ impl crate::Response for ReadNamespacedControllerRevisionResponse {
 
 // Generated from operation replaceAppsV1beta1NamespacedControllerRevision
 
+#[cfg(feature = "api")]
 impl ControllerRevision {
     /// replace the specified ControllerRevision
     ///
@@ -666,6 +690,7 @@ impl ControllerRevision {
 }
 
 /// Optional parameters of [`ControllerRevision::replace_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedControllerRevisionOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -673,12 +698,14 @@ pub struct ReplaceNamespacedControllerRevisionOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedControllerRevisionResponse as Response>::try_from_parts` to parse the HTTP response body of [`ControllerRevision::replace_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedControllerRevisionResponse {
     Ok(crate::v1_8::api::apps::v1beta1::ControllerRevision),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedControllerRevisionResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -710,6 +737,7 @@ impl crate::Response for ReplaceNamespacedControllerRevisionResponse {
 
 // Generated from operation watchAppsV1beta1ControllerRevisionForAllNamespaces
 
+#[cfg(feature = "api")]
 impl ControllerRevision {
     /// list or watch objects of kind ControllerRevision
     ///
@@ -740,12 +768,14 @@ impl ControllerRevision {
 }
 
 /// Use `<WatchControllerRevisionForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`ControllerRevision::watch_controller_revision_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchControllerRevisionForAllNamespacesResponse {
     Ok(crate::v1_8::apimachinery::pkg::apis::meta::v1::WatchEvent<ControllerRevision>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchControllerRevisionForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -779,6 +809,7 @@ impl crate::Response for WatchControllerRevisionForAllNamespacesResponse {
 
 // Generated from operation watchAppsV1beta1NamespacedControllerRevision
 
+#[cfg(feature = "api")]
 impl ControllerRevision {
     /// list or watch objects of kind ControllerRevision
     ///
@@ -816,12 +847,14 @@ impl ControllerRevision {
 }
 
 /// Use `<WatchNamespacedControllerRevisionResponse as Response>::try_from_parts` to parse the HTTP response body of [`ControllerRevision::watch_namespaced_controller_revision`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedControllerRevisionResponse {
     Ok(crate::v1_8::apimachinery::pkg::apis::meta::v1::WatchEvent<ControllerRevision>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedControllerRevisionResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

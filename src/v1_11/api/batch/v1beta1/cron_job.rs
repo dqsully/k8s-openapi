@@ -17,6 +17,7 @@ pub struct CronJob {
 
 // Generated from operation createBatchV1beta1NamespacedCronJob
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// create a CronJob
     ///
@@ -61,6 +62,7 @@ impl CronJob {
 }
 
 /// Optional parameters of [`CronJob::create_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedCronJobOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -68,6 +70,7 @@ pub struct CreateNamespacedCronJobOptional<'a> {
 }
 
 /// Use `<CreateNamespacedCronJobResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::create_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedCronJobResponse {
     Ok(crate::v1_11::api::batch::v1beta1::CronJob),
@@ -76,6 +79,7 @@ pub enum CreateNamespacedCronJobResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedCronJobResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -123,6 +127,7 @@ impl crate::Response for CreateNamespacedCronJobResponse {
 
 // Generated from operation deleteBatchV1beta1CollectionNamespacedCronJob
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// delete collection of CronJob
     ///
@@ -164,6 +169,7 @@ impl CronJob {
 }
 
 /// Use `<DeleteCollectionNamespacedCronJobResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::delete_collection_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedCronJobResponse {
     OkStatus(crate::v1_11::apimachinery::pkg::apis::meta::v1::Status),
@@ -171,6 +177,7 @@ pub enum DeleteCollectionNamespacedCronJobResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedCronJobResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -215,6 +222,7 @@ impl crate::Response for DeleteCollectionNamespacedCronJobResponse {
 
 // Generated from operation deleteBatchV1beta1NamespacedCronJob
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// delete a CronJob
     ///
@@ -254,6 +262,7 @@ impl CronJob {
 }
 
 /// Use `<DeleteNamespacedCronJobResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::delete_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedCronJobResponse {
     OkStatus(crate::v1_11::apimachinery::pkg::apis::meta::v1::Status),
@@ -261,6 +270,7 @@ pub enum DeleteNamespacedCronJobResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedCronJobResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -305,6 +315,7 @@ impl crate::Response for DeleteNamespacedCronJobResponse {
 
 // Generated from operation listBatchV1beta1CronJobForAllNamespaces
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// list or watch objects of kind CronJob
     ///
@@ -335,12 +346,14 @@ impl CronJob {
 }
 
 /// Use `<ListCronJobForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::list_cron_job_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListCronJobForAllNamespacesResponse {
     Ok(crate::v1_11::api::batch::v1beta1::CronJobList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListCronJobForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -372,6 +385,7 @@ impl crate::Response for ListCronJobForAllNamespacesResponse {
 
 // Generated from operation listBatchV1beta1NamespacedCronJob
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// list or watch objects of kind CronJob
     ///
@@ -409,12 +423,14 @@ impl CronJob {
 }
 
 /// Use `<ListNamespacedCronJobResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::list_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedCronJobResponse {
     Ok(crate::v1_11::api::batch::v1beta1::CronJobList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedCronJobResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -446,6 +462,7 @@ impl crate::Response for ListNamespacedCronJobResponse {
 
 // Generated from operation patchBatchV1beta1NamespacedCronJob
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// partially update the specified CronJob
     ///
@@ -495,12 +512,14 @@ impl CronJob {
 }
 
 /// Use `<PatchNamespacedCronJobResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::patch_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedCronJobResponse {
     Ok(crate::v1_11::api::batch::v1beta1::CronJob),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedCronJobResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -532,6 +551,7 @@ impl crate::Response for PatchNamespacedCronJobResponse {
 
 // Generated from operation patchBatchV1beta1NamespacedCronJobStatus
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// partially update status of the specified CronJob
     ///
@@ -581,12 +601,14 @@ impl CronJob {
 }
 
 /// Use `<PatchNamespacedCronJobStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::patch_namespaced_cron_job_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedCronJobStatusResponse {
     Ok(crate::v1_11::api::batch::v1beta1::CronJob),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedCronJobStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -618,6 +640,7 @@ impl crate::Response for PatchNamespacedCronJobStatusResponse {
 
 // Generated from operation readBatchV1beta1NamespacedCronJob
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// read the specified CronJob
     ///
@@ -672,6 +695,7 @@ impl CronJob {
 }
 
 /// Optional parameters of [`CronJob::read_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedCronJobOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -683,12 +707,14 @@ pub struct ReadNamespacedCronJobOptional<'a> {
 }
 
 /// Use `<ReadNamespacedCronJobResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::read_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedCronJobResponse {
     Ok(crate::v1_11::api::batch::v1beta1::CronJob),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedCronJobResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -720,6 +746,7 @@ impl crate::Response for ReadNamespacedCronJobResponse {
 
 // Generated from operation readBatchV1beta1NamespacedCronJobStatus
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// read status of the specified CronJob
     ///
@@ -766,6 +793,7 @@ impl CronJob {
 }
 
 /// Optional parameters of [`CronJob::read_namespaced_cron_job_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedCronJobStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -773,12 +801,14 @@ pub struct ReadNamespacedCronJobStatusOptional<'a> {
 }
 
 /// Use `<ReadNamespacedCronJobStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::read_namespaced_cron_job_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedCronJobStatusResponse {
     Ok(crate::v1_11::api::batch::v1beta1::CronJob),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedCronJobStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -810,6 +840,7 @@ impl crate::Response for ReadNamespacedCronJobStatusResponse {
 
 // Generated from operation replaceBatchV1beta1NamespacedCronJob
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// replace the specified CronJob
     ///
@@ -860,6 +891,7 @@ impl CronJob {
 }
 
 /// Optional parameters of [`CronJob::replace_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedCronJobOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -867,6 +899,7 @@ pub struct ReplaceNamespacedCronJobOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedCronJobResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::replace_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedCronJobResponse {
     Ok(crate::v1_11::api::batch::v1beta1::CronJob),
@@ -874,6 +907,7 @@ pub enum ReplaceNamespacedCronJobResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedCronJobResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -913,6 +947,7 @@ impl crate::Response for ReplaceNamespacedCronJobResponse {
 
 // Generated from operation replaceBatchV1beta1NamespacedCronJobStatus
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// replace status of the specified CronJob
     ///
@@ -963,6 +998,7 @@ impl CronJob {
 }
 
 /// Optional parameters of [`CronJob::replace_namespaced_cron_job_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedCronJobStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -970,6 +1006,7 @@ pub struct ReplaceNamespacedCronJobStatusOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedCronJobStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::replace_namespaced_cron_job_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedCronJobStatusResponse {
     Ok(crate::v1_11::api::batch::v1beta1::CronJob),
@@ -977,6 +1014,7 @@ pub enum ReplaceNamespacedCronJobStatusResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedCronJobStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1016,6 +1054,7 @@ impl crate::Response for ReplaceNamespacedCronJobStatusResponse {
 
 // Generated from operation watchBatchV1beta1CronJobForAllNamespaces
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// list or watch objects of kind CronJob
     ///
@@ -1046,12 +1085,14 @@ impl CronJob {
 }
 
 /// Use `<WatchCronJobForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::watch_cron_job_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchCronJobForAllNamespacesResponse {
     Ok(crate::v1_11::apimachinery::pkg::apis::meta::v1::WatchEvent<CronJob>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchCronJobForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1085,6 +1126,7 @@ impl crate::Response for WatchCronJobForAllNamespacesResponse {
 
 // Generated from operation watchBatchV1beta1NamespacedCronJob
 
+#[cfg(feature = "api")]
 impl CronJob {
     /// list or watch objects of kind CronJob
     ///
@@ -1122,12 +1164,14 @@ impl CronJob {
 }
 
 /// Use `<WatchNamespacedCronJobResponse as Response>::try_from_parts` to parse the HTTP response body of [`CronJob::watch_namespaced_cron_job`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedCronJobResponse {
     Ok(crate::v1_11::apimachinery::pkg::apis::meta::v1::WatchEvent<CronJob>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedCronJobResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

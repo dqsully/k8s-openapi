@@ -17,6 +17,7 @@ pub struct RoleBinding {
 
 // Generated from operation createRbacAuthorizationV1NamespacedRoleBinding
 
+#[cfg(feature = "api")]
 impl RoleBinding {
     /// create a RoleBinding
     ///
@@ -61,6 +62,7 @@ impl RoleBinding {
 }
 
 /// Optional parameters of [`RoleBinding::create_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedRoleBindingOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -68,12 +70,14 @@ pub struct CreateNamespacedRoleBindingOptional<'a> {
 }
 
 /// Use `<CreateNamespacedRoleBindingResponse as Response>::try_from_parts` to parse the HTTP response body of [`RoleBinding::create_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedRoleBindingResponse {
     Ok(crate::v1_8::api::rbac::v1::RoleBinding),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedRoleBindingResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -105,6 +109,7 @@ impl crate::Response for CreateNamespacedRoleBindingResponse {
 
 // Generated from operation deleteRbacAuthorizationV1CollectionNamespacedRoleBinding
 
+#[cfg(feature = "api")]
 impl RoleBinding {
     /// delete collection of RoleBinding
     ///
@@ -146,6 +151,7 @@ impl RoleBinding {
 }
 
 /// Use `<DeleteCollectionNamespacedRoleBindingResponse as Response>::try_from_parts` to parse the HTTP response body of [`RoleBinding::delete_collection_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedRoleBindingResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -153,6 +159,7 @@ pub enum DeleteCollectionNamespacedRoleBindingResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedRoleBindingResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -197,6 +204,7 @@ impl crate::Response for DeleteCollectionNamespacedRoleBindingResponse {
 
 // Generated from operation deleteRbacAuthorizationV1NamespacedRoleBinding
 
+#[cfg(feature = "api")]
 impl RoleBinding {
     /// delete a RoleBinding
     ///
@@ -236,6 +244,7 @@ impl RoleBinding {
 }
 
 /// Use `<DeleteNamespacedRoleBindingResponse as Response>::try_from_parts` to parse the HTTP response body of [`RoleBinding::delete_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedRoleBindingResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -243,6 +252,7 @@ pub enum DeleteNamespacedRoleBindingResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedRoleBindingResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -287,6 +297,7 @@ impl crate::Response for DeleteNamespacedRoleBindingResponse {
 
 // Generated from operation listRbacAuthorizationV1NamespacedRoleBinding
 
+#[cfg(feature = "api")]
 impl RoleBinding {
     /// list or watch objects of kind RoleBinding
     ///
@@ -324,12 +335,14 @@ impl RoleBinding {
 }
 
 /// Use `<ListNamespacedRoleBindingResponse as Response>::try_from_parts` to parse the HTTP response body of [`RoleBinding::list_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedRoleBindingResponse {
     Ok(crate::v1_8::api::rbac::v1::RoleBindingList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedRoleBindingResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -361,6 +374,7 @@ impl crate::Response for ListNamespacedRoleBindingResponse {
 
 // Generated from operation listRbacAuthorizationV1RoleBindingForAllNamespaces
 
+#[cfg(feature = "api")]
 impl RoleBinding {
     /// list or watch objects of kind RoleBinding
     ///
@@ -391,12 +405,14 @@ impl RoleBinding {
 }
 
 /// Use `<ListRoleBindingForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`RoleBinding::list_role_binding_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListRoleBindingForAllNamespacesResponse {
     Ok(crate::v1_8::api::rbac::v1::RoleBindingList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListRoleBindingForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -428,6 +444,7 @@ impl crate::Response for ListRoleBindingForAllNamespacesResponse {
 
 // Generated from operation patchRbacAuthorizationV1NamespacedRoleBinding
 
+#[cfg(feature = "api")]
 impl RoleBinding {
     /// partially update the specified RoleBinding
     ///
@@ -477,12 +494,14 @@ impl RoleBinding {
 }
 
 /// Use `<PatchNamespacedRoleBindingResponse as Response>::try_from_parts` to parse the HTTP response body of [`RoleBinding::patch_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedRoleBindingResponse {
     Ok(crate::v1_8::api::rbac::v1::RoleBinding),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedRoleBindingResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -514,6 +533,7 @@ impl crate::Response for PatchNamespacedRoleBindingResponse {
 
 // Generated from operation readRbacAuthorizationV1NamespacedRoleBinding
 
+#[cfg(feature = "api")]
 impl RoleBinding {
     /// read the specified RoleBinding
     ///
@@ -560,6 +580,7 @@ impl RoleBinding {
 }
 
 /// Optional parameters of [`RoleBinding::read_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedRoleBindingOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -567,12 +588,14 @@ pub struct ReadNamespacedRoleBindingOptional<'a> {
 }
 
 /// Use `<ReadNamespacedRoleBindingResponse as Response>::try_from_parts` to parse the HTTP response body of [`RoleBinding::read_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedRoleBindingResponse {
     Ok(crate::v1_8::api::rbac::v1::RoleBinding),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedRoleBindingResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -604,6 +627,7 @@ impl crate::Response for ReadNamespacedRoleBindingResponse {
 
 // Generated from operation replaceRbacAuthorizationV1NamespacedRoleBinding
 
+#[cfg(feature = "api")]
 impl RoleBinding {
     /// replace the specified RoleBinding
     ///
@@ -654,6 +678,7 @@ impl RoleBinding {
 }
 
 /// Optional parameters of [`RoleBinding::replace_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedRoleBindingOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -661,12 +686,14 @@ pub struct ReplaceNamespacedRoleBindingOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedRoleBindingResponse as Response>::try_from_parts` to parse the HTTP response body of [`RoleBinding::replace_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedRoleBindingResponse {
     Ok(crate::v1_8::api::rbac::v1::RoleBinding),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedRoleBindingResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -698,6 +725,7 @@ impl crate::Response for ReplaceNamespacedRoleBindingResponse {
 
 // Generated from operation watchRbacAuthorizationV1NamespacedRoleBinding
 
+#[cfg(feature = "api")]
 impl RoleBinding {
     /// list or watch objects of kind RoleBinding
     ///
@@ -735,12 +763,14 @@ impl RoleBinding {
 }
 
 /// Use `<WatchNamespacedRoleBindingResponse as Response>::try_from_parts` to parse the HTTP response body of [`RoleBinding::watch_namespaced_role_binding`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedRoleBindingResponse {
     Ok(crate::v1_8::apimachinery::pkg::apis::meta::v1::WatchEvent<RoleBinding>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedRoleBindingResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -774,6 +804,7 @@ impl crate::Response for WatchNamespacedRoleBindingResponse {
 
 // Generated from operation watchRbacAuthorizationV1RoleBindingForAllNamespaces
 
+#[cfg(feature = "api")]
 impl RoleBinding {
     /// list or watch objects of kind RoleBinding
     ///
@@ -804,12 +835,14 @@ impl RoleBinding {
 }
 
 /// Use `<WatchRoleBindingForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`RoleBinding::watch_role_binding_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchRoleBindingForAllNamespacesResponse {
     Ok(crate::v1_8::apimachinery::pkg::apis::meta::v1::WatchEvent<RoleBinding>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchRoleBindingForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

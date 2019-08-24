@@ -17,6 +17,7 @@ pub struct Pod {
 
 // Generated from operation connectCoreV1DeleteNamespacedPodProxy
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect DELETE requests to proxy of Pod
     ///
@@ -58,6 +59,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_delete_namespaced_pod_proxy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectDeleteNamespacedPodProxyOptional<'a> {
     /// Path is the URL path to use for the current proxy request to pod.
@@ -66,6 +68,7 @@ pub struct ConnectDeleteNamespacedPodProxyOptional<'a> {
 
 // Generated from operation connectCoreV1DeleteNamespacedPodProxyWithPath
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect DELETE requests to proxy of Pod
     ///
@@ -113,6 +116,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_delete_namespaced_pod_proxy_with_path`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectDeleteNamespacedPodProxyWithPathOptional<'a> {
     /// Path is the URL path to use for the current proxy request to pod.
@@ -121,6 +125,7 @@ pub struct ConnectDeleteNamespacedPodProxyWithPathOptional<'a> {
 
 // Generated from operation connectCoreV1GetNamespacedPodAttach
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect GET requests to attach of Pod
     ///
@@ -178,6 +183,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_get_namespaced_pod_attach`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectGetNamespacedPodAttachOptional<'a> {
     /// The container in which to execute the command. Defaults to only container if there is only one container in the pod.
@@ -194,6 +200,7 @@ pub struct ConnectGetNamespacedPodAttachOptional<'a> {
 
 // Generated from operation connectCoreV1GetNamespacedPodExec
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect GET requests to exec of Pod
     ///
@@ -255,6 +262,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_get_namespaced_pod_exec`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectGetNamespacedPodExecOptional<'a> {
     /// Command is the remote command to execute. argv array. Not executed within a shell.
@@ -273,6 +281,7 @@ pub struct ConnectGetNamespacedPodExecOptional<'a> {
 
 // Generated from operation connectCoreV1GetNamespacedPodPortforward
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect GET requests to portforward of Pod
     ///
@@ -314,6 +323,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_get_namespaced_pod_portforward`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectGetNamespacedPodPortforwardOptional {
     /// List of ports to forward Required when using WebSockets
@@ -322,6 +332,7 @@ pub struct ConnectGetNamespacedPodPortforwardOptional {
 
 // Generated from operation connectCoreV1GetNamespacedPodProxy
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect GET requests to proxy of Pod
     ///
@@ -363,6 +374,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_get_namespaced_pod_proxy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectGetNamespacedPodProxyOptional<'a> {
     /// Path is the URL path to use for the current proxy request to pod.
@@ -371,6 +383,7 @@ pub struct ConnectGetNamespacedPodProxyOptional<'a> {
 
 // Generated from operation connectCoreV1GetNamespacedPodProxyWithPath
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect GET requests to proxy of Pod
     ///
@@ -418,6 +431,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_get_namespaced_pod_proxy_with_path`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectGetNamespacedPodProxyWithPathOptional<'a> {
     /// Path is the URL path to use for the current proxy request to pod.
@@ -426,6 +440,7 @@ pub struct ConnectGetNamespacedPodProxyWithPathOptional<'a> {
 
 // Generated from operation connectCoreV1PatchNamespacedPodProxy
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect PATCH requests to proxy of Pod
     ///
@@ -467,6 +482,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_patch_namespaced_pod_proxy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPatchNamespacedPodProxyOptional<'a> {
     /// Path is the URL path to use for the current proxy request to pod.
@@ -475,6 +491,7 @@ pub struct ConnectPatchNamespacedPodProxyOptional<'a> {
 
 // Generated from operation connectCoreV1PatchNamespacedPodProxyWithPath
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect PATCH requests to proxy of Pod
     ///
@@ -522,6 +539,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_patch_namespaced_pod_proxy_with_path`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPatchNamespacedPodProxyWithPathOptional<'a> {
     /// Path is the URL path to use for the current proxy request to pod.
@@ -530,6 +548,7 @@ pub struct ConnectPatchNamespacedPodProxyWithPathOptional<'a> {
 
 // Generated from operation connectCoreV1PostNamespacedPodAttach
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect POST requests to attach of Pod
     ///
@@ -587,6 +606,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_post_namespaced_pod_attach`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPostNamespacedPodAttachOptional<'a> {
     /// The container in which to execute the command. Defaults to only container if there is only one container in the pod.
@@ -603,6 +623,7 @@ pub struct ConnectPostNamespacedPodAttachOptional<'a> {
 
 // Generated from operation connectCoreV1PostNamespacedPodExec
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect POST requests to exec of Pod
     ///
@@ -664,6 +685,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_post_namespaced_pod_exec`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPostNamespacedPodExecOptional<'a> {
     /// Command is the remote command to execute. argv array. Not executed within a shell.
@@ -682,6 +704,7 @@ pub struct ConnectPostNamespacedPodExecOptional<'a> {
 
 // Generated from operation connectCoreV1PostNamespacedPodPortforward
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect POST requests to portforward of Pod
     ///
@@ -723,6 +746,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_post_namespaced_pod_portforward`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPostNamespacedPodPortforwardOptional {
     /// List of ports to forward Required when using WebSockets
@@ -731,6 +755,7 @@ pub struct ConnectPostNamespacedPodPortforwardOptional {
 
 // Generated from operation connectCoreV1PostNamespacedPodProxy
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect POST requests to proxy of Pod
     ///
@@ -772,6 +797,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_post_namespaced_pod_proxy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPostNamespacedPodProxyOptional<'a> {
     /// Path is the URL path to use for the current proxy request to pod.
@@ -780,6 +806,7 @@ pub struct ConnectPostNamespacedPodProxyOptional<'a> {
 
 // Generated from operation connectCoreV1PostNamespacedPodProxyWithPath
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect POST requests to proxy of Pod
     ///
@@ -827,6 +854,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_post_namespaced_pod_proxy_with_path`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPostNamespacedPodProxyWithPathOptional<'a> {
     /// Path is the URL path to use for the current proxy request to pod.
@@ -835,6 +863,7 @@ pub struct ConnectPostNamespacedPodProxyWithPathOptional<'a> {
 
 // Generated from operation connectCoreV1PutNamespacedPodProxy
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect PUT requests to proxy of Pod
     ///
@@ -876,6 +905,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_put_namespaced_pod_proxy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPutNamespacedPodProxyOptional<'a> {
     /// Path is the URL path to use for the current proxy request to pod.
@@ -884,6 +914,7 @@ pub struct ConnectPutNamespacedPodProxyOptional<'a> {
 
 // Generated from operation connectCoreV1PutNamespacedPodProxyWithPath
 
+#[cfg(feature = "api")]
 impl Pod {
     /// connect PUT requests to proxy of Pod
     ///
@@ -931,6 +962,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::connect_put_namespaced_pod_proxy_with_path`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPutNamespacedPodProxyWithPathOptional<'a> {
     /// Path is the URL path to use for the current proxy request to pod.
@@ -939,6 +971,7 @@ pub struct ConnectPutNamespacedPodProxyWithPathOptional<'a> {
 
 // Generated from operation createCoreV1NamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// create a Pod
     ///
@@ -983,6 +1016,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::create_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedPodOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -990,12 +1024,14 @@ pub struct CreateNamespacedPodOptional<'a> {
 }
 
 /// Use `<CreateNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::create_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedPodResponse {
     Ok(crate::v1_8::api::core::v1::Pod),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1027,6 +1063,7 @@ impl crate::Response for CreateNamespacedPodResponse {
 
 // Generated from operation deleteCoreV1CollectionNamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// delete collection of Pod
     ///
@@ -1068,6 +1105,7 @@ impl Pod {
 }
 
 /// Use `<DeleteCollectionNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::delete_collection_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedPodResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -1075,6 +1113,7 @@ pub enum DeleteCollectionNamespacedPodResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1119,6 +1158,7 @@ impl crate::Response for DeleteCollectionNamespacedPodResponse {
 
 // Generated from operation deleteCoreV1NamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// delete a Pod
     ///
@@ -1158,6 +1198,7 @@ impl Pod {
 }
 
 /// Use `<DeleteNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::delete_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedPodResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -1165,6 +1206,7 @@ pub enum DeleteNamespacedPodResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1209,6 +1251,7 @@ impl crate::Response for DeleteNamespacedPodResponse {
 
 // Generated from operation listCoreV1NamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// list or watch objects of kind Pod
     ///
@@ -1246,12 +1289,14 @@ impl Pod {
 }
 
 /// Use `<ListNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::list_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedPodResponse {
     Ok(crate::v1_8::api::core::v1::PodList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1283,6 +1328,7 @@ impl crate::Response for ListNamespacedPodResponse {
 
 // Generated from operation listCoreV1PodForAllNamespaces
 
+#[cfg(feature = "api")]
 impl Pod {
     /// list or watch objects of kind Pod
     ///
@@ -1313,12 +1359,14 @@ impl Pod {
 }
 
 /// Use `<ListPodForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::list_pod_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListPodForAllNamespacesResponse {
     Ok(crate::v1_8::api::core::v1::PodList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListPodForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1350,6 +1398,7 @@ impl crate::Response for ListPodForAllNamespacesResponse {
 
 // Generated from operation patchCoreV1NamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// partially update the specified Pod
     ///
@@ -1399,12 +1448,14 @@ impl Pod {
 }
 
 /// Use `<PatchNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::patch_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedPodResponse {
     Ok(crate::v1_8::api::core::v1::Pod),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1436,6 +1487,7 @@ impl crate::Response for PatchNamespacedPodResponse {
 
 // Generated from operation patchCoreV1NamespacedPodStatus
 
+#[cfg(feature = "api")]
 impl Pod {
     /// partially update status of the specified Pod
     ///
@@ -1485,12 +1537,14 @@ impl Pod {
 }
 
 /// Use `<PatchNamespacedPodStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::patch_namespaced_pod_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedPodStatusResponse {
     Ok(crate::v1_8::api::core::v1::Pod),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedPodStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1522,6 +1576,7 @@ impl crate::Response for PatchNamespacedPodStatusResponse {
 
 // Generated from operation proxyCoreV1DELETENamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// proxy DELETE requests to Pod
     ///
@@ -1555,12 +1610,14 @@ impl Pod {
 }
 
 /// Use `<ProxyDELETENamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::proxy_delete_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyDELETENamespacedPodResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyDELETENamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1602,6 +1659,7 @@ impl crate::Response for ProxyDELETENamespacedPodResponse {
 
 // Generated from operation proxyCoreV1DELETENamespacedPodWithPath
 
+#[cfg(feature = "api")]
 impl Pod {
     /// proxy DELETE requests to Pod
     ///
@@ -1641,12 +1699,14 @@ impl Pod {
 }
 
 /// Use `<ProxyDELETENamespacedPodWithPathResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::proxy_delete_namespaced_pod_with_path`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyDELETENamespacedPodWithPathResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyDELETENamespacedPodWithPathResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1688,6 +1748,7 @@ impl crate::Response for ProxyDELETENamespacedPodWithPathResponse {
 
 // Generated from operation proxyCoreV1GETNamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// proxy GET requests to Pod
     ///
@@ -1721,12 +1782,14 @@ impl Pod {
 }
 
 /// Use `<ProxyGETNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::proxy_get_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyGETNamespacedPodResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyGETNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1768,6 +1831,7 @@ impl crate::Response for ProxyGETNamespacedPodResponse {
 
 // Generated from operation proxyCoreV1GETNamespacedPodWithPath
 
+#[cfg(feature = "api")]
 impl Pod {
     /// proxy GET requests to Pod
     ///
@@ -1807,12 +1871,14 @@ impl Pod {
 }
 
 /// Use `<ProxyGETNamespacedPodWithPathResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::proxy_get_namespaced_pod_with_path`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyGETNamespacedPodWithPathResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyGETNamespacedPodWithPathResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1854,6 +1920,7 @@ impl crate::Response for ProxyGETNamespacedPodWithPathResponse {
 
 // Generated from operation proxyCoreV1PATCHNamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// proxy PATCH requests to Pod
     ///
@@ -1887,12 +1954,14 @@ impl Pod {
 }
 
 /// Use `<ProxyPATCHNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::proxy_patch_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPATCHNamespacedPodResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPATCHNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1934,6 +2003,7 @@ impl crate::Response for ProxyPATCHNamespacedPodResponse {
 
 // Generated from operation proxyCoreV1PATCHNamespacedPodWithPath
 
+#[cfg(feature = "api")]
 impl Pod {
     /// proxy PATCH requests to Pod
     ///
@@ -1973,12 +2043,14 @@ impl Pod {
 }
 
 /// Use `<ProxyPATCHNamespacedPodWithPathResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::proxy_patch_namespaced_pod_with_path`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPATCHNamespacedPodWithPathResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPATCHNamespacedPodWithPathResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2020,6 +2092,7 @@ impl crate::Response for ProxyPATCHNamespacedPodWithPathResponse {
 
 // Generated from operation proxyCoreV1POSTNamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// proxy POST requests to Pod
     ///
@@ -2053,12 +2126,14 @@ impl Pod {
 }
 
 /// Use `<ProxyPOSTNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::proxy_post_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPOSTNamespacedPodResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPOSTNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2100,6 +2175,7 @@ impl crate::Response for ProxyPOSTNamespacedPodResponse {
 
 // Generated from operation proxyCoreV1POSTNamespacedPodWithPath
 
+#[cfg(feature = "api")]
 impl Pod {
     /// proxy POST requests to Pod
     ///
@@ -2139,12 +2215,14 @@ impl Pod {
 }
 
 /// Use `<ProxyPOSTNamespacedPodWithPathResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::proxy_post_namespaced_pod_with_path`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPOSTNamespacedPodWithPathResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPOSTNamespacedPodWithPathResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2186,6 +2264,7 @@ impl crate::Response for ProxyPOSTNamespacedPodWithPathResponse {
 
 // Generated from operation proxyCoreV1PUTNamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// proxy PUT requests to Pod
     ///
@@ -2219,12 +2298,14 @@ impl Pod {
 }
 
 /// Use `<ProxyPUTNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::proxy_put_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPUTNamespacedPodResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPUTNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2266,6 +2347,7 @@ impl crate::Response for ProxyPUTNamespacedPodResponse {
 
 // Generated from operation proxyCoreV1PUTNamespacedPodWithPath
 
+#[cfg(feature = "api")]
 impl Pod {
     /// proxy PUT requests to Pod
     ///
@@ -2305,12 +2387,14 @@ impl Pod {
 }
 
 /// Use `<ProxyPUTNamespacedPodWithPathResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::proxy_put_namespaced_pod_with_path`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPUTNamespacedPodWithPathResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPUTNamespacedPodWithPathResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2352,6 +2436,7 @@ impl crate::Response for ProxyPUTNamespacedPodWithPathResponse {
 
 // Generated from operation readCoreV1NamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// read the specified Pod
     ///
@@ -2406,6 +2491,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::read_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedPodOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -2417,12 +2503,14 @@ pub struct ReadNamespacedPodOptional<'a> {
 }
 
 /// Use `<ReadNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::read_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedPodResponse {
     Ok(crate::v1_8::api::core::v1::Pod),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2454,6 +2542,7 @@ impl crate::Response for ReadNamespacedPodResponse {
 
 // Generated from operation readCoreV1NamespacedPodLog
 
+#[cfg(feature = "api")]
 impl Pod {
     /// read log of the specified Pod
     ///
@@ -2528,6 +2617,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::read_namespaced_pod_log`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedPodLogOptional<'a> {
     /// The container for which to stream logs. Defaults to only container if there is one container in the pod.
@@ -2549,12 +2639,14 @@ pub struct ReadNamespacedPodLogOptional<'a> {
 }
 
 /// Use `<ReadNamespacedPodLogResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::read_namespaced_pod_log`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedPodLogResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedPodLogResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2596,6 +2688,7 @@ impl crate::Response for ReadNamespacedPodLogResponse {
 
 // Generated from operation readCoreV1NamespacedPodStatus
 
+#[cfg(feature = "api")]
 impl Pod {
     /// read status of the specified Pod
     ///
@@ -2642,6 +2735,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::read_namespaced_pod_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedPodStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -2649,12 +2743,14 @@ pub struct ReadNamespacedPodStatusOptional<'a> {
 }
 
 /// Use `<ReadNamespacedPodStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::read_namespaced_pod_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedPodStatusResponse {
     Ok(crate::v1_8::api::core::v1::Pod),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedPodStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2686,6 +2782,7 @@ impl crate::Response for ReadNamespacedPodStatusResponse {
 
 // Generated from operation replaceCoreV1NamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// replace the specified Pod
     ///
@@ -2736,6 +2833,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::replace_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedPodOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -2743,12 +2841,14 @@ pub struct ReplaceNamespacedPodOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::replace_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedPodResponse {
     Ok(crate::v1_8::api::core::v1::Pod),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2780,6 +2880,7 @@ impl crate::Response for ReplaceNamespacedPodResponse {
 
 // Generated from operation replaceCoreV1NamespacedPodStatus
 
+#[cfg(feature = "api")]
 impl Pod {
     /// replace status of the specified Pod
     ///
@@ -2830,6 +2931,7 @@ impl Pod {
 }
 
 /// Optional parameters of [`Pod::replace_namespaced_pod_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedPodStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -2837,12 +2939,14 @@ pub struct ReplaceNamespacedPodStatusOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedPodStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::replace_namespaced_pod_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedPodStatusResponse {
     Ok(crate::v1_8::api::core::v1::Pod),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedPodStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2874,6 +2978,7 @@ impl crate::Response for ReplaceNamespacedPodStatusResponse {
 
 // Generated from operation watchCoreV1NamespacedPod
 
+#[cfg(feature = "api")]
 impl Pod {
     /// list or watch objects of kind Pod
     ///
@@ -2911,12 +3016,14 @@ impl Pod {
 }
 
 /// Use `<WatchNamespacedPodResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::watch_namespaced_pod`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedPodResponse {
     Ok(crate::v1_8::apimachinery::pkg::apis::meta::v1::WatchEvent<Pod>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedPodResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2950,6 +3057,7 @@ impl crate::Response for WatchNamespacedPodResponse {
 
 // Generated from operation watchCoreV1PodForAllNamespaces
 
+#[cfg(feature = "api")]
 impl Pod {
     /// list or watch objects of kind Pod
     ///
@@ -2980,12 +3088,14 @@ impl Pod {
 }
 
 /// Use `<WatchPodForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`Pod::watch_pod_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchPodForAllNamespacesResponse {
     Ok(crate::v1_8::apimachinery::pkg::apis::meta::v1::WatchEvent<Pod>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchPodForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

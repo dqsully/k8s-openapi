@@ -16,6 +16,7 @@ pub struct CertificateSigningRequest {
 
 // Generated from operation createCertificatesV1beta1CertificateSigningRequest
 
+#[cfg(feature = "api")]
 impl CertificateSigningRequest {
     /// create a CertificateSigningRequest
     ///
@@ -53,6 +54,7 @@ impl CertificateSigningRequest {
 }
 
 /// Optional parameters of [`CertificateSigningRequest::create_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateCertificateSigningRequestOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -60,12 +62,14 @@ pub struct CreateCertificateSigningRequestOptional<'a> {
 }
 
 /// Use `<CreateCertificateSigningRequestResponse as Response>::try_from_parts` to parse the HTTP response body of [`CertificateSigningRequest::create_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateCertificateSigningRequestResponse {
     Ok(crate::v1_8::api::certificates::v1beta1::CertificateSigningRequest),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateCertificateSigningRequestResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -97,6 +101,7 @@ impl crate::Response for CreateCertificateSigningRequestResponse {
 
 // Generated from operation deleteCertificatesV1beta1CertificateSigningRequest
 
+#[cfg(feature = "api")]
 impl CertificateSigningRequest {
     /// delete a CertificateSigningRequest
     ///
@@ -130,6 +135,7 @@ impl CertificateSigningRequest {
 }
 
 /// Use `<DeleteCertificateSigningRequestResponse as Response>::try_from_parts` to parse the HTTP response body of [`CertificateSigningRequest::delete_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCertificateSigningRequestResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -137,6 +143,7 @@ pub enum DeleteCertificateSigningRequestResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCertificateSigningRequestResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -181,6 +188,7 @@ impl crate::Response for DeleteCertificateSigningRequestResponse {
 
 // Generated from operation deleteCertificatesV1beta1CollectionCertificateSigningRequest
 
+#[cfg(feature = "api")]
 impl CertificateSigningRequest {
     /// delete collection of CertificateSigningRequest
     ///
@@ -215,6 +223,7 @@ impl CertificateSigningRequest {
 }
 
 /// Use `<DeleteCollectionCertificateSigningRequestResponse as Response>::try_from_parts` to parse the HTTP response body of [`CertificateSigningRequest::delete_collection_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionCertificateSigningRequestResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -222,6 +231,7 @@ pub enum DeleteCollectionCertificateSigningRequestResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionCertificateSigningRequestResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -266,6 +276,7 @@ impl crate::Response for DeleteCollectionCertificateSigningRequestResponse {
 
 // Generated from operation listCertificatesV1beta1CertificateSigningRequest
 
+#[cfg(feature = "api")]
 impl CertificateSigningRequest {
     /// list or watch objects of kind CertificateSigningRequest
     ///
@@ -296,12 +307,14 @@ impl CertificateSigningRequest {
 }
 
 /// Use `<ListCertificateSigningRequestResponse as Response>::try_from_parts` to parse the HTTP response body of [`CertificateSigningRequest::list_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListCertificateSigningRequestResponse {
     Ok(crate::v1_8::api::certificates::v1beta1::CertificateSigningRequestList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListCertificateSigningRequestResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -333,6 +346,7 @@ impl crate::Response for ListCertificateSigningRequestResponse {
 
 // Generated from operation patchCertificatesV1beta1CertificateSigningRequest
 
+#[cfg(feature = "api")]
 impl CertificateSigningRequest {
     /// partially update the specified CertificateSigningRequest
     ///
@@ -376,12 +390,14 @@ impl CertificateSigningRequest {
 }
 
 /// Use `<PatchCertificateSigningRequestResponse as Response>::try_from_parts` to parse the HTTP response body of [`CertificateSigningRequest::patch_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchCertificateSigningRequestResponse {
     Ok(crate::v1_8::api::certificates::v1beta1::CertificateSigningRequest),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchCertificateSigningRequestResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -413,6 +429,7 @@ impl crate::Response for PatchCertificateSigningRequestResponse {
 
 // Generated from operation readCertificatesV1beta1CertificateSigningRequest
 
+#[cfg(feature = "api")]
 impl CertificateSigningRequest {
     /// read the specified CertificateSigningRequest
     ///
@@ -461,6 +478,7 @@ impl CertificateSigningRequest {
 }
 
 /// Optional parameters of [`CertificateSigningRequest::read_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadCertificateSigningRequestOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -472,12 +490,14 @@ pub struct ReadCertificateSigningRequestOptional<'a> {
 }
 
 /// Use `<ReadCertificateSigningRequestResponse as Response>::try_from_parts` to parse the HTTP response body of [`CertificateSigningRequest::read_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadCertificateSigningRequestResponse {
     Ok(crate::v1_8::api::certificates::v1beta1::CertificateSigningRequest),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadCertificateSigningRequestResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -509,6 +529,7 @@ impl crate::Response for ReadCertificateSigningRequestResponse {
 
 // Generated from operation replaceCertificatesV1beta1CertificateSigningRequest
 
+#[cfg(feature = "api")]
 impl CertificateSigningRequest {
     /// replace the specified CertificateSigningRequest
     ///
@@ -553,6 +574,7 @@ impl CertificateSigningRequest {
 }
 
 /// Optional parameters of [`CertificateSigningRequest::replace_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceCertificateSigningRequestOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -560,12 +582,14 @@ pub struct ReplaceCertificateSigningRequestOptional<'a> {
 }
 
 /// Use `<ReplaceCertificateSigningRequestResponse as Response>::try_from_parts` to parse the HTTP response body of [`CertificateSigningRequest::replace_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceCertificateSigningRequestResponse {
     Ok(crate::v1_8::api::certificates::v1beta1::CertificateSigningRequest),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceCertificateSigningRequestResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -597,6 +621,7 @@ impl crate::Response for ReplaceCertificateSigningRequestResponse {
 
 // Generated from operation replaceCertificatesV1beta1CertificateSigningRequestApproval
 
+#[cfg(feature = "api")]
 impl CertificateSigningRequest {
     /// replace approval of the specified CertificateSigningRequest
     ///
@@ -641,6 +666,7 @@ impl CertificateSigningRequest {
 }
 
 /// Optional parameters of [`CertificateSigningRequest::replace_certificate_signing_request_approval`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceCertificateSigningRequestApprovalOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -648,12 +674,14 @@ pub struct ReplaceCertificateSigningRequestApprovalOptional<'a> {
 }
 
 /// Use `<ReplaceCertificateSigningRequestApprovalResponse as Response>::try_from_parts` to parse the HTTP response body of [`CertificateSigningRequest::replace_certificate_signing_request_approval`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceCertificateSigningRequestApprovalResponse {
     Ok(crate::v1_8::api::certificates::v1beta1::CertificateSigningRequest),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceCertificateSigningRequestApprovalResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -685,6 +713,7 @@ impl crate::Response for ReplaceCertificateSigningRequestApprovalResponse {
 
 // Generated from operation replaceCertificatesV1beta1CertificateSigningRequestStatus
 
+#[cfg(feature = "api")]
 impl CertificateSigningRequest {
     /// replace status of the specified CertificateSigningRequest
     ///
@@ -729,6 +758,7 @@ impl CertificateSigningRequest {
 }
 
 /// Optional parameters of [`CertificateSigningRequest::replace_certificate_signing_request_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceCertificateSigningRequestStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -736,12 +766,14 @@ pub struct ReplaceCertificateSigningRequestStatusOptional<'a> {
 }
 
 /// Use `<ReplaceCertificateSigningRequestStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`CertificateSigningRequest::replace_certificate_signing_request_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceCertificateSigningRequestStatusResponse {
     Ok(crate::v1_8::api::certificates::v1beta1::CertificateSigningRequest),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceCertificateSigningRequestStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -773,6 +805,7 @@ impl crate::Response for ReplaceCertificateSigningRequestStatusResponse {
 
 // Generated from operation watchCertificatesV1beta1CertificateSigningRequest
 
+#[cfg(feature = "api")]
 impl CertificateSigningRequest {
     /// list or watch objects of kind CertificateSigningRequest
     ///
@@ -803,12 +836,14 @@ impl CertificateSigningRequest {
 }
 
 /// Use `<WatchCertificateSigningRequestResponse as Response>::try_from_parts` to parse the HTTP response body of [`CertificateSigningRequest::watch_certificate_signing_request`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchCertificateSigningRequestResponse {
     Ok(crate::v1_8::apimachinery::pkg::apis::meta::v1::WatchEvent<CertificateSigningRequest>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchCertificateSigningRequestResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

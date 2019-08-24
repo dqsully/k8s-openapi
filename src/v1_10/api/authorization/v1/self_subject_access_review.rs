@@ -16,6 +16,7 @@ pub struct SelfSubjectAccessReview {
 
 // Generated from operation createAuthorizationV1SelfSubjectAccessReview
 
+#[cfg(feature = "api")]
 impl SelfSubjectAccessReview {
     /// create a SelfSubjectAccessReview
     ///
@@ -53,6 +54,7 @@ impl SelfSubjectAccessReview {
 }
 
 /// Optional parameters of [`SelfSubjectAccessReview::create_self_subject_access_review`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateSelfSubjectAccessReviewOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -60,6 +62,7 @@ pub struct CreateSelfSubjectAccessReviewOptional<'a> {
 }
 
 /// Use `<CreateSelfSubjectAccessReviewResponse as Response>::try_from_parts` to parse the HTTP response body of [`SelfSubjectAccessReview::create_self_subject_access_review`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateSelfSubjectAccessReviewResponse {
     Ok(crate::v1_10::api::authorization::v1::SelfSubjectAccessReview),
@@ -68,6 +71,7 @@ pub enum CreateSelfSubjectAccessReviewResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateSelfSubjectAccessReviewResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

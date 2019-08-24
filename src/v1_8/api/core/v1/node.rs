@@ -17,6 +17,7 @@ pub struct Node {
 
 // Generated from operation connectCoreV1DeleteNodeProxy
 
+#[cfg(feature = "api")]
 impl Node {
     /// connect DELETE requests to proxy of Node
     ///
@@ -52,6 +53,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::connect_delete_node_proxy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectDeleteNodeProxyOptional<'a> {
     /// Path is the URL path to use for the current proxy request to node.
@@ -60,6 +62,7 @@ pub struct ConnectDeleteNodeProxyOptional<'a> {
 
 // Generated from operation connectCoreV1DeleteNodeProxyWithPath
 
+#[cfg(feature = "api")]
 impl Node {
     /// connect DELETE requests to proxy of Node
     ///
@@ -101,6 +104,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::connect_delete_node_proxy_with_path`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectDeleteNodeProxyWithPathOptional<'a> {
     /// Path is the URL path to use for the current proxy request to node.
@@ -109,6 +113,7 @@ pub struct ConnectDeleteNodeProxyWithPathOptional<'a> {
 
 // Generated from operation connectCoreV1GetNodeProxy
 
+#[cfg(feature = "api")]
 impl Node {
     /// connect GET requests to proxy of Node
     ///
@@ -144,6 +149,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::connect_get_node_proxy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectGetNodeProxyOptional<'a> {
     /// Path is the URL path to use for the current proxy request to node.
@@ -152,6 +158,7 @@ pub struct ConnectGetNodeProxyOptional<'a> {
 
 // Generated from operation connectCoreV1GetNodeProxyWithPath
 
+#[cfg(feature = "api")]
 impl Node {
     /// connect GET requests to proxy of Node
     ///
@@ -193,6 +200,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::connect_get_node_proxy_with_path`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectGetNodeProxyWithPathOptional<'a> {
     /// Path is the URL path to use for the current proxy request to node.
@@ -201,6 +209,7 @@ pub struct ConnectGetNodeProxyWithPathOptional<'a> {
 
 // Generated from operation connectCoreV1PatchNodeProxy
 
+#[cfg(feature = "api")]
 impl Node {
     /// connect PATCH requests to proxy of Node
     ///
@@ -236,6 +245,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::connect_patch_node_proxy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPatchNodeProxyOptional<'a> {
     /// Path is the URL path to use for the current proxy request to node.
@@ -244,6 +254,7 @@ pub struct ConnectPatchNodeProxyOptional<'a> {
 
 // Generated from operation connectCoreV1PatchNodeProxyWithPath
 
+#[cfg(feature = "api")]
 impl Node {
     /// connect PATCH requests to proxy of Node
     ///
@@ -285,6 +296,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::connect_patch_node_proxy_with_path`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPatchNodeProxyWithPathOptional<'a> {
     /// Path is the URL path to use for the current proxy request to node.
@@ -293,6 +305,7 @@ pub struct ConnectPatchNodeProxyWithPathOptional<'a> {
 
 // Generated from operation connectCoreV1PostNodeProxy
 
+#[cfg(feature = "api")]
 impl Node {
     /// connect POST requests to proxy of Node
     ///
@@ -328,6 +341,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::connect_post_node_proxy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPostNodeProxyOptional<'a> {
     /// Path is the URL path to use for the current proxy request to node.
@@ -336,6 +350,7 @@ pub struct ConnectPostNodeProxyOptional<'a> {
 
 // Generated from operation connectCoreV1PostNodeProxyWithPath
 
+#[cfg(feature = "api")]
 impl Node {
     /// connect POST requests to proxy of Node
     ///
@@ -377,6 +392,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::connect_post_node_proxy_with_path`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPostNodeProxyWithPathOptional<'a> {
     /// Path is the URL path to use for the current proxy request to node.
@@ -385,6 +401,7 @@ pub struct ConnectPostNodeProxyWithPathOptional<'a> {
 
 // Generated from operation connectCoreV1PutNodeProxy
 
+#[cfg(feature = "api")]
 impl Node {
     /// connect PUT requests to proxy of Node
     ///
@@ -420,6 +437,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::connect_put_node_proxy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPutNodeProxyOptional<'a> {
     /// Path is the URL path to use for the current proxy request to node.
@@ -428,6 +446,7 @@ pub struct ConnectPutNodeProxyOptional<'a> {
 
 // Generated from operation connectCoreV1PutNodeProxyWithPath
 
+#[cfg(feature = "api")]
 impl Node {
     /// connect PUT requests to proxy of Node
     ///
@@ -469,6 +488,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::connect_put_node_proxy_with_path`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ConnectPutNodeProxyWithPathOptional<'a> {
     /// Path is the URL path to use for the current proxy request to node.
@@ -477,6 +497,7 @@ pub struct ConnectPutNodeProxyWithPathOptional<'a> {
 
 // Generated from operation createCoreV1Node
 
+#[cfg(feature = "api")]
 impl Node {
     /// create a Node
     ///
@@ -514,6 +535,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::create_node`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNodeOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -521,12 +543,14 @@ pub struct CreateNodeOptional<'a> {
 }
 
 /// Use `<CreateNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::create_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNodeResponse {
     Ok(crate::v1_8::api::core::v1::Node),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -558,6 +582,7 @@ impl crate::Response for CreateNodeResponse {
 
 // Generated from operation deleteCoreV1CollectionNode
 
+#[cfg(feature = "api")]
 impl Node {
     /// delete collection of Node
     ///
@@ -592,6 +617,7 @@ impl Node {
 }
 
 /// Use `<DeleteCollectionNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::delete_collection_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNodeResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -599,6 +625,7 @@ pub enum DeleteCollectionNodeResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -643,6 +670,7 @@ impl crate::Response for DeleteCollectionNodeResponse {
 
 // Generated from operation deleteCoreV1Node
 
+#[cfg(feature = "api")]
 impl Node {
     /// delete a Node
     ///
@@ -676,6 +704,7 @@ impl Node {
 }
 
 /// Use `<DeleteNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::delete_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNodeResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -683,6 +712,7 @@ pub enum DeleteNodeResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -727,6 +757,7 @@ impl crate::Response for DeleteNodeResponse {
 
 // Generated from operation listCoreV1Node
 
+#[cfg(feature = "api")]
 impl Node {
     /// list or watch objects of kind Node
     ///
@@ -757,12 +788,14 @@ impl Node {
 }
 
 /// Use `<ListNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::list_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNodeResponse {
     Ok(crate::v1_8::api::core::v1::NodeList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -794,6 +827,7 @@ impl crate::Response for ListNodeResponse {
 
 // Generated from operation patchCoreV1Node
 
+#[cfg(feature = "api")]
 impl Node {
     /// partially update the specified Node
     ///
@@ -837,12 +871,14 @@ impl Node {
 }
 
 /// Use `<PatchNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::patch_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNodeResponse {
     Ok(crate::v1_8::api::core::v1::Node),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -874,6 +910,7 @@ impl crate::Response for PatchNodeResponse {
 
 // Generated from operation patchCoreV1NodeStatus
 
+#[cfg(feature = "api")]
 impl Node {
     /// partially update status of the specified Node
     ///
@@ -917,12 +954,14 @@ impl Node {
 }
 
 /// Use `<PatchNodeStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::patch_node_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNodeStatusResponse {
     Ok(crate::v1_8::api::core::v1::Node),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNodeStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -954,6 +993,7 @@ impl crate::Response for PatchNodeStatusResponse {
 
 // Generated from operation proxyCoreV1DELETENode
 
+#[cfg(feature = "api")]
 impl Node {
     /// proxy DELETE requests to Node
     ///
@@ -981,12 +1021,14 @@ impl Node {
 }
 
 /// Use `<ProxyDELETENodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::proxy_delete_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyDELETENodeResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyDELETENodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1028,6 +1070,7 @@ impl crate::Response for ProxyDELETENodeResponse {
 
 // Generated from operation proxyCoreV1DELETENodeWithPath
 
+#[cfg(feature = "api")]
 impl Node {
     /// proxy DELETE requests to Node
     ///
@@ -1061,12 +1104,14 @@ impl Node {
 }
 
 /// Use `<ProxyDELETENodeWithPathResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::proxy_delete_node_with_path`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyDELETENodeWithPathResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyDELETENodeWithPathResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1108,6 +1153,7 @@ impl crate::Response for ProxyDELETENodeWithPathResponse {
 
 // Generated from operation proxyCoreV1GETNode
 
+#[cfg(feature = "api")]
 impl Node {
     /// proxy GET requests to Node
     ///
@@ -1135,12 +1181,14 @@ impl Node {
 }
 
 /// Use `<ProxyGETNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::proxy_get_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyGETNodeResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyGETNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1182,6 +1230,7 @@ impl crate::Response for ProxyGETNodeResponse {
 
 // Generated from operation proxyCoreV1GETNodeWithPath
 
+#[cfg(feature = "api")]
 impl Node {
     /// proxy GET requests to Node
     ///
@@ -1215,12 +1264,14 @@ impl Node {
 }
 
 /// Use `<ProxyGETNodeWithPathResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::proxy_get_node_with_path`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyGETNodeWithPathResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyGETNodeWithPathResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1262,6 +1313,7 @@ impl crate::Response for ProxyGETNodeWithPathResponse {
 
 // Generated from operation proxyCoreV1PATCHNode
 
+#[cfg(feature = "api")]
 impl Node {
     /// proxy PATCH requests to Node
     ///
@@ -1289,12 +1341,14 @@ impl Node {
 }
 
 /// Use `<ProxyPATCHNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::proxy_patch_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPATCHNodeResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPATCHNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1336,6 +1390,7 @@ impl crate::Response for ProxyPATCHNodeResponse {
 
 // Generated from operation proxyCoreV1PATCHNodeWithPath
 
+#[cfg(feature = "api")]
 impl Node {
     /// proxy PATCH requests to Node
     ///
@@ -1369,12 +1424,14 @@ impl Node {
 }
 
 /// Use `<ProxyPATCHNodeWithPathResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::proxy_patch_node_with_path`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPATCHNodeWithPathResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPATCHNodeWithPathResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1416,6 +1473,7 @@ impl crate::Response for ProxyPATCHNodeWithPathResponse {
 
 // Generated from operation proxyCoreV1POSTNode
 
+#[cfg(feature = "api")]
 impl Node {
     /// proxy POST requests to Node
     ///
@@ -1443,12 +1501,14 @@ impl Node {
 }
 
 /// Use `<ProxyPOSTNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::proxy_post_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPOSTNodeResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPOSTNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1490,6 +1550,7 @@ impl crate::Response for ProxyPOSTNodeResponse {
 
 // Generated from operation proxyCoreV1POSTNodeWithPath
 
+#[cfg(feature = "api")]
 impl Node {
     /// proxy POST requests to Node
     ///
@@ -1523,12 +1584,14 @@ impl Node {
 }
 
 /// Use `<ProxyPOSTNodeWithPathResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::proxy_post_node_with_path`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPOSTNodeWithPathResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPOSTNodeWithPathResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1570,6 +1633,7 @@ impl crate::Response for ProxyPOSTNodeWithPathResponse {
 
 // Generated from operation proxyCoreV1PUTNode
 
+#[cfg(feature = "api")]
 impl Node {
     /// proxy PUT requests to Node
     ///
@@ -1597,12 +1661,14 @@ impl Node {
 }
 
 /// Use `<ProxyPUTNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::proxy_put_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPUTNodeResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPUTNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1644,6 +1710,7 @@ impl crate::Response for ProxyPUTNodeResponse {
 
 // Generated from operation proxyCoreV1PUTNodeWithPath
 
+#[cfg(feature = "api")]
 impl Node {
     /// proxy PUT requests to Node
     ///
@@ -1677,12 +1744,14 @@ impl Node {
 }
 
 /// Use `<ProxyPUTNodeWithPathResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::proxy_put_node_with_path`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ProxyPUTNodeWithPathResponse {
     Ok(String),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ProxyPUTNodeWithPathResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1724,6 +1793,7 @@ impl crate::Response for ProxyPUTNodeWithPathResponse {
 
 // Generated from operation readCoreV1Node
 
+#[cfg(feature = "api")]
 impl Node {
     /// read the specified Node
     ///
@@ -1772,6 +1842,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::read_node`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNodeOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -1783,12 +1854,14 @@ pub struct ReadNodeOptional<'a> {
 }
 
 /// Use `<ReadNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::read_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNodeResponse {
     Ok(crate::v1_8::api::core::v1::Node),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1820,6 +1893,7 @@ impl crate::Response for ReadNodeResponse {
 
 // Generated from operation readCoreV1NodeStatus
 
+#[cfg(feature = "api")]
 impl Node {
     /// read status of the specified Node
     ///
@@ -1860,6 +1934,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::read_node_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNodeStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -1867,12 +1942,14 @@ pub struct ReadNodeStatusOptional<'a> {
 }
 
 /// Use `<ReadNodeStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::read_node_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNodeStatusResponse {
     Ok(crate::v1_8::api::core::v1::Node),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNodeStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1904,6 +1981,7 @@ impl crate::Response for ReadNodeStatusResponse {
 
 // Generated from operation replaceCoreV1Node
 
+#[cfg(feature = "api")]
 impl Node {
     /// replace the specified Node
     ///
@@ -1948,6 +2026,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::replace_node`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNodeOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -1955,12 +2034,14 @@ pub struct ReplaceNodeOptional<'a> {
 }
 
 /// Use `<ReplaceNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::replace_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNodeResponse {
     Ok(crate::v1_8::api::core::v1::Node),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1992,6 +2073,7 @@ impl crate::Response for ReplaceNodeResponse {
 
 // Generated from operation replaceCoreV1NodeStatus
 
+#[cfg(feature = "api")]
 impl Node {
     /// replace status of the specified Node
     ///
@@ -2036,6 +2118,7 @@ impl Node {
 }
 
 /// Optional parameters of [`Node::replace_node_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNodeStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -2043,12 +2126,14 @@ pub struct ReplaceNodeStatusOptional<'a> {
 }
 
 /// Use `<ReplaceNodeStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::replace_node_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNodeStatusResponse {
     Ok(crate::v1_8::api::core::v1::Node),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNodeStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2080,6 +2165,7 @@ impl crate::Response for ReplaceNodeStatusResponse {
 
 // Generated from operation watchCoreV1Node
 
+#[cfg(feature = "api")]
 impl Node {
     /// list or watch objects of kind Node
     ///
@@ -2110,12 +2196,14 @@ impl Node {
 }
 
 /// Use `<WatchNodeResponse as Response>::try_from_parts` to parse the HTTP response body of [`Node::watch_node`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNodeResponse {
     Ok(crate::v1_8::apimachinery::pkg::apis::meta::v1::WatchEvent<Node>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNodeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

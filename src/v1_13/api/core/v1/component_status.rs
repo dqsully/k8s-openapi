@@ -14,6 +14,7 @@ pub struct ComponentStatus {
 
 // Generated from operation listCoreV1ComponentStatus
 
+#[cfg(feature = "api")]
 impl ComponentStatus {
     /// list objects of kind ComponentStatus
     ///
@@ -44,12 +45,14 @@ impl ComponentStatus {
 }
 
 /// Use `<ListComponentStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`ComponentStatus::list_component_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListComponentStatusResponse {
     Ok(crate::v1_13::api::core::v1::ComponentStatusList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListComponentStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -81,6 +84,7 @@ impl crate::Response for ListComponentStatusResponse {
 
 // Generated from operation readCoreV1ComponentStatus
 
+#[cfg(feature = "api")]
 impl ComponentStatus {
     /// read the specified ComponentStatus
     ///
@@ -121,6 +125,7 @@ impl ComponentStatus {
 }
 
 /// Optional parameters of [`ComponentStatus::read_component_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadComponentStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -128,12 +133,14 @@ pub struct ReadComponentStatusOptional<'a> {
 }
 
 /// Use `<ReadComponentStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`ComponentStatus::read_component_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadComponentStatusResponse {
     Ok(crate::v1_13::api::core::v1::ComponentStatus),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadComponentStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -165,6 +172,7 @@ impl crate::Response for ReadComponentStatusResponse {
 
 // Generated from operation watchCoreV1ComponentStatus
 
+#[cfg(feature = "api")]
 impl ComponentStatus {
     /// list objects of kind ComponentStatus
     ///
@@ -195,12 +203,14 @@ impl ComponentStatus {
 }
 
 /// Use `<WatchComponentStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`ComponentStatus::watch_component_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchComponentStatusResponse {
     Ok(crate::v1_13::apimachinery::pkg::apis::meta::v1::WatchEvent<ComponentStatus>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchComponentStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

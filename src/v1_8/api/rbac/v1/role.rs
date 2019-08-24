@@ -14,6 +14,7 @@ pub struct Role {
 
 // Generated from operation createRbacAuthorizationV1NamespacedRole
 
+#[cfg(feature = "api")]
 impl Role {
     /// create a Role
     ///
@@ -58,6 +59,7 @@ impl Role {
 }
 
 /// Optional parameters of [`Role::create_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedRoleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -65,12 +67,14 @@ pub struct CreateNamespacedRoleOptional<'a> {
 }
 
 /// Use `<CreateNamespacedRoleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Role::create_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedRoleResponse {
     Ok(crate::v1_8::api::rbac::v1::Role),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedRoleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -102,6 +106,7 @@ impl crate::Response for CreateNamespacedRoleResponse {
 
 // Generated from operation deleteRbacAuthorizationV1CollectionNamespacedRole
 
+#[cfg(feature = "api")]
 impl Role {
     /// delete collection of Role
     ///
@@ -143,6 +148,7 @@ impl Role {
 }
 
 /// Use `<DeleteCollectionNamespacedRoleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Role::delete_collection_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedRoleResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -150,6 +156,7 @@ pub enum DeleteCollectionNamespacedRoleResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedRoleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -194,6 +201,7 @@ impl crate::Response for DeleteCollectionNamespacedRoleResponse {
 
 // Generated from operation deleteRbacAuthorizationV1NamespacedRole
 
+#[cfg(feature = "api")]
 impl Role {
     /// delete a Role
     ///
@@ -233,6 +241,7 @@ impl Role {
 }
 
 /// Use `<DeleteNamespacedRoleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Role::delete_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedRoleResponse {
     OkStatus(crate::v1_8::apimachinery::pkg::apis::meta::v1::Status),
@@ -240,6 +249,7 @@ pub enum DeleteNamespacedRoleResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedRoleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -284,6 +294,7 @@ impl crate::Response for DeleteNamespacedRoleResponse {
 
 // Generated from operation listRbacAuthorizationV1NamespacedRole
 
+#[cfg(feature = "api")]
 impl Role {
     /// list or watch objects of kind Role
     ///
@@ -321,12 +332,14 @@ impl Role {
 }
 
 /// Use `<ListNamespacedRoleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Role::list_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedRoleResponse {
     Ok(crate::v1_8::api::rbac::v1::RoleList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedRoleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -358,6 +371,7 @@ impl crate::Response for ListNamespacedRoleResponse {
 
 // Generated from operation listRbacAuthorizationV1RoleForAllNamespaces
 
+#[cfg(feature = "api")]
 impl Role {
     /// list or watch objects of kind Role
     ///
@@ -388,12 +402,14 @@ impl Role {
 }
 
 /// Use `<ListRoleForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`Role::list_role_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListRoleForAllNamespacesResponse {
     Ok(crate::v1_8::api::rbac::v1::RoleList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListRoleForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -425,6 +441,7 @@ impl crate::Response for ListRoleForAllNamespacesResponse {
 
 // Generated from operation patchRbacAuthorizationV1NamespacedRole
 
+#[cfg(feature = "api")]
 impl Role {
     /// partially update the specified Role
     ///
@@ -474,12 +491,14 @@ impl Role {
 }
 
 /// Use `<PatchNamespacedRoleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Role::patch_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedRoleResponse {
     Ok(crate::v1_8::api::rbac::v1::Role),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedRoleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -511,6 +530,7 @@ impl crate::Response for PatchNamespacedRoleResponse {
 
 // Generated from operation readRbacAuthorizationV1NamespacedRole
 
+#[cfg(feature = "api")]
 impl Role {
     /// read the specified Role
     ///
@@ -557,6 +577,7 @@ impl Role {
 }
 
 /// Optional parameters of [`Role::read_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedRoleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -564,12 +585,14 @@ pub struct ReadNamespacedRoleOptional<'a> {
 }
 
 /// Use `<ReadNamespacedRoleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Role::read_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedRoleResponse {
     Ok(crate::v1_8::api::rbac::v1::Role),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedRoleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -601,6 +624,7 @@ impl crate::Response for ReadNamespacedRoleResponse {
 
 // Generated from operation replaceRbacAuthorizationV1NamespacedRole
 
+#[cfg(feature = "api")]
 impl Role {
     /// replace the specified Role
     ///
@@ -651,6 +675,7 @@ impl Role {
 }
 
 /// Optional parameters of [`Role::replace_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedRoleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -658,12 +683,14 @@ pub struct ReplaceNamespacedRoleOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedRoleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Role::replace_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedRoleResponse {
     Ok(crate::v1_8::api::rbac::v1::Role),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedRoleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -695,6 +722,7 @@ impl crate::Response for ReplaceNamespacedRoleResponse {
 
 // Generated from operation watchRbacAuthorizationV1NamespacedRole
 
+#[cfg(feature = "api")]
 impl Role {
     /// list or watch objects of kind Role
     ///
@@ -732,12 +760,14 @@ impl Role {
 }
 
 /// Use `<WatchNamespacedRoleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Role::watch_namespaced_role`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedRoleResponse {
     Ok(crate::v1_8::apimachinery::pkg::apis::meta::v1::WatchEvent<Role>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedRoleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -771,6 +801,7 @@ impl crate::Response for WatchNamespacedRoleResponse {
 
 // Generated from operation watchRbacAuthorizationV1RoleForAllNamespaces
 
+#[cfg(feature = "api")]
 impl Role {
     /// list or watch objects of kind Role
     ///
@@ -801,12 +832,14 @@ impl Role {
 }
 
 /// Use `<WatchRoleForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`Role::watch_role_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchRoleForAllNamespacesResponse {
     Ok(crate::v1_8::apimachinery::pkg::apis::meta::v1::WatchEvent<Role>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchRoleForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

@@ -17,6 +17,7 @@ pub struct PersistentVolume {
 
 // Generated from operation createCoreV1PersistentVolume
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// create a PersistentVolume
     ///
@@ -54,6 +55,7 @@ impl PersistentVolume {
 }
 
 /// Optional parameters of [`PersistentVolume::create_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreatePersistentVolumeOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -61,6 +63,7 @@ pub struct CreatePersistentVolumeOptional<'a> {
 }
 
 /// Use `<CreatePersistentVolumeResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::create_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreatePersistentVolumeResponse {
     Ok(crate::v1_10::api::core::v1::PersistentVolume),
@@ -69,6 +72,7 @@ pub enum CreatePersistentVolumeResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreatePersistentVolumeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -116,6 +120,7 @@ impl crate::Response for CreatePersistentVolumeResponse {
 
 // Generated from operation deleteCoreV1CollectionPersistentVolume
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// delete collection of PersistentVolume
     ///
@@ -150,6 +155,7 @@ impl PersistentVolume {
 }
 
 /// Use `<DeleteCollectionPersistentVolumeResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::delete_collection_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionPersistentVolumeResponse {
     OkStatus(crate::v1_10::apimachinery::pkg::apis::meta::v1::Status),
@@ -157,6 +163,7 @@ pub enum DeleteCollectionPersistentVolumeResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionPersistentVolumeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -201,6 +208,7 @@ impl crate::Response for DeleteCollectionPersistentVolumeResponse {
 
 // Generated from operation deleteCoreV1PersistentVolume
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// delete a PersistentVolume
     ///
@@ -234,6 +242,7 @@ impl PersistentVolume {
 }
 
 /// Use `<DeletePersistentVolumeResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::delete_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeletePersistentVolumeResponse {
     OkStatus(crate::v1_10::apimachinery::pkg::apis::meta::v1::Status),
@@ -241,6 +250,7 @@ pub enum DeletePersistentVolumeResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeletePersistentVolumeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -285,6 +295,7 @@ impl crate::Response for DeletePersistentVolumeResponse {
 
 // Generated from operation listCoreV1PersistentVolume
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// list or watch objects of kind PersistentVolume
     ///
@@ -315,12 +326,14 @@ impl PersistentVolume {
 }
 
 /// Use `<ListPersistentVolumeResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::list_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListPersistentVolumeResponse {
     Ok(crate::v1_10::api::core::v1::PersistentVolumeList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListPersistentVolumeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -352,6 +365,7 @@ impl crate::Response for ListPersistentVolumeResponse {
 
 // Generated from operation patchCoreV1PersistentVolume
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// partially update the specified PersistentVolume
     ///
@@ -395,12 +409,14 @@ impl PersistentVolume {
 }
 
 /// Use `<PatchPersistentVolumeResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::patch_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchPersistentVolumeResponse {
     Ok(crate::v1_10::api::core::v1::PersistentVolume),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchPersistentVolumeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -432,6 +448,7 @@ impl crate::Response for PatchPersistentVolumeResponse {
 
 // Generated from operation patchCoreV1PersistentVolumeStatus
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// partially update status of the specified PersistentVolume
     ///
@@ -475,12 +492,14 @@ impl PersistentVolume {
 }
 
 /// Use `<PatchPersistentVolumeStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::patch_persistent_volume_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchPersistentVolumeStatusResponse {
     Ok(crate::v1_10::api::core::v1::PersistentVolume),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchPersistentVolumeStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -512,6 +531,7 @@ impl crate::Response for PatchPersistentVolumeStatusResponse {
 
 // Generated from operation readCoreV1PersistentVolume
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// read the specified PersistentVolume
     ///
@@ -560,6 +580,7 @@ impl PersistentVolume {
 }
 
 /// Optional parameters of [`PersistentVolume::read_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadPersistentVolumeOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -571,12 +592,14 @@ pub struct ReadPersistentVolumeOptional<'a> {
 }
 
 /// Use `<ReadPersistentVolumeResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::read_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadPersistentVolumeResponse {
     Ok(crate::v1_10::api::core::v1::PersistentVolume),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadPersistentVolumeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -608,6 +631,7 @@ impl crate::Response for ReadPersistentVolumeResponse {
 
 // Generated from operation readCoreV1PersistentVolumeStatus
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// read status of the specified PersistentVolume
     ///
@@ -648,6 +672,7 @@ impl PersistentVolume {
 }
 
 /// Optional parameters of [`PersistentVolume::read_persistent_volume_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadPersistentVolumeStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -655,12 +680,14 @@ pub struct ReadPersistentVolumeStatusOptional<'a> {
 }
 
 /// Use `<ReadPersistentVolumeStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::read_persistent_volume_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadPersistentVolumeStatusResponse {
     Ok(crate::v1_10::api::core::v1::PersistentVolume),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadPersistentVolumeStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -692,6 +719,7 @@ impl crate::Response for ReadPersistentVolumeStatusResponse {
 
 // Generated from operation replaceCoreV1PersistentVolume
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// replace the specified PersistentVolume
     ///
@@ -736,6 +764,7 @@ impl PersistentVolume {
 }
 
 /// Optional parameters of [`PersistentVolume::replace_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplacePersistentVolumeOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -743,6 +772,7 @@ pub struct ReplacePersistentVolumeOptional<'a> {
 }
 
 /// Use `<ReplacePersistentVolumeResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::replace_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplacePersistentVolumeResponse {
     Ok(crate::v1_10::api::core::v1::PersistentVolume),
@@ -750,6 +780,7 @@ pub enum ReplacePersistentVolumeResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplacePersistentVolumeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -789,6 +820,7 @@ impl crate::Response for ReplacePersistentVolumeResponse {
 
 // Generated from operation replaceCoreV1PersistentVolumeStatus
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// replace status of the specified PersistentVolume
     ///
@@ -833,6 +865,7 @@ impl PersistentVolume {
 }
 
 /// Optional parameters of [`PersistentVolume::replace_persistent_volume_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplacePersistentVolumeStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -840,6 +873,7 @@ pub struct ReplacePersistentVolumeStatusOptional<'a> {
 }
 
 /// Use `<ReplacePersistentVolumeStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::replace_persistent_volume_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplacePersistentVolumeStatusResponse {
     Ok(crate::v1_10::api::core::v1::PersistentVolume),
@@ -847,6 +881,7 @@ pub enum ReplacePersistentVolumeStatusResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplacePersistentVolumeStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -886,6 +921,7 @@ impl crate::Response for ReplacePersistentVolumeStatusResponse {
 
 // Generated from operation watchCoreV1PersistentVolume
 
+#[cfg(feature = "api")]
 impl PersistentVolume {
     /// list or watch objects of kind PersistentVolume
     ///
@@ -916,12 +952,14 @@ impl PersistentVolume {
 }
 
 /// Use `<WatchPersistentVolumeResponse as Response>::try_from_parts` to parse the HTTP response body of [`PersistentVolume::watch_persistent_volume`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchPersistentVolumeResponse {
     Ok(crate::v1_10::apimachinery::pkg::apis::meta::v1::WatchEvent<PersistentVolume>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchPersistentVolumeResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

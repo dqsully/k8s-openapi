@@ -17,6 +17,7 @@ pub struct Deployment {
 
 // Generated from operation createAppsV1beta2NamespacedDeployment
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// create a Deployment
     ///
@@ -61,6 +62,7 @@ impl Deployment {
 }
 
 /// Optional parameters of [`Deployment::create_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedDeploymentOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -68,6 +70,7 @@ pub struct CreateNamespacedDeploymentOptional<'a> {
 }
 
 /// Use `<CreateNamespacedDeploymentResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::create_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedDeploymentResponse {
     Ok(crate::v1_9::api::apps::v1beta2::Deployment),
@@ -76,6 +79,7 @@ pub enum CreateNamespacedDeploymentResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedDeploymentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -123,6 +127,7 @@ impl crate::Response for CreateNamespacedDeploymentResponse {
 
 // Generated from operation deleteAppsV1beta2CollectionNamespacedDeployment
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// delete collection of Deployment
     ///
@@ -164,6 +169,7 @@ impl Deployment {
 }
 
 /// Use `<DeleteCollectionNamespacedDeploymentResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::delete_collection_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedDeploymentResponse {
     OkStatus(crate::v1_9::apimachinery::pkg::apis::meta::v1::Status),
@@ -171,6 +177,7 @@ pub enum DeleteCollectionNamespacedDeploymentResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedDeploymentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -215,6 +222,7 @@ impl crate::Response for DeleteCollectionNamespacedDeploymentResponse {
 
 // Generated from operation deleteAppsV1beta2NamespacedDeployment
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// delete a Deployment
     ///
@@ -254,6 +262,7 @@ impl Deployment {
 }
 
 /// Use `<DeleteNamespacedDeploymentResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::delete_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedDeploymentResponse {
     OkStatus(crate::v1_9::apimachinery::pkg::apis::meta::v1::Status),
@@ -261,6 +270,7 @@ pub enum DeleteNamespacedDeploymentResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedDeploymentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -305,6 +315,7 @@ impl crate::Response for DeleteNamespacedDeploymentResponse {
 
 // Generated from operation listAppsV1beta2DeploymentForAllNamespaces
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// list or watch objects of kind Deployment
     ///
@@ -335,12 +346,14 @@ impl Deployment {
 }
 
 /// Use `<ListDeploymentForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::list_deployment_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListDeploymentForAllNamespacesResponse {
     Ok(crate::v1_9::api::apps::v1beta2::DeploymentList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListDeploymentForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -372,6 +385,7 @@ impl crate::Response for ListDeploymentForAllNamespacesResponse {
 
 // Generated from operation listAppsV1beta2NamespacedDeployment
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// list or watch objects of kind Deployment
     ///
@@ -409,12 +423,14 @@ impl Deployment {
 }
 
 /// Use `<ListNamespacedDeploymentResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::list_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedDeploymentResponse {
     Ok(crate::v1_9::api::apps::v1beta2::DeploymentList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedDeploymentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -446,6 +462,7 @@ impl crate::Response for ListNamespacedDeploymentResponse {
 
 // Generated from operation patchAppsV1beta2NamespacedDeployment
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// partially update the specified Deployment
     ///
@@ -495,12 +512,14 @@ impl Deployment {
 }
 
 /// Use `<PatchNamespacedDeploymentResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::patch_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedDeploymentResponse {
     Ok(crate::v1_9::api::apps::v1beta2::Deployment),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedDeploymentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -532,6 +551,7 @@ impl crate::Response for PatchNamespacedDeploymentResponse {
 
 // Generated from operation patchAppsV1beta2NamespacedDeploymentStatus
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// partially update status of the specified Deployment
     ///
@@ -581,12 +601,14 @@ impl Deployment {
 }
 
 /// Use `<PatchNamespacedDeploymentStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::patch_namespaced_deployment_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedDeploymentStatusResponse {
     Ok(crate::v1_9::api::apps::v1beta2::Deployment),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedDeploymentStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -618,6 +640,7 @@ impl crate::Response for PatchNamespacedDeploymentStatusResponse {
 
 // Generated from operation readAppsV1beta2NamespacedDeployment
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// read the specified Deployment
     ///
@@ -672,6 +695,7 @@ impl Deployment {
 }
 
 /// Optional parameters of [`Deployment::read_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedDeploymentOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -683,12 +707,14 @@ pub struct ReadNamespacedDeploymentOptional<'a> {
 }
 
 /// Use `<ReadNamespacedDeploymentResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::read_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedDeploymentResponse {
     Ok(crate::v1_9::api::apps::v1beta2::Deployment),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedDeploymentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -720,6 +746,7 @@ impl crate::Response for ReadNamespacedDeploymentResponse {
 
 // Generated from operation readAppsV1beta2NamespacedDeploymentStatus
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// read status of the specified Deployment
     ///
@@ -766,6 +793,7 @@ impl Deployment {
 }
 
 /// Optional parameters of [`Deployment::read_namespaced_deployment_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedDeploymentStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -773,12 +801,14 @@ pub struct ReadNamespacedDeploymentStatusOptional<'a> {
 }
 
 /// Use `<ReadNamespacedDeploymentStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::read_namespaced_deployment_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedDeploymentStatusResponse {
     Ok(crate::v1_9::api::apps::v1beta2::Deployment),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedDeploymentStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -810,6 +840,7 @@ impl crate::Response for ReadNamespacedDeploymentStatusResponse {
 
 // Generated from operation replaceAppsV1beta2NamespacedDeployment
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// replace the specified Deployment
     ///
@@ -860,6 +891,7 @@ impl Deployment {
 }
 
 /// Optional parameters of [`Deployment::replace_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedDeploymentOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -867,6 +899,7 @@ pub struct ReplaceNamespacedDeploymentOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedDeploymentResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::replace_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedDeploymentResponse {
     Ok(crate::v1_9::api::apps::v1beta2::Deployment),
@@ -874,6 +907,7 @@ pub enum ReplaceNamespacedDeploymentResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedDeploymentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -913,6 +947,7 @@ impl crate::Response for ReplaceNamespacedDeploymentResponse {
 
 // Generated from operation replaceAppsV1beta2NamespacedDeploymentStatus
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// replace status of the specified Deployment
     ///
@@ -963,6 +998,7 @@ impl Deployment {
 }
 
 /// Optional parameters of [`Deployment::replace_namespaced_deployment_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedDeploymentStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -970,6 +1006,7 @@ pub struct ReplaceNamespacedDeploymentStatusOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedDeploymentStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::replace_namespaced_deployment_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedDeploymentStatusResponse {
     Ok(crate::v1_9::api::apps::v1beta2::Deployment),
@@ -977,6 +1014,7 @@ pub enum ReplaceNamespacedDeploymentStatusResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedDeploymentStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1016,6 +1054,7 @@ impl crate::Response for ReplaceNamespacedDeploymentStatusResponse {
 
 // Generated from operation watchAppsV1beta2DeploymentForAllNamespaces
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// list or watch objects of kind Deployment
     ///
@@ -1046,12 +1085,14 @@ impl Deployment {
 }
 
 /// Use `<WatchDeploymentForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::watch_deployment_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchDeploymentForAllNamespacesResponse {
     Ok(crate::v1_9::apimachinery::pkg::apis::meta::v1::WatchEvent<Deployment>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchDeploymentForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1085,6 +1126,7 @@ impl crate::Response for WatchDeploymentForAllNamespacesResponse {
 
 // Generated from operation watchAppsV1beta2NamespacedDeployment
 
+#[cfg(feature = "api")]
 impl Deployment {
     /// list or watch objects of kind Deployment
     ///
@@ -1122,12 +1164,14 @@ impl Deployment {
 }
 
 /// Use `<WatchNamespacedDeploymentResponse as Response>::try_from_parts` to parse the HTTP response body of [`Deployment::watch_namespaced_deployment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedDeploymentResponse {
     Ok(crate::v1_9::apimachinery::pkg::apis::meta::v1::WatchEvent<Deployment>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedDeploymentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

@@ -19,6 +19,7 @@ pub struct VolumeAttachment {
 
 // Generated from operation createStorageV1beta1VolumeAttachment
 
+#[cfg(feature = "api")]
 impl VolumeAttachment {
     /// create a VolumeAttachment
     ///
@@ -64,6 +65,7 @@ impl VolumeAttachment {
 }
 
 /// Optional parameters of [`VolumeAttachment::create_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateVolumeAttachmentOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -75,6 +77,7 @@ pub struct CreateVolumeAttachmentOptional<'a> {
 }
 
 /// Use `<CreateVolumeAttachmentResponse as Response>::try_from_parts` to parse the HTTP response body of [`VolumeAttachment::create_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateVolumeAttachmentResponse {
     Ok(crate::v1_12::api::storage::v1beta1::VolumeAttachment),
@@ -83,6 +86,7 @@ pub enum CreateVolumeAttachmentResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateVolumeAttachmentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -130,6 +134,7 @@ impl crate::Response for CreateVolumeAttachmentResponse {
 
 // Generated from operation deleteStorageV1beta1CollectionVolumeAttachment
 
+#[cfg(feature = "api")]
 impl VolumeAttachment {
     /// delete collection of VolumeAttachment
     ///
@@ -164,6 +169,7 @@ impl VolumeAttachment {
 }
 
 /// Use `<DeleteCollectionVolumeAttachmentResponse as Response>::try_from_parts` to parse the HTTP response body of [`VolumeAttachment::delete_collection_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionVolumeAttachmentResponse {
     OkStatus(crate::v1_12::apimachinery::pkg::apis::meta::v1::Status),
@@ -171,6 +177,7 @@ pub enum DeleteCollectionVolumeAttachmentResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionVolumeAttachmentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -215,6 +222,7 @@ impl crate::Response for DeleteCollectionVolumeAttachmentResponse {
 
 // Generated from operation deleteStorageV1beta1VolumeAttachment
 
+#[cfg(feature = "api")]
 impl VolumeAttachment {
     /// delete a VolumeAttachment
     ///
@@ -248,6 +256,7 @@ impl VolumeAttachment {
 }
 
 /// Use `<DeleteVolumeAttachmentResponse as Response>::try_from_parts` to parse the HTTP response body of [`VolumeAttachment::delete_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteVolumeAttachmentResponse {
     OkStatus(crate::v1_12::apimachinery::pkg::apis::meta::v1::Status),
@@ -256,6 +265,7 @@ pub enum DeleteVolumeAttachmentResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteVolumeAttachmentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -308,6 +318,7 @@ impl crate::Response for DeleteVolumeAttachmentResponse {
 
 // Generated from operation listStorageV1beta1VolumeAttachment
 
+#[cfg(feature = "api")]
 impl VolumeAttachment {
     /// list or watch objects of kind VolumeAttachment
     ///
@@ -338,12 +349,14 @@ impl VolumeAttachment {
 }
 
 /// Use `<ListVolumeAttachmentResponse as Response>::try_from_parts` to parse the HTTP response body of [`VolumeAttachment::list_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListVolumeAttachmentResponse {
     Ok(crate::v1_12::api::storage::v1beta1::VolumeAttachmentList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListVolumeAttachmentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -375,6 +388,7 @@ impl crate::Response for ListVolumeAttachmentResponse {
 
 // Generated from operation patchStorageV1beta1VolumeAttachment
 
+#[cfg(feature = "api")]
 impl VolumeAttachment {
     /// partially update the specified VolumeAttachment
     ///
@@ -418,12 +432,14 @@ impl VolumeAttachment {
 }
 
 /// Use `<PatchVolumeAttachmentResponse as Response>::try_from_parts` to parse the HTTP response body of [`VolumeAttachment::patch_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchVolumeAttachmentResponse {
     Ok(crate::v1_12::api::storage::v1beta1::VolumeAttachment),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchVolumeAttachmentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -455,6 +471,7 @@ impl crate::Response for PatchVolumeAttachmentResponse {
 
 // Generated from operation readStorageV1beta1VolumeAttachment
 
+#[cfg(feature = "api")]
 impl VolumeAttachment {
     /// read the specified VolumeAttachment
     ///
@@ -503,6 +520,7 @@ impl VolumeAttachment {
 }
 
 /// Optional parameters of [`VolumeAttachment::read_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadVolumeAttachmentOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -514,12 +532,14 @@ pub struct ReadVolumeAttachmentOptional<'a> {
 }
 
 /// Use `<ReadVolumeAttachmentResponse as Response>::try_from_parts` to parse the HTTP response body of [`VolumeAttachment::read_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadVolumeAttachmentResponse {
     Ok(crate::v1_12::api::storage::v1beta1::VolumeAttachment),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadVolumeAttachmentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -551,6 +571,7 @@ impl crate::Response for ReadVolumeAttachmentResponse {
 
 // Generated from operation replaceStorageV1beta1VolumeAttachment
 
+#[cfg(feature = "api")]
 impl VolumeAttachment {
     /// replace the specified VolumeAttachment
     ///
@@ -599,6 +620,7 @@ impl VolumeAttachment {
 }
 
 /// Optional parameters of [`VolumeAttachment::replace_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceVolumeAttachmentOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -608,6 +630,7 @@ pub struct ReplaceVolumeAttachmentOptional<'a> {
 }
 
 /// Use `<ReplaceVolumeAttachmentResponse as Response>::try_from_parts` to parse the HTTP response body of [`VolumeAttachment::replace_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceVolumeAttachmentResponse {
     Ok(crate::v1_12::api::storage::v1beta1::VolumeAttachment),
@@ -615,6 +638,7 @@ pub enum ReplaceVolumeAttachmentResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceVolumeAttachmentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -654,6 +678,7 @@ impl crate::Response for ReplaceVolumeAttachmentResponse {
 
 // Generated from operation watchStorageV1beta1VolumeAttachment
 
+#[cfg(feature = "api")]
 impl VolumeAttachment {
     /// list or watch objects of kind VolumeAttachment
     ///
@@ -684,12 +709,14 @@ impl VolumeAttachment {
 }
 
 /// Use `<WatchVolumeAttachmentResponse as Response>::try_from_parts` to parse the HTTP response body of [`VolumeAttachment::watch_volume_attachment`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchVolumeAttachmentResponse {
     Ok(crate::v1_12::apimachinery::pkg::apis::meta::v1::WatchEvent<VolumeAttachment>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchVolumeAttachmentResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

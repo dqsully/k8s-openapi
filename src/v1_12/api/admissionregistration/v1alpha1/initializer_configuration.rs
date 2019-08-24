@@ -14,6 +14,7 @@ pub struct InitializerConfiguration {
 
 // Generated from operation createAdmissionregistrationV1alpha1InitializerConfiguration
 
+#[cfg(feature = "api")]
 impl InitializerConfiguration {
     /// create an InitializerConfiguration
     ///
@@ -59,6 +60,7 @@ impl InitializerConfiguration {
 }
 
 /// Optional parameters of [`InitializerConfiguration::create_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateInitializerConfigurationOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -70,6 +72,7 @@ pub struct CreateInitializerConfigurationOptional<'a> {
 }
 
 /// Use `<CreateInitializerConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`InitializerConfiguration::create_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateInitializerConfigurationResponse {
     Ok(crate::v1_12::api::admissionregistration::v1alpha1::InitializerConfiguration),
@@ -78,6 +81,7 @@ pub enum CreateInitializerConfigurationResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateInitializerConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -125,6 +129,7 @@ impl crate::Response for CreateInitializerConfigurationResponse {
 
 // Generated from operation deleteAdmissionregistrationV1alpha1CollectionInitializerConfiguration
 
+#[cfg(feature = "api")]
 impl InitializerConfiguration {
     /// delete collection of InitializerConfiguration
     ///
@@ -159,6 +164,7 @@ impl InitializerConfiguration {
 }
 
 /// Use `<DeleteCollectionInitializerConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`InitializerConfiguration::delete_collection_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionInitializerConfigurationResponse {
     OkStatus(crate::v1_12::apimachinery::pkg::apis::meta::v1::Status),
@@ -166,6 +172,7 @@ pub enum DeleteCollectionInitializerConfigurationResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionInitializerConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -210,6 +217,7 @@ impl crate::Response for DeleteCollectionInitializerConfigurationResponse {
 
 // Generated from operation deleteAdmissionregistrationV1alpha1InitializerConfiguration
 
+#[cfg(feature = "api")]
 impl InitializerConfiguration {
     /// delete an InitializerConfiguration
     ///
@@ -243,6 +251,7 @@ impl InitializerConfiguration {
 }
 
 /// Use `<DeleteInitializerConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`InitializerConfiguration::delete_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteInitializerConfigurationResponse {
     OkStatus(crate::v1_12::apimachinery::pkg::apis::meta::v1::Status),
@@ -251,6 +260,7 @@ pub enum DeleteInitializerConfigurationResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteInitializerConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -303,6 +313,7 @@ impl crate::Response for DeleteInitializerConfigurationResponse {
 
 // Generated from operation listAdmissionregistrationV1alpha1InitializerConfiguration
 
+#[cfg(feature = "api")]
 impl InitializerConfiguration {
     /// list or watch objects of kind InitializerConfiguration
     ///
@@ -333,12 +344,14 @@ impl InitializerConfiguration {
 }
 
 /// Use `<ListInitializerConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`InitializerConfiguration::list_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListInitializerConfigurationResponse {
     Ok(crate::v1_12::api::admissionregistration::v1alpha1::InitializerConfigurationList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListInitializerConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -370,6 +383,7 @@ impl crate::Response for ListInitializerConfigurationResponse {
 
 // Generated from operation patchAdmissionregistrationV1alpha1InitializerConfiguration
 
+#[cfg(feature = "api")]
 impl InitializerConfiguration {
     /// partially update the specified InitializerConfiguration
     ///
@@ -413,12 +427,14 @@ impl InitializerConfiguration {
 }
 
 /// Use `<PatchInitializerConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`InitializerConfiguration::patch_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchInitializerConfigurationResponse {
     Ok(crate::v1_12::api::admissionregistration::v1alpha1::InitializerConfiguration),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchInitializerConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -450,6 +466,7 @@ impl crate::Response for PatchInitializerConfigurationResponse {
 
 // Generated from operation readAdmissionregistrationV1alpha1InitializerConfiguration
 
+#[cfg(feature = "api")]
 impl InitializerConfiguration {
     /// read the specified InitializerConfiguration
     ///
@@ -498,6 +515,7 @@ impl InitializerConfiguration {
 }
 
 /// Optional parameters of [`InitializerConfiguration::read_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadInitializerConfigurationOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -509,12 +527,14 @@ pub struct ReadInitializerConfigurationOptional<'a> {
 }
 
 /// Use `<ReadInitializerConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`InitializerConfiguration::read_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadInitializerConfigurationResponse {
     Ok(crate::v1_12::api::admissionregistration::v1alpha1::InitializerConfiguration),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadInitializerConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -546,6 +566,7 @@ impl crate::Response for ReadInitializerConfigurationResponse {
 
 // Generated from operation replaceAdmissionregistrationV1alpha1InitializerConfiguration
 
+#[cfg(feature = "api")]
 impl InitializerConfiguration {
     /// replace the specified InitializerConfiguration
     ///
@@ -594,6 +615,7 @@ impl InitializerConfiguration {
 }
 
 /// Optional parameters of [`InitializerConfiguration::replace_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceInitializerConfigurationOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -603,6 +625,7 @@ pub struct ReplaceInitializerConfigurationOptional<'a> {
 }
 
 /// Use `<ReplaceInitializerConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`InitializerConfiguration::replace_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceInitializerConfigurationResponse {
     Ok(crate::v1_12::api::admissionregistration::v1alpha1::InitializerConfiguration),
@@ -610,6 +633,7 @@ pub enum ReplaceInitializerConfigurationResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceInitializerConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -649,6 +673,7 @@ impl crate::Response for ReplaceInitializerConfigurationResponse {
 
 // Generated from operation watchAdmissionregistrationV1alpha1InitializerConfiguration
 
+#[cfg(feature = "api")]
 impl InitializerConfiguration {
     /// list or watch objects of kind InitializerConfiguration
     ///
@@ -679,12 +704,14 @@ impl InitializerConfiguration {
 }
 
 /// Use `<WatchInitializerConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`InitializerConfiguration::watch_initializer_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchInitializerConfigurationResponse {
     Ok(crate::v1_12::apimachinery::pkg::apis::meta::v1::WatchEvent<InitializerConfiguration>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchInitializerConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

@@ -16,6 +16,7 @@ pub struct SelfSubjectRulesReview {
 
 // Generated from operation createAuthorizationV1SelfSubjectRulesReview
 
+#[cfg(feature = "api")]
 impl SelfSubjectRulesReview {
     /// create a SelfSubjectRulesReview
     ///
@@ -53,6 +54,7 @@ impl SelfSubjectRulesReview {
 }
 
 /// Optional parameters of [`SelfSubjectRulesReview::create_self_subject_rules_review`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateSelfSubjectRulesReviewOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -60,12 +62,14 @@ pub struct CreateSelfSubjectRulesReviewOptional<'a> {
 }
 
 /// Use `<CreateSelfSubjectRulesReviewResponse as Response>::try_from_parts` to parse the HTTP response body of [`SelfSubjectRulesReview::create_self_subject_rules_review`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateSelfSubjectRulesReviewResponse {
     Ok(crate::v1_8::api::authorization::v1::SelfSubjectRulesReview),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateSelfSubjectRulesReviewResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

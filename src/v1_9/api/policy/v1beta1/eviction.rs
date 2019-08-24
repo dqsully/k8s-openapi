@@ -14,6 +14,7 @@ pub struct Eviction {
 
 // Generated from operation createCoreV1NamespacedPodEviction
 
+#[cfg(feature = "api")]
 impl Eviction {
     /// create eviction of a Pod
     ///
@@ -64,6 +65,7 @@ impl Eviction {
 }
 
 /// Optional parameters of [`Eviction::create_namespaced_pod_eviction`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedPodEvictionOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -71,6 +73,7 @@ pub struct CreateNamespacedPodEvictionOptional<'a> {
 }
 
 /// Use `<CreateNamespacedPodEvictionResponse as Response>::try_from_parts` to parse the HTTP response body of [`Eviction::create_namespaced_pod_eviction`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedPodEvictionResponse {
     Ok(crate::v1_9::api::policy::v1beta1::Eviction),
@@ -79,6 +82,7 @@ pub enum CreateNamespacedPodEvictionResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedPodEvictionResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

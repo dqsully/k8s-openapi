@@ -20,6 +20,7 @@ pub struct PriorityClass {
 
 // Generated from operation createSchedulingV1alpha1PriorityClass
 
+#[cfg(feature = "api")]
 impl PriorityClass {
     /// create a PriorityClass
     ///
@@ -57,6 +58,7 @@ impl PriorityClass {
 }
 
 /// Optional parameters of [`PriorityClass::create_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreatePriorityClassOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -64,6 +66,7 @@ pub struct CreatePriorityClassOptional<'a> {
 }
 
 /// Use `<CreatePriorityClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`PriorityClass::create_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreatePriorityClassResponse {
     Ok(crate::v1_9::api::scheduling::v1alpha1::PriorityClass),
@@ -72,6 +75,7 @@ pub enum CreatePriorityClassResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreatePriorityClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -119,6 +123,7 @@ impl crate::Response for CreatePriorityClassResponse {
 
 // Generated from operation deleteSchedulingV1alpha1CollectionPriorityClass
 
+#[cfg(feature = "api")]
 impl PriorityClass {
     /// delete collection of PriorityClass
     ///
@@ -153,6 +158,7 @@ impl PriorityClass {
 }
 
 /// Use `<DeleteCollectionPriorityClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`PriorityClass::delete_collection_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionPriorityClassResponse {
     OkStatus(crate::v1_9::apimachinery::pkg::apis::meta::v1::Status),
@@ -160,6 +166,7 @@ pub enum DeleteCollectionPriorityClassResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionPriorityClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -204,6 +211,7 @@ impl crate::Response for DeleteCollectionPriorityClassResponse {
 
 // Generated from operation deleteSchedulingV1alpha1PriorityClass
 
+#[cfg(feature = "api")]
 impl PriorityClass {
     /// delete a PriorityClass
     ///
@@ -237,6 +245,7 @@ impl PriorityClass {
 }
 
 /// Use `<DeletePriorityClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`PriorityClass::delete_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeletePriorityClassResponse {
     OkStatus(crate::v1_9::apimachinery::pkg::apis::meta::v1::Status),
@@ -244,6 +253,7 @@ pub enum DeletePriorityClassResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeletePriorityClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -288,6 +298,7 @@ impl crate::Response for DeletePriorityClassResponse {
 
 // Generated from operation listSchedulingV1alpha1PriorityClass
 
+#[cfg(feature = "api")]
 impl PriorityClass {
     /// list or watch objects of kind PriorityClass
     ///
@@ -318,12 +329,14 @@ impl PriorityClass {
 }
 
 /// Use `<ListPriorityClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`PriorityClass::list_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListPriorityClassResponse {
     Ok(crate::v1_9::api::scheduling::v1alpha1::PriorityClassList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListPriorityClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -355,6 +368,7 @@ impl crate::Response for ListPriorityClassResponse {
 
 // Generated from operation patchSchedulingV1alpha1PriorityClass
 
+#[cfg(feature = "api")]
 impl PriorityClass {
     /// partially update the specified PriorityClass
     ///
@@ -398,12 +412,14 @@ impl PriorityClass {
 }
 
 /// Use `<PatchPriorityClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`PriorityClass::patch_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchPriorityClassResponse {
     Ok(crate::v1_9::api::scheduling::v1alpha1::PriorityClass),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchPriorityClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -435,6 +451,7 @@ impl crate::Response for PatchPriorityClassResponse {
 
 // Generated from operation readSchedulingV1alpha1PriorityClass
 
+#[cfg(feature = "api")]
 impl PriorityClass {
     /// read the specified PriorityClass
     ///
@@ -483,6 +500,7 @@ impl PriorityClass {
 }
 
 /// Optional parameters of [`PriorityClass::read_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadPriorityClassOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -494,12 +512,14 @@ pub struct ReadPriorityClassOptional<'a> {
 }
 
 /// Use `<ReadPriorityClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`PriorityClass::read_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadPriorityClassResponse {
     Ok(crate::v1_9::api::scheduling::v1alpha1::PriorityClass),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadPriorityClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -531,6 +551,7 @@ impl crate::Response for ReadPriorityClassResponse {
 
 // Generated from operation replaceSchedulingV1alpha1PriorityClass
 
+#[cfg(feature = "api")]
 impl PriorityClass {
     /// replace the specified PriorityClass
     ///
@@ -575,6 +596,7 @@ impl PriorityClass {
 }
 
 /// Optional parameters of [`PriorityClass::replace_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplacePriorityClassOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -582,6 +604,7 @@ pub struct ReplacePriorityClassOptional<'a> {
 }
 
 /// Use `<ReplacePriorityClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`PriorityClass::replace_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplacePriorityClassResponse {
     Ok(crate::v1_9::api::scheduling::v1alpha1::PriorityClass),
@@ -589,6 +612,7 @@ pub enum ReplacePriorityClassResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplacePriorityClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -628,6 +652,7 @@ impl crate::Response for ReplacePriorityClassResponse {
 
 // Generated from operation watchSchedulingV1alpha1PriorityClass
 
+#[cfg(feature = "api")]
 impl PriorityClass {
     /// list or watch objects of kind PriorityClass
     ///
@@ -658,12 +683,14 @@ impl PriorityClass {
 }
 
 /// Use `<WatchPriorityClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`PriorityClass::watch_priority_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchPriorityClassResponse {
     Ok(crate::v1_9::apimachinery::pkg::apis::meta::v1::WatchEvent<PriorityClass>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchPriorityClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

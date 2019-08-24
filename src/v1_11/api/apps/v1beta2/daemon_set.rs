@@ -17,6 +17,7 @@ pub struct DaemonSet {
 
 // Generated from operation createAppsV1beta2NamespacedDaemonSet
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// create a DaemonSet
     ///
@@ -61,6 +62,7 @@ impl DaemonSet {
 }
 
 /// Optional parameters of [`DaemonSet::create_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedDaemonSetOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -68,6 +70,7 @@ pub struct CreateNamespacedDaemonSetOptional<'a> {
 }
 
 /// Use `<CreateNamespacedDaemonSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::create_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedDaemonSetResponse {
     Ok(crate::v1_11::api::apps::v1beta2::DaemonSet),
@@ -76,6 +79,7 @@ pub enum CreateNamespacedDaemonSetResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedDaemonSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -123,6 +127,7 @@ impl crate::Response for CreateNamespacedDaemonSetResponse {
 
 // Generated from operation deleteAppsV1beta2CollectionNamespacedDaemonSet
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// delete collection of DaemonSet
     ///
@@ -164,6 +169,7 @@ impl DaemonSet {
 }
 
 /// Use `<DeleteCollectionNamespacedDaemonSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::delete_collection_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedDaemonSetResponse {
     OkStatus(crate::v1_11::apimachinery::pkg::apis::meta::v1::Status),
@@ -171,6 +177,7 @@ pub enum DeleteCollectionNamespacedDaemonSetResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedDaemonSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -215,6 +222,7 @@ impl crate::Response for DeleteCollectionNamespacedDaemonSetResponse {
 
 // Generated from operation deleteAppsV1beta2NamespacedDaemonSet
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// delete a DaemonSet
     ///
@@ -254,6 +262,7 @@ impl DaemonSet {
 }
 
 /// Use `<DeleteNamespacedDaemonSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::delete_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedDaemonSetResponse {
     OkStatus(crate::v1_11::apimachinery::pkg::apis::meta::v1::Status),
@@ -261,6 +270,7 @@ pub enum DeleteNamespacedDaemonSetResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedDaemonSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -305,6 +315,7 @@ impl crate::Response for DeleteNamespacedDaemonSetResponse {
 
 // Generated from operation listAppsV1beta2DaemonSetForAllNamespaces
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// list or watch objects of kind DaemonSet
     ///
@@ -335,12 +346,14 @@ impl DaemonSet {
 }
 
 /// Use `<ListDaemonSetForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::list_daemon_set_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListDaemonSetForAllNamespacesResponse {
     Ok(crate::v1_11::api::apps::v1beta2::DaemonSetList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListDaemonSetForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -372,6 +385,7 @@ impl crate::Response for ListDaemonSetForAllNamespacesResponse {
 
 // Generated from operation listAppsV1beta2NamespacedDaemonSet
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// list or watch objects of kind DaemonSet
     ///
@@ -409,12 +423,14 @@ impl DaemonSet {
 }
 
 /// Use `<ListNamespacedDaemonSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::list_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedDaemonSetResponse {
     Ok(crate::v1_11::api::apps::v1beta2::DaemonSetList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedDaemonSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -446,6 +462,7 @@ impl crate::Response for ListNamespacedDaemonSetResponse {
 
 // Generated from operation patchAppsV1beta2NamespacedDaemonSet
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// partially update the specified DaemonSet
     ///
@@ -495,12 +512,14 @@ impl DaemonSet {
 }
 
 /// Use `<PatchNamespacedDaemonSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::patch_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedDaemonSetResponse {
     Ok(crate::v1_11::api::apps::v1beta2::DaemonSet),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedDaemonSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -532,6 +551,7 @@ impl crate::Response for PatchNamespacedDaemonSetResponse {
 
 // Generated from operation patchAppsV1beta2NamespacedDaemonSetStatus
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// partially update status of the specified DaemonSet
     ///
@@ -581,12 +601,14 @@ impl DaemonSet {
 }
 
 /// Use `<PatchNamespacedDaemonSetStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::patch_namespaced_daemon_set_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedDaemonSetStatusResponse {
     Ok(crate::v1_11::api::apps::v1beta2::DaemonSet),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedDaemonSetStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -618,6 +640,7 @@ impl crate::Response for PatchNamespacedDaemonSetStatusResponse {
 
 // Generated from operation readAppsV1beta2NamespacedDaemonSet
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// read the specified DaemonSet
     ///
@@ -672,6 +695,7 @@ impl DaemonSet {
 }
 
 /// Optional parameters of [`DaemonSet::read_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedDaemonSetOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -683,12 +707,14 @@ pub struct ReadNamespacedDaemonSetOptional<'a> {
 }
 
 /// Use `<ReadNamespacedDaemonSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::read_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedDaemonSetResponse {
     Ok(crate::v1_11::api::apps::v1beta2::DaemonSet),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedDaemonSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -720,6 +746,7 @@ impl crate::Response for ReadNamespacedDaemonSetResponse {
 
 // Generated from operation readAppsV1beta2NamespacedDaemonSetStatus
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// read status of the specified DaemonSet
     ///
@@ -766,6 +793,7 @@ impl DaemonSet {
 }
 
 /// Optional parameters of [`DaemonSet::read_namespaced_daemon_set_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedDaemonSetStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -773,12 +801,14 @@ pub struct ReadNamespacedDaemonSetStatusOptional<'a> {
 }
 
 /// Use `<ReadNamespacedDaemonSetStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::read_namespaced_daemon_set_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedDaemonSetStatusResponse {
     Ok(crate::v1_11::api::apps::v1beta2::DaemonSet),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedDaemonSetStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -810,6 +840,7 @@ impl crate::Response for ReadNamespacedDaemonSetStatusResponse {
 
 // Generated from operation replaceAppsV1beta2NamespacedDaemonSet
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// replace the specified DaemonSet
     ///
@@ -860,6 +891,7 @@ impl DaemonSet {
 }
 
 /// Optional parameters of [`DaemonSet::replace_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedDaemonSetOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -867,6 +899,7 @@ pub struct ReplaceNamespacedDaemonSetOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedDaemonSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::replace_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedDaemonSetResponse {
     Ok(crate::v1_11::api::apps::v1beta2::DaemonSet),
@@ -874,6 +907,7 @@ pub enum ReplaceNamespacedDaemonSetResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedDaemonSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -913,6 +947,7 @@ impl crate::Response for ReplaceNamespacedDaemonSetResponse {
 
 // Generated from operation replaceAppsV1beta2NamespacedDaemonSetStatus
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// replace status of the specified DaemonSet
     ///
@@ -963,6 +998,7 @@ impl DaemonSet {
 }
 
 /// Optional parameters of [`DaemonSet::replace_namespaced_daemon_set_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedDaemonSetStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -970,6 +1006,7 @@ pub struct ReplaceNamespacedDaemonSetStatusOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedDaemonSetStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::replace_namespaced_daemon_set_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedDaemonSetStatusResponse {
     Ok(crate::v1_11::api::apps::v1beta2::DaemonSet),
@@ -977,6 +1014,7 @@ pub enum ReplaceNamespacedDaemonSetStatusResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedDaemonSetStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1016,6 +1054,7 @@ impl crate::Response for ReplaceNamespacedDaemonSetStatusResponse {
 
 // Generated from operation watchAppsV1beta2DaemonSetForAllNamespaces
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// list or watch objects of kind DaemonSet
     ///
@@ -1046,12 +1085,14 @@ impl DaemonSet {
 }
 
 /// Use `<WatchDaemonSetForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::watch_daemon_set_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchDaemonSetForAllNamespacesResponse {
     Ok(crate::v1_11::apimachinery::pkg::apis::meta::v1::WatchEvent<DaemonSet>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchDaemonSetForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1085,6 +1126,7 @@ impl crate::Response for WatchDaemonSetForAllNamespacesResponse {
 
 // Generated from operation watchAppsV1beta2NamespacedDaemonSet
 
+#[cfg(feature = "api")]
 impl DaemonSet {
     /// list or watch objects of kind DaemonSet
     ///
@@ -1122,12 +1164,14 @@ impl DaemonSet {
 }
 
 /// Use `<WatchNamespacedDaemonSetResponse as Response>::try_from_parts` to parse the HTTP response body of [`DaemonSet::watch_namespaced_daemon_set`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedDaemonSetResponse {
     Ok(crate::v1_11::apimachinery::pkg::apis::meta::v1::WatchEvent<DaemonSet>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedDaemonSetResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

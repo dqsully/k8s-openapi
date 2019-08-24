@@ -14,6 +14,7 @@ pub struct CSIDriver {
 
 // Generated from operation createStorageV1beta1CSIDriver
 
+#[cfg(feature = "api")]
 impl CSIDriver {
     /// create a CSIDriver
     ///
@@ -59,6 +60,7 @@ impl CSIDriver {
 }
 
 /// Optional parameters of [`CSIDriver::create_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateCSIDriverOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -70,6 +72,7 @@ pub struct CreateCSIDriverOptional<'a> {
 }
 
 /// Use `<CreateCSIDriverResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSIDriver::create_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateCSIDriverResponse {
     Ok(crate::v1_14::api::storage::v1beta1::CSIDriver),
@@ -78,6 +81,7 @@ pub enum CreateCSIDriverResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateCSIDriverResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -125,6 +129,7 @@ impl crate::Response for CreateCSIDriverResponse {
 
 // Generated from operation deleteStorageV1beta1CSIDriver
 
+#[cfg(feature = "api")]
 impl CSIDriver {
     /// delete a CSIDriver
     ///
@@ -158,6 +163,7 @@ impl CSIDriver {
 }
 
 /// Use `<DeleteCSIDriverResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSIDriver::delete_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCSIDriverResponse {
     OkStatus(crate::v1_14::apimachinery::pkg::apis::meta::v1::Status),
@@ -166,6 +172,7 @@ pub enum DeleteCSIDriverResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCSIDriverResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -218,6 +225,7 @@ impl crate::Response for DeleteCSIDriverResponse {
 
 // Generated from operation deleteStorageV1beta1CollectionCSIDriver
 
+#[cfg(feature = "api")]
 impl CSIDriver {
     /// delete collection of CSIDriver
     ///
@@ -252,6 +260,7 @@ impl CSIDriver {
 }
 
 /// Use `<DeleteCollectionCSIDriverResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSIDriver::delete_collection_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionCSIDriverResponse {
     OkStatus(crate::v1_14::apimachinery::pkg::apis::meta::v1::Status),
@@ -259,6 +268,7 @@ pub enum DeleteCollectionCSIDriverResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionCSIDriverResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -303,6 +313,7 @@ impl crate::Response for DeleteCollectionCSIDriverResponse {
 
 // Generated from operation listStorageV1beta1CSIDriver
 
+#[cfg(feature = "api")]
 impl CSIDriver {
     /// list or watch objects of kind CSIDriver
     ///
@@ -333,12 +344,14 @@ impl CSIDriver {
 }
 
 /// Use `<ListCSIDriverResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSIDriver::list_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListCSIDriverResponse {
     Ok(crate::v1_14::api::storage::v1beta1::CSIDriverList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListCSIDriverResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -370,6 +383,7 @@ impl crate::Response for ListCSIDriverResponse {
 
 // Generated from operation patchStorageV1beta1CSIDriver
 
+#[cfg(feature = "api")]
 impl CSIDriver {
     /// partially update the specified CSIDriver
     ///
@@ -413,12 +427,14 @@ impl CSIDriver {
 }
 
 /// Use `<PatchCSIDriverResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSIDriver::patch_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchCSIDriverResponse {
     Ok(crate::v1_14::api::storage::v1beta1::CSIDriver),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchCSIDriverResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -450,6 +466,7 @@ impl crate::Response for PatchCSIDriverResponse {
 
 // Generated from operation readStorageV1beta1CSIDriver
 
+#[cfg(feature = "api")]
 impl CSIDriver {
     /// read the specified CSIDriver
     ///
@@ -498,6 +515,7 @@ impl CSIDriver {
 }
 
 /// Optional parameters of [`CSIDriver::read_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadCSIDriverOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'. Deprecated. Planned for removal in 1.18.
@@ -509,12 +527,14 @@ pub struct ReadCSIDriverOptional<'a> {
 }
 
 /// Use `<ReadCSIDriverResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSIDriver::read_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadCSIDriverResponse {
     Ok(crate::v1_14::api::storage::v1beta1::CSIDriver),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadCSIDriverResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -546,6 +566,7 @@ impl crate::Response for ReadCSIDriverResponse {
 
 // Generated from operation replaceStorageV1beta1CSIDriver
 
+#[cfg(feature = "api")]
 impl CSIDriver {
     /// replace the specified CSIDriver
     ///
@@ -598,6 +619,7 @@ impl CSIDriver {
 }
 
 /// Optional parameters of [`CSIDriver::replace_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceCSIDriverOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -609,6 +631,7 @@ pub struct ReplaceCSIDriverOptional<'a> {
 }
 
 /// Use `<ReplaceCSIDriverResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSIDriver::replace_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceCSIDriverResponse {
     Ok(crate::v1_14::api::storage::v1beta1::CSIDriver),
@@ -616,6 +639,7 @@ pub enum ReplaceCSIDriverResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceCSIDriverResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -655,6 +679,7 @@ impl crate::Response for ReplaceCSIDriverResponse {
 
 // Generated from operation watchStorageV1beta1CSIDriver
 
+#[cfg(feature = "api")]
 impl CSIDriver {
     /// list or watch objects of kind CSIDriver
     ///
@@ -685,12 +710,14 @@ impl CSIDriver {
 }
 
 /// Use `<WatchCSIDriverResponse as Response>::try_from_parts` to parse the HTTP response body of [`CSIDriver::watch_csi_driver`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchCSIDriverResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::WatchEvent<CSIDriver>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchCSIDriverResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

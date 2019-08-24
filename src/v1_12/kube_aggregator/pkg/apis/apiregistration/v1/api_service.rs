@@ -16,6 +16,7 @@ pub struct APIService {
 
 // Generated from operation createApiregistrationV1APIService
 
+#[cfg(feature = "api")]
 impl APIService {
     /// create an APIService
     ///
@@ -61,6 +62,7 @@ impl APIService {
 }
 
 /// Optional parameters of [`APIService::create_api_service`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateAPIServiceOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -72,6 +74,7 @@ pub struct CreateAPIServiceOptional<'a> {
 }
 
 /// Use `<CreateAPIServiceResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::create_api_service`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateAPIServiceResponse {
     Ok(crate::v1_12::kube_aggregator::pkg::apis::apiregistration::v1::APIService),
@@ -80,6 +83,7 @@ pub enum CreateAPIServiceResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateAPIServiceResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -127,6 +131,7 @@ impl crate::Response for CreateAPIServiceResponse {
 
 // Generated from operation deleteApiregistrationV1APIService
 
+#[cfg(feature = "api")]
 impl APIService {
     /// delete an APIService
     ///
@@ -160,6 +165,7 @@ impl APIService {
 }
 
 /// Use `<DeleteAPIServiceResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::delete_api_service`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteAPIServiceResponse {
     OkStatus(crate::v1_12::apimachinery::pkg::apis::meta::v1::Status),
@@ -168,6 +174,7 @@ pub enum DeleteAPIServiceResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteAPIServiceResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -220,6 +227,7 @@ impl crate::Response for DeleteAPIServiceResponse {
 
 // Generated from operation deleteApiregistrationV1CollectionAPIService
 
+#[cfg(feature = "api")]
 impl APIService {
     /// delete collection of APIService
     ///
@@ -254,6 +262,7 @@ impl APIService {
 }
 
 /// Use `<DeleteCollectionAPIServiceResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::delete_collection_api_service`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionAPIServiceResponse {
     OkStatus(crate::v1_12::apimachinery::pkg::apis::meta::v1::Status),
@@ -261,6 +270,7 @@ pub enum DeleteCollectionAPIServiceResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionAPIServiceResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -305,6 +315,7 @@ impl crate::Response for DeleteCollectionAPIServiceResponse {
 
 // Generated from operation listApiregistrationV1APIService
 
+#[cfg(feature = "api")]
 impl APIService {
     /// list or watch objects of kind APIService
     ///
@@ -335,12 +346,14 @@ impl APIService {
 }
 
 /// Use `<ListAPIServiceResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::list_api_service`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListAPIServiceResponse {
     Ok(crate::v1_12::kube_aggregator::pkg::apis::apiregistration::v1::APIServiceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListAPIServiceResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -372,6 +385,7 @@ impl crate::Response for ListAPIServiceResponse {
 
 // Generated from operation patchApiregistrationV1APIService
 
+#[cfg(feature = "api")]
 impl APIService {
     /// partially update the specified APIService
     ///
@@ -415,12 +429,14 @@ impl APIService {
 }
 
 /// Use `<PatchAPIServiceResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::patch_api_service`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchAPIServiceResponse {
     Ok(crate::v1_12::kube_aggregator::pkg::apis::apiregistration::v1::APIService),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchAPIServiceResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -452,6 +468,7 @@ impl crate::Response for PatchAPIServiceResponse {
 
 // Generated from operation patchApiregistrationV1APIServiceStatus
 
+#[cfg(feature = "api")]
 impl APIService {
     /// partially update status of the specified APIService
     ///
@@ -495,12 +512,14 @@ impl APIService {
 }
 
 /// Use `<PatchAPIServiceStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::patch_api_service_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchAPIServiceStatusResponse {
     Ok(crate::v1_12::kube_aggregator::pkg::apis::apiregistration::v1::APIService),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchAPIServiceStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -532,6 +551,7 @@ impl crate::Response for PatchAPIServiceStatusResponse {
 
 // Generated from operation readApiregistrationV1APIService
 
+#[cfg(feature = "api")]
 impl APIService {
     /// read the specified APIService
     ///
@@ -580,6 +600,7 @@ impl APIService {
 }
 
 /// Optional parameters of [`APIService::read_api_service`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadAPIServiceOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -591,12 +612,14 @@ pub struct ReadAPIServiceOptional<'a> {
 }
 
 /// Use `<ReadAPIServiceResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::read_api_service`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadAPIServiceResponse {
     Ok(crate::v1_12::kube_aggregator::pkg::apis::apiregistration::v1::APIService),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadAPIServiceResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -628,6 +651,7 @@ impl crate::Response for ReadAPIServiceResponse {
 
 // Generated from operation readApiregistrationV1APIServiceStatus
 
+#[cfg(feature = "api")]
 impl APIService {
     /// read status of the specified APIService
     ///
@@ -668,6 +692,7 @@ impl APIService {
 }
 
 /// Optional parameters of [`APIService::read_api_service_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadAPIServiceStatusOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -675,12 +700,14 @@ pub struct ReadAPIServiceStatusOptional<'a> {
 }
 
 /// Use `<ReadAPIServiceStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::read_api_service_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadAPIServiceStatusResponse {
     Ok(crate::v1_12::kube_aggregator::pkg::apis::apiregistration::v1::APIService),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadAPIServiceStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -712,6 +739,7 @@ impl crate::Response for ReadAPIServiceStatusResponse {
 
 // Generated from operation replaceApiregistrationV1APIService
 
+#[cfg(feature = "api")]
 impl APIService {
     /// replace the specified APIService
     ///
@@ -760,6 +788,7 @@ impl APIService {
 }
 
 /// Optional parameters of [`APIService::replace_api_service`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceAPIServiceOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -769,6 +798,7 @@ pub struct ReplaceAPIServiceOptional<'a> {
 }
 
 /// Use `<ReplaceAPIServiceResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::replace_api_service`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceAPIServiceResponse {
     Ok(crate::v1_12::kube_aggregator::pkg::apis::apiregistration::v1::APIService),
@@ -776,6 +806,7 @@ pub enum ReplaceAPIServiceResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceAPIServiceResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -815,6 +846,7 @@ impl crate::Response for ReplaceAPIServiceResponse {
 
 // Generated from operation replaceApiregistrationV1APIServiceStatus
 
+#[cfg(feature = "api")]
 impl APIService {
     /// replace status of the specified APIService
     ///
@@ -863,6 +895,7 @@ impl APIService {
 }
 
 /// Optional parameters of [`APIService::replace_api_service_status`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceAPIServiceStatusOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -872,6 +905,7 @@ pub struct ReplaceAPIServiceStatusOptional<'a> {
 }
 
 /// Use `<ReplaceAPIServiceStatusResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::replace_api_service_status`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceAPIServiceStatusResponse {
     Ok(crate::v1_12::kube_aggregator::pkg::apis::apiregistration::v1::APIService),
@@ -879,6 +913,7 @@ pub enum ReplaceAPIServiceStatusResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceAPIServiceStatusResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -918,6 +953,7 @@ impl crate::Response for ReplaceAPIServiceStatusResponse {
 
 // Generated from operation watchApiregistrationV1APIService
 
+#[cfg(feature = "api")]
 impl APIService {
     /// list or watch objects of kind APIService
     ///
@@ -948,12 +984,14 @@ impl APIService {
 }
 
 /// Use `<WatchAPIServiceResponse as Response>::try_from_parts` to parse the HTTP response body of [`APIService::watch_api_service`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchAPIServiceResponse {
     Ok(crate::v1_12::apimachinery::pkg::apis::meta::v1::WatchEvent<APIService>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchAPIServiceResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

@@ -17,6 +17,7 @@ pub struct Scale {
 
 // Generated from operation patchAppsV1NamespacedDeploymentScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// partially update scale of the specified Deployment
     ///
@@ -66,12 +67,14 @@ impl Scale {
 }
 
 /// Use `<PatchNamespacedDeploymentScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::patch_namespaced_deployment_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedDeploymentScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedDeploymentScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -103,6 +106,7 @@ impl crate::Response for PatchNamespacedDeploymentScaleResponse {
 
 // Generated from operation patchAppsV1NamespacedReplicaSetScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// partially update scale of the specified ReplicaSet
     ///
@@ -152,12 +156,14 @@ impl Scale {
 }
 
 /// Use `<PatchNamespacedReplicaSetScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::patch_namespaced_replica_set_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedReplicaSetScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedReplicaSetScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -189,6 +195,7 @@ impl crate::Response for PatchNamespacedReplicaSetScaleResponse {
 
 // Generated from operation patchAppsV1NamespacedStatefulSetScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// partially update scale of the specified StatefulSet
     ///
@@ -238,12 +245,14 @@ impl Scale {
 }
 
 /// Use `<PatchNamespacedStatefulSetScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::patch_namespaced_stateful_set_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedStatefulSetScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedStatefulSetScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -275,6 +284,7 @@ impl crate::Response for PatchNamespacedStatefulSetScaleResponse {
 
 // Generated from operation patchCoreV1NamespacedReplicationControllerScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// partially update scale of the specified ReplicationController
     ///
@@ -324,12 +334,14 @@ impl Scale {
 }
 
 /// Use `<PatchNamespacedReplicationControllerScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::patch_namespaced_replication_controller_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedReplicationControllerScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedReplicationControllerScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -361,6 +373,7 @@ impl crate::Response for PatchNamespacedReplicationControllerScaleResponse {
 
 // Generated from operation readAppsV1NamespacedDeploymentScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// read scale of the specified Deployment
     ///
@@ -407,6 +420,7 @@ impl Scale {
 }
 
 /// Optional parameters of [`Scale::read_namespaced_deployment_scale`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedDeploymentScaleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -414,12 +428,14 @@ pub struct ReadNamespacedDeploymentScaleOptional<'a> {
 }
 
 /// Use `<ReadNamespacedDeploymentScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::read_namespaced_deployment_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedDeploymentScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedDeploymentScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -451,6 +467,7 @@ impl crate::Response for ReadNamespacedDeploymentScaleResponse {
 
 // Generated from operation readAppsV1NamespacedReplicaSetScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// read scale of the specified ReplicaSet
     ///
@@ -497,6 +514,7 @@ impl Scale {
 }
 
 /// Optional parameters of [`Scale::read_namespaced_replica_set_scale`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedReplicaSetScaleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -504,12 +522,14 @@ pub struct ReadNamespacedReplicaSetScaleOptional<'a> {
 }
 
 /// Use `<ReadNamespacedReplicaSetScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::read_namespaced_replica_set_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedReplicaSetScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedReplicaSetScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -541,6 +561,7 @@ impl crate::Response for ReadNamespacedReplicaSetScaleResponse {
 
 // Generated from operation readAppsV1NamespacedStatefulSetScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// read scale of the specified StatefulSet
     ///
@@ -587,6 +608,7 @@ impl Scale {
 }
 
 /// Optional parameters of [`Scale::read_namespaced_stateful_set_scale`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedStatefulSetScaleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -594,12 +616,14 @@ pub struct ReadNamespacedStatefulSetScaleOptional<'a> {
 }
 
 /// Use `<ReadNamespacedStatefulSetScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::read_namespaced_stateful_set_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedStatefulSetScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedStatefulSetScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -631,6 +655,7 @@ impl crate::Response for ReadNamespacedStatefulSetScaleResponse {
 
 // Generated from operation readCoreV1NamespacedReplicationControllerScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// read scale of the specified ReplicationController
     ///
@@ -677,6 +702,7 @@ impl Scale {
 }
 
 /// Optional parameters of [`Scale::read_namespaced_replication_controller_scale`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedReplicationControllerScaleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -684,12 +710,14 @@ pub struct ReadNamespacedReplicationControllerScaleOptional<'a> {
 }
 
 /// Use `<ReadNamespacedReplicationControllerScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::read_namespaced_replication_controller_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedReplicationControllerScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedReplicationControllerScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -721,6 +749,7 @@ impl crate::Response for ReadNamespacedReplicationControllerScaleResponse {
 
 // Generated from operation replaceAppsV1NamespacedDeploymentScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// replace scale of the specified Deployment
     ///
@@ -771,6 +800,7 @@ impl Scale {
 }
 
 /// Optional parameters of [`Scale::replace_namespaced_deployment_scale`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedDeploymentScaleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -778,6 +808,7 @@ pub struct ReplaceNamespacedDeploymentScaleOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedDeploymentScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::replace_namespaced_deployment_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedDeploymentScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
@@ -785,6 +816,7 @@ pub enum ReplaceNamespacedDeploymentScaleResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedDeploymentScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -824,6 +856,7 @@ impl crate::Response for ReplaceNamespacedDeploymentScaleResponse {
 
 // Generated from operation replaceAppsV1NamespacedReplicaSetScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// replace scale of the specified ReplicaSet
     ///
@@ -874,6 +907,7 @@ impl Scale {
 }
 
 /// Optional parameters of [`Scale::replace_namespaced_replica_set_scale`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedReplicaSetScaleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -881,6 +915,7 @@ pub struct ReplaceNamespacedReplicaSetScaleOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedReplicaSetScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::replace_namespaced_replica_set_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedReplicaSetScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
@@ -888,6 +923,7 @@ pub enum ReplaceNamespacedReplicaSetScaleResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedReplicaSetScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -927,6 +963,7 @@ impl crate::Response for ReplaceNamespacedReplicaSetScaleResponse {
 
 // Generated from operation replaceAppsV1NamespacedStatefulSetScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// replace scale of the specified StatefulSet
     ///
@@ -977,6 +1014,7 @@ impl Scale {
 }
 
 /// Optional parameters of [`Scale::replace_namespaced_stateful_set_scale`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedStatefulSetScaleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -984,6 +1022,7 @@ pub struct ReplaceNamespacedStatefulSetScaleOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedStatefulSetScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::replace_namespaced_stateful_set_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedStatefulSetScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
@@ -991,6 +1030,7 @@ pub enum ReplaceNamespacedStatefulSetScaleResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedStatefulSetScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1030,6 +1070,7 @@ impl crate::Response for ReplaceNamespacedStatefulSetScaleResponse {
 
 // Generated from operation replaceCoreV1NamespacedReplicationControllerScale
 
+#[cfg(feature = "api")]
 impl Scale {
     /// replace scale of the specified ReplicationController
     ///
@@ -1080,6 +1121,7 @@ impl Scale {
 }
 
 /// Optional parameters of [`Scale::replace_namespaced_replication_controller_scale`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedReplicationControllerScaleOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -1087,6 +1129,7 @@ pub struct ReplaceNamespacedReplicationControllerScaleOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedReplicationControllerScaleResponse as Response>::try_from_parts` to parse the HTTP response body of [`Scale::replace_namespaced_replication_controller_scale`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedReplicationControllerScaleResponse {
     Ok(crate::v1_9::api::autoscaling::v1::Scale),
@@ -1094,6 +1137,7 @@ pub enum ReplaceNamespacedReplicationControllerScaleResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedReplicationControllerScaleResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

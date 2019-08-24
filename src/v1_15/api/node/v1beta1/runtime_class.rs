@@ -14,6 +14,7 @@ pub struct RuntimeClass {
 
 // Generated from operation createNodeV1beta1RuntimeClass
 
+#[cfg(feature = "api")]
 impl RuntimeClass {
     /// create a RuntimeClass
     ///
@@ -59,6 +60,7 @@ impl RuntimeClass {
 }
 
 /// Optional parameters of [`RuntimeClass::create_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateRuntimeClassOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -70,6 +72,7 @@ pub struct CreateRuntimeClassOptional<'a> {
 }
 
 /// Use `<CreateRuntimeClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`RuntimeClass::create_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateRuntimeClassResponse {
     Ok(crate::v1_15::api::node::v1beta1::RuntimeClass),
@@ -78,6 +81,7 @@ pub enum CreateRuntimeClassResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateRuntimeClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -125,6 +129,7 @@ impl crate::Response for CreateRuntimeClassResponse {
 
 // Generated from operation deleteNodeV1beta1CollectionRuntimeClass
 
+#[cfg(feature = "api")]
 impl RuntimeClass {
     /// delete collection of RuntimeClass
     ///
@@ -159,6 +164,7 @@ impl RuntimeClass {
 }
 
 /// Use `<DeleteCollectionRuntimeClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`RuntimeClass::delete_collection_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionRuntimeClassResponse {
     OkStatus(crate::v1_15::apimachinery::pkg::apis::meta::v1::Status),
@@ -166,6 +172,7 @@ pub enum DeleteCollectionRuntimeClassResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionRuntimeClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -210,6 +217,7 @@ impl crate::Response for DeleteCollectionRuntimeClassResponse {
 
 // Generated from operation deleteNodeV1beta1RuntimeClass
 
+#[cfg(feature = "api")]
 impl RuntimeClass {
     /// delete a RuntimeClass
     ///
@@ -243,6 +251,7 @@ impl RuntimeClass {
 }
 
 /// Use `<DeleteRuntimeClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`RuntimeClass::delete_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteRuntimeClassResponse {
     OkStatus(crate::v1_15::apimachinery::pkg::apis::meta::v1::Status),
@@ -251,6 +260,7 @@ pub enum DeleteRuntimeClassResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteRuntimeClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -303,6 +313,7 @@ impl crate::Response for DeleteRuntimeClassResponse {
 
 // Generated from operation listNodeV1beta1RuntimeClass
 
+#[cfg(feature = "api")]
 impl RuntimeClass {
     /// list or watch objects of kind RuntimeClass
     ///
@@ -333,12 +344,14 @@ impl RuntimeClass {
 }
 
 /// Use `<ListRuntimeClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`RuntimeClass::list_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListRuntimeClassResponse {
     Ok(crate::v1_15::api::node::v1beta1::RuntimeClassList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListRuntimeClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -370,6 +383,7 @@ impl crate::Response for ListRuntimeClassResponse {
 
 // Generated from operation patchNodeV1beta1RuntimeClass
 
+#[cfg(feature = "api")]
 impl RuntimeClass {
     /// partially update the specified RuntimeClass
     ///
@@ -413,12 +427,14 @@ impl RuntimeClass {
 }
 
 /// Use `<PatchRuntimeClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`RuntimeClass::patch_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchRuntimeClassResponse {
     Ok(crate::v1_15::api::node::v1beta1::RuntimeClass),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchRuntimeClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -450,6 +466,7 @@ impl crate::Response for PatchRuntimeClassResponse {
 
 // Generated from operation readNodeV1beta1RuntimeClass
 
+#[cfg(feature = "api")]
 impl RuntimeClass {
     /// read the specified RuntimeClass
     ///
@@ -498,6 +515,7 @@ impl RuntimeClass {
 }
 
 /// Optional parameters of [`RuntimeClass::read_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadRuntimeClassOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'. Deprecated. Planned for removal in 1.18.
@@ -509,12 +527,14 @@ pub struct ReadRuntimeClassOptional<'a> {
 }
 
 /// Use `<ReadRuntimeClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`RuntimeClass::read_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadRuntimeClassResponse {
     Ok(crate::v1_15::api::node::v1beta1::RuntimeClass),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadRuntimeClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -546,6 +566,7 @@ impl crate::Response for ReadRuntimeClassResponse {
 
 // Generated from operation replaceNodeV1beta1RuntimeClass
 
+#[cfg(feature = "api")]
 impl RuntimeClass {
     /// replace the specified RuntimeClass
     ///
@@ -598,6 +619,7 @@ impl RuntimeClass {
 }
 
 /// Optional parameters of [`RuntimeClass::replace_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceRuntimeClassOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -609,6 +631,7 @@ pub struct ReplaceRuntimeClassOptional<'a> {
 }
 
 /// Use `<ReplaceRuntimeClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`RuntimeClass::replace_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceRuntimeClassResponse {
     Ok(crate::v1_15::api::node::v1beta1::RuntimeClass),
@@ -616,6 +639,7 @@ pub enum ReplaceRuntimeClassResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceRuntimeClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -655,6 +679,7 @@ impl crate::Response for ReplaceRuntimeClassResponse {
 
 // Generated from operation watchNodeV1beta1RuntimeClass
 
+#[cfg(feature = "api")]
 impl RuntimeClass {
     /// list or watch objects of kind RuntimeClass
     ///
@@ -685,12 +710,14 @@ impl RuntimeClass {
 }
 
 /// Use `<WatchRuntimeClassResponse as Response>::try_from_parts` to parse the HTTP response body of [`RuntimeClass::watch_runtime_class`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchRuntimeClassResponse {
     Ok(crate::v1_15::apimachinery::pkg::apis::meta::v1::WatchEvent<RuntimeClass>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchRuntimeClassResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

@@ -25,6 +25,7 @@ pub struct Endpoints {
 
 // Generated from operation createCoreV1NamespacedEndpoints
 
+#[cfg(feature = "api")]
 impl Endpoints {
     /// create Endpoints
     ///
@@ -77,6 +78,7 @@ impl Endpoints {
 }
 
 /// Optional parameters of [`Endpoints::create_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedEndpointsOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -88,6 +90,7 @@ pub struct CreateNamespacedEndpointsOptional<'a> {
 }
 
 /// Use `<CreateNamespacedEndpointsResponse as Response>::try_from_parts` to parse the HTTP response body of [`Endpoints::create_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedEndpointsResponse {
     Ok(crate::v1_13::api::core::v1::Endpoints),
@@ -96,6 +99,7 @@ pub enum CreateNamespacedEndpointsResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedEndpointsResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -143,6 +147,7 @@ impl crate::Response for CreateNamespacedEndpointsResponse {
 
 // Generated from operation deleteCoreV1CollectionNamespacedEndpoints
 
+#[cfg(feature = "api")]
 impl Endpoints {
     /// delete collection of Endpoints
     ///
@@ -184,6 +189,7 @@ impl Endpoints {
 }
 
 /// Use `<DeleteCollectionNamespacedEndpointsResponse as Response>::try_from_parts` to parse the HTTP response body of [`Endpoints::delete_collection_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedEndpointsResponse {
     OkStatus(crate::v1_13::apimachinery::pkg::apis::meta::v1::Status),
@@ -191,6 +197,7 @@ pub enum DeleteCollectionNamespacedEndpointsResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedEndpointsResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -235,6 +242,7 @@ impl crate::Response for DeleteCollectionNamespacedEndpointsResponse {
 
 // Generated from operation deleteCoreV1NamespacedEndpoints
 
+#[cfg(feature = "api")]
 impl Endpoints {
     /// delete Endpoints
     ///
@@ -274,6 +282,7 @@ impl Endpoints {
 }
 
 /// Use `<DeleteNamespacedEndpointsResponse as Response>::try_from_parts` to parse the HTTP response body of [`Endpoints::delete_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedEndpointsResponse {
     OkStatus(crate::v1_13::apimachinery::pkg::apis::meta::v1::Status),
@@ -282,6 +291,7 @@ pub enum DeleteNamespacedEndpointsResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedEndpointsResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -334,6 +344,7 @@ impl crate::Response for DeleteNamespacedEndpointsResponse {
 
 // Generated from operation listCoreV1EndpointsForAllNamespaces
 
+#[cfg(feature = "api")]
 impl Endpoints {
     /// list or watch objects of kind Endpoints
     ///
@@ -364,12 +375,14 @@ impl Endpoints {
 }
 
 /// Use `<ListEndpointsForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`Endpoints::list_endpoints_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListEndpointsForAllNamespacesResponse {
     Ok(crate::v1_13::api::core::v1::EndpointsList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListEndpointsForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -401,6 +414,7 @@ impl crate::Response for ListEndpointsForAllNamespacesResponse {
 
 // Generated from operation listCoreV1NamespacedEndpoints
 
+#[cfg(feature = "api")]
 impl Endpoints {
     /// list or watch objects of kind Endpoints
     ///
@@ -438,12 +452,14 @@ impl Endpoints {
 }
 
 /// Use `<ListNamespacedEndpointsResponse as Response>::try_from_parts` to parse the HTTP response body of [`Endpoints::list_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedEndpointsResponse {
     Ok(crate::v1_13::api::core::v1::EndpointsList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedEndpointsResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -475,6 +491,7 @@ impl crate::Response for ListNamespacedEndpointsResponse {
 
 // Generated from operation patchCoreV1NamespacedEndpoints
 
+#[cfg(feature = "api")]
 impl Endpoints {
     /// partially update the specified Endpoints
     ///
@@ -524,12 +541,14 @@ impl Endpoints {
 }
 
 /// Use `<PatchNamespacedEndpointsResponse as Response>::try_from_parts` to parse the HTTP response body of [`Endpoints::patch_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedEndpointsResponse {
     Ok(crate::v1_13::api::core::v1::Endpoints),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedEndpointsResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -561,6 +580,7 @@ impl crate::Response for PatchNamespacedEndpointsResponse {
 
 // Generated from operation readCoreV1NamespacedEndpoints
 
+#[cfg(feature = "api")]
 impl Endpoints {
     /// read the specified Endpoints
     ///
@@ -615,6 +635,7 @@ impl Endpoints {
 }
 
 /// Optional parameters of [`Endpoints::read_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedEndpointsOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -626,12 +647,14 @@ pub struct ReadNamespacedEndpointsOptional<'a> {
 }
 
 /// Use `<ReadNamespacedEndpointsResponse as Response>::try_from_parts` to parse the HTTP response body of [`Endpoints::read_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedEndpointsResponse {
     Ok(crate::v1_13::api::core::v1::Endpoints),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedEndpointsResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -663,6 +686,7 @@ impl crate::Response for ReadNamespacedEndpointsResponse {
 
 // Generated from operation replaceCoreV1NamespacedEndpoints
 
+#[cfg(feature = "api")]
 impl Endpoints {
     /// replace the specified Endpoints
     ///
@@ -717,6 +741,7 @@ impl Endpoints {
 }
 
 /// Optional parameters of [`Endpoints::replace_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedEndpointsOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -726,6 +751,7 @@ pub struct ReplaceNamespacedEndpointsOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedEndpointsResponse as Response>::try_from_parts` to parse the HTTP response body of [`Endpoints::replace_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedEndpointsResponse {
     Ok(crate::v1_13::api::core::v1::Endpoints),
@@ -733,6 +759,7 @@ pub enum ReplaceNamespacedEndpointsResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedEndpointsResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -772,6 +799,7 @@ impl crate::Response for ReplaceNamespacedEndpointsResponse {
 
 // Generated from operation watchCoreV1EndpointsForAllNamespaces
 
+#[cfg(feature = "api")]
 impl Endpoints {
     /// list or watch objects of kind Endpoints
     ///
@@ -802,12 +830,14 @@ impl Endpoints {
 }
 
 /// Use `<WatchEndpointsForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`Endpoints::watch_endpoints_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchEndpointsForAllNamespacesResponse {
     Ok(crate::v1_13::apimachinery::pkg::apis::meta::v1::WatchEvent<Endpoints>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchEndpointsForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -841,6 +871,7 @@ impl crate::Response for WatchEndpointsForAllNamespacesResponse {
 
 // Generated from operation watchCoreV1NamespacedEndpoints
 
+#[cfg(feature = "api")]
 impl Endpoints {
     /// list or watch objects of kind Endpoints
     ///
@@ -878,12 +909,14 @@ impl Endpoints {
 }
 
 /// Use `<WatchNamespacedEndpointsResponse as Response>::try_from_parts` to parse the HTTP response body of [`Endpoints::watch_namespaced_endpoints`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedEndpointsResponse {
     Ok(crate::v1_13::apimachinery::pkg::apis::meta::v1::WatchEvent<Endpoints>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedEndpointsResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

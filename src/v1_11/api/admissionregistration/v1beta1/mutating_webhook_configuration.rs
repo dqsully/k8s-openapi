@@ -14,6 +14,7 @@ pub struct MutatingWebhookConfiguration {
 
 // Generated from operation createAdmissionregistrationV1beta1MutatingWebhookConfiguration
 
+#[cfg(feature = "api")]
 impl MutatingWebhookConfiguration {
     /// create a MutatingWebhookConfiguration
     ///
@@ -51,6 +52,7 @@ impl MutatingWebhookConfiguration {
 }
 
 /// Optional parameters of [`MutatingWebhookConfiguration::create_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateMutatingWebhookConfigurationOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -58,6 +60,7 @@ pub struct CreateMutatingWebhookConfigurationOptional<'a> {
 }
 
 /// Use `<CreateMutatingWebhookConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`MutatingWebhookConfiguration::create_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateMutatingWebhookConfigurationResponse {
     Ok(crate::v1_11::api::admissionregistration::v1beta1::MutatingWebhookConfiguration),
@@ -66,6 +69,7 @@ pub enum CreateMutatingWebhookConfigurationResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateMutatingWebhookConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -113,6 +117,7 @@ impl crate::Response for CreateMutatingWebhookConfigurationResponse {
 
 // Generated from operation deleteAdmissionregistrationV1beta1CollectionMutatingWebhookConfiguration
 
+#[cfg(feature = "api")]
 impl MutatingWebhookConfiguration {
     /// delete collection of MutatingWebhookConfiguration
     ///
@@ -147,6 +152,7 @@ impl MutatingWebhookConfiguration {
 }
 
 /// Use `<DeleteCollectionMutatingWebhookConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`MutatingWebhookConfiguration::delete_collection_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionMutatingWebhookConfigurationResponse {
     OkStatus(crate::v1_11::apimachinery::pkg::apis::meta::v1::Status),
@@ -154,6 +160,7 @@ pub enum DeleteCollectionMutatingWebhookConfigurationResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionMutatingWebhookConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -198,6 +205,7 @@ impl crate::Response for DeleteCollectionMutatingWebhookConfigurationResponse {
 
 // Generated from operation deleteAdmissionregistrationV1beta1MutatingWebhookConfiguration
 
+#[cfg(feature = "api")]
 impl MutatingWebhookConfiguration {
     /// delete a MutatingWebhookConfiguration
     ///
@@ -231,6 +239,7 @@ impl MutatingWebhookConfiguration {
 }
 
 /// Use `<DeleteMutatingWebhookConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`MutatingWebhookConfiguration::delete_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteMutatingWebhookConfigurationResponse {
     OkStatus(crate::v1_11::apimachinery::pkg::apis::meta::v1::Status),
@@ -238,6 +247,7 @@ pub enum DeleteMutatingWebhookConfigurationResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteMutatingWebhookConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -282,6 +292,7 @@ impl crate::Response for DeleteMutatingWebhookConfigurationResponse {
 
 // Generated from operation listAdmissionregistrationV1beta1MutatingWebhookConfiguration
 
+#[cfg(feature = "api")]
 impl MutatingWebhookConfiguration {
     /// list or watch objects of kind MutatingWebhookConfiguration
     ///
@@ -312,12 +323,14 @@ impl MutatingWebhookConfiguration {
 }
 
 /// Use `<ListMutatingWebhookConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`MutatingWebhookConfiguration::list_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListMutatingWebhookConfigurationResponse {
     Ok(crate::v1_11::api::admissionregistration::v1beta1::MutatingWebhookConfigurationList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListMutatingWebhookConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -349,6 +362,7 @@ impl crate::Response for ListMutatingWebhookConfigurationResponse {
 
 // Generated from operation patchAdmissionregistrationV1beta1MutatingWebhookConfiguration
 
+#[cfg(feature = "api")]
 impl MutatingWebhookConfiguration {
     /// partially update the specified MutatingWebhookConfiguration
     ///
@@ -392,12 +406,14 @@ impl MutatingWebhookConfiguration {
 }
 
 /// Use `<PatchMutatingWebhookConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`MutatingWebhookConfiguration::patch_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchMutatingWebhookConfigurationResponse {
     Ok(crate::v1_11::api::admissionregistration::v1beta1::MutatingWebhookConfiguration),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchMutatingWebhookConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -429,6 +445,7 @@ impl crate::Response for PatchMutatingWebhookConfigurationResponse {
 
 // Generated from operation readAdmissionregistrationV1beta1MutatingWebhookConfiguration
 
+#[cfg(feature = "api")]
 impl MutatingWebhookConfiguration {
     /// read the specified MutatingWebhookConfiguration
     ///
@@ -477,6 +494,7 @@ impl MutatingWebhookConfiguration {
 }
 
 /// Optional parameters of [`MutatingWebhookConfiguration::read_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadMutatingWebhookConfigurationOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -488,12 +506,14 @@ pub struct ReadMutatingWebhookConfigurationOptional<'a> {
 }
 
 /// Use `<ReadMutatingWebhookConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`MutatingWebhookConfiguration::read_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadMutatingWebhookConfigurationResponse {
     Ok(crate::v1_11::api::admissionregistration::v1beta1::MutatingWebhookConfiguration),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadMutatingWebhookConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -525,6 +545,7 @@ impl crate::Response for ReadMutatingWebhookConfigurationResponse {
 
 // Generated from operation replaceAdmissionregistrationV1beta1MutatingWebhookConfiguration
 
+#[cfg(feature = "api")]
 impl MutatingWebhookConfiguration {
     /// replace the specified MutatingWebhookConfiguration
     ///
@@ -569,6 +590,7 @@ impl MutatingWebhookConfiguration {
 }
 
 /// Optional parameters of [`MutatingWebhookConfiguration::replace_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceMutatingWebhookConfigurationOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -576,6 +598,7 @@ pub struct ReplaceMutatingWebhookConfigurationOptional<'a> {
 }
 
 /// Use `<ReplaceMutatingWebhookConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`MutatingWebhookConfiguration::replace_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceMutatingWebhookConfigurationResponse {
     Ok(crate::v1_11::api::admissionregistration::v1beta1::MutatingWebhookConfiguration),
@@ -583,6 +606,7 @@ pub enum ReplaceMutatingWebhookConfigurationResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceMutatingWebhookConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -622,6 +646,7 @@ impl crate::Response for ReplaceMutatingWebhookConfigurationResponse {
 
 // Generated from operation watchAdmissionregistrationV1beta1MutatingWebhookConfiguration
 
+#[cfg(feature = "api")]
 impl MutatingWebhookConfiguration {
     /// list or watch objects of kind MutatingWebhookConfiguration
     ///
@@ -652,12 +677,14 @@ impl MutatingWebhookConfiguration {
 }
 
 /// Use `<WatchMutatingWebhookConfigurationResponse as Response>::try_from_parts` to parse the HTTP response body of [`MutatingWebhookConfiguration::watch_mutating_webhook_configuration`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchMutatingWebhookConfigurationResponse {
     Ok(crate::v1_11::apimachinery::pkg::apis::meta::v1::WatchEvent<MutatingWebhookConfiguration>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchMutatingWebhookConfigurationResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

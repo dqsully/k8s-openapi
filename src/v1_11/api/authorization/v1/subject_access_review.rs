@@ -16,6 +16,7 @@ pub struct SubjectAccessReview {
 
 // Generated from operation createAuthorizationV1SubjectAccessReview
 
+#[cfg(feature = "api")]
 impl SubjectAccessReview {
     /// create a SubjectAccessReview
     ///
@@ -53,6 +54,7 @@ impl SubjectAccessReview {
 }
 
 /// Optional parameters of [`SubjectAccessReview::create_subject_access_review`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateSubjectAccessReviewOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -60,6 +62,7 @@ pub struct CreateSubjectAccessReviewOptional<'a> {
 }
 
 /// Use `<CreateSubjectAccessReviewResponse as Response>::try_from_parts` to parse the HTTP response body of [`SubjectAccessReview::create_subject_access_review`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateSubjectAccessReviewResponse {
     Ok(crate::v1_11::api::authorization::v1::SubjectAccessReview),
@@ -68,6 +71,7 @@ pub enum CreateSubjectAccessReviewResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateSubjectAccessReviewResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

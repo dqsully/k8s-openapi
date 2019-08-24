@@ -1,23 +1,15 @@
 
 mod delete_optional;
-pub use self::delete_optional::{
-    DeleteOptional,
-};
+pub use self::delete_optional::DeleteOptional;
 
 mod list_optional;
-pub use self::list_optional::{
-    ListOptional,
-};
+pub use self::list_optional::ListOptional;
 
 mod patch_optional;
-pub use self::patch_optional::{
-    PatchOptional,
-};
+pub use self::patch_optional::PatchOptional;
 
 mod watch_optional;
-pub use self::watch_optional::{
-    WatchOptional,
-};
+pub use self::watch_optional::WatchOptional;
 
 pub mod api;
 
@@ -29,6 +21,7 @@ pub mod kube_aggregator;
 
 // Generated from operation getAPIVersions
 
+#[cfg(feature = "api")]
 /// get available API versions
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAPIVersionsResponse`]`>` constructor, or [`GetAPIVersionsResponse`] directly, to parse the HTTP response.
@@ -45,12 +38,14 @@ pub fn get_api_versions(
 }
 
 /// Use `<GetAPIVersionsResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_api_versions`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAPIVersionsResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroupList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAPIVersionsResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -82,6 +77,7 @@ impl crate::Response for GetAPIVersionsResponse {
 
 // Generated from operation getAdmissionregistrationAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAdmissionregistrationAPIGroupResponse`]`>` constructor, or [`GetAdmissionregistrationAPIGroupResponse`] directly, to parse the HTTP response.
@@ -98,12 +94,14 @@ pub fn get_admissionregistration_api_group(
 }
 
 /// Use `<GetAdmissionregistrationAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_admissionregistration_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAdmissionregistrationAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAdmissionregistrationAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -135,6 +133,7 @@ impl crate::Response for GetAdmissionregistrationAPIGroupResponse {
 
 // Generated from operation getAdmissionregistrationV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAdmissionregistrationV1beta1APIResourcesResponse`]`>` constructor, or [`GetAdmissionregistrationV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -151,12 +150,14 @@ pub fn get_admissionregistration_v1beta1_api_resources(
 }
 
 /// Use `<GetAdmissionregistrationV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_admissionregistration_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAdmissionregistrationV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAdmissionregistrationV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -188,6 +189,7 @@ impl crate::Response for GetAdmissionregistrationV1beta1APIResourcesResponse {
 
 // Generated from operation getApiextensionsAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetApiextensionsAPIGroupResponse`]`>` constructor, or [`GetApiextensionsAPIGroupResponse`] directly, to parse the HTTP response.
@@ -204,12 +206,14 @@ pub fn get_apiextensions_api_group(
 }
 
 /// Use `<GetApiextensionsAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_apiextensions_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetApiextensionsAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetApiextensionsAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -241,6 +245,7 @@ impl crate::Response for GetApiextensionsAPIGroupResponse {
 
 // Generated from operation getApiextensionsV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetApiextensionsV1beta1APIResourcesResponse`]`>` constructor, or [`GetApiextensionsV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -257,12 +262,14 @@ pub fn get_apiextensions_v1beta1_api_resources(
 }
 
 /// Use `<GetApiextensionsV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_apiextensions_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetApiextensionsV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetApiextensionsV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -294,6 +301,7 @@ impl crate::Response for GetApiextensionsV1beta1APIResourcesResponse {
 
 // Generated from operation getApiregistrationAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetApiregistrationAPIGroupResponse`]`>` constructor, or [`GetApiregistrationAPIGroupResponse`] directly, to parse the HTTP response.
@@ -310,12 +318,14 @@ pub fn get_apiregistration_api_group(
 }
 
 /// Use `<GetApiregistrationAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_apiregistration_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetApiregistrationAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetApiregistrationAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -347,6 +357,7 @@ impl crate::Response for GetApiregistrationAPIGroupResponse {
 
 // Generated from operation getApiregistrationV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetApiregistrationV1APIResourcesResponse`]`>` constructor, or [`GetApiregistrationV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -363,12 +374,14 @@ pub fn get_apiregistration_v1_api_resources(
 }
 
 /// Use `<GetApiregistrationV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_apiregistration_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetApiregistrationV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetApiregistrationV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -400,6 +413,7 @@ impl crate::Response for GetApiregistrationV1APIResourcesResponse {
 
 // Generated from operation getApiregistrationV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetApiregistrationV1beta1APIResourcesResponse`]`>` constructor, or [`GetApiregistrationV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -416,12 +430,14 @@ pub fn get_apiregistration_v1beta1_api_resources(
 }
 
 /// Use `<GetApiregistrationV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_apiregistration_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetApiregistrationV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetApiregistrationV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -453,6 +469,7 @@ impl crate::Response for GetApiregistrationV1beta1APIResourcesResponse {
 
 // Generated from operation getAppsAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAppsAPIGroupResponse`]`>` constructor, or [`GetAppsAPIGroupResponse`] directly, to parse the HTTP response.
@@ -469,12 +486,14 @@ pub fn get_apps_api_group(
 }
 
 /// Use `<GetAppsAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_apps_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAppsAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAppsAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -506,6 +525,7 @@ impl crate::Response for GetAppsAPIGroupResponse {
 
 // Generated from operation getAppsV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAppsV1APIResourcesResponse`]`>` constructor, or [`GetAppsV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -522,12 +542,14 @@ pub fn get_apps_v1_api_resources(
 }
 
 /// Use `<GetAppsV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_apps_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAppsV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAppsV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -559,6 +581,7 @@ impl crate::Response for GetAppsV1APIResourcesResponse {
 
 // Generated from operation getAppsV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAppsV1beta1APIResourcesResponse`]`>` constructor, or [`GetAppsV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -575,12 +598,14 @@ pub fn get_apps_v1beta1_api_resources(
 }
 
 /// Use `<GetAppsV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_apps_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAppsV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAppsV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -612,6 +637,7 @@ impl crate::Response for GetAppsV1beta1APIResourcesResponse {
 
 // Generated from operation getAppsV1beta2APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAppsV1beta2APIResourcesResponse`]`>` constructor, or [`GetAppsV1beta2APIResourcesResponse`] directly, to parse the HTTP response.
@@ -628,12 +654,14 @@ pub fn get_apps_v1beta2_api_resources(
 }
 
 /// Use `<GetAppsV1beta2APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_apps_v1beta2_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAppsV1beta2APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAppsV1beta2APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -665,6 +693,7 @@ impl crate::Response for GetAppsV1beta2APIResourcesResponse {
 
 // Generated from operation getAuditregistrationAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAuditregistrationAPIGroupResponse`]`>` constructor, or [`GetAuditregistrationAPIGroupResponse`] directly, to parse the HTTP response.
@@ -681,12 +710,14 @@ pub fn get_auditregistration_api_group(
 }
 
 /// Use `<GetAuditregistrationAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_auditregistration_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAuditregistrationAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAuditregistrationAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -718,6 +749,7 @@ impl crate::Response for GetAuditregistrationAPIGroupResponse {
 
 // Generated from operation getAuditregistrationV1alpha1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAuditregistrationV1alpha1APIResourcesResponse`]`>` constructor, or [`GetAuditregistrationV1alpha1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -734,12 +766,14 @@ pub fn get_auditregistration_v1alpha1_api_resources(
 }
 
 /// Use `<GetAuditregistrationV1alpha1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_auditregistration_v1alpha1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAuditregistrationV1alpha1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAuditregistrationV1alpha1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -771,6 +805,7 @@ impl crate::Response for GetAuditregistrationV1alpha1APIResourcesResponse {
 
 // Generated from operation getAuthenticationAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAuthenticationAPIGroupResponse`]`>` constructor, or [`GetAuthenticationAPIGroupResponse`] directly, to parse the HTTP response.
@@ -787,12 +822,14 @@ pub fn get_authentication_api_group(
 }
 
 /// Use `<GetAuthenticationAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_authentication_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAuthenticationAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAuthenticationAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -824,6 +861,7 @@ impl crate::Response for GetAuthenticationAPIGroupResponse {
 
 // Generated from operation getAuthenticationV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAuthenticationV1APIResourcesResponse`]`>` constructor, or [`GetAuthenticationV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -840,12 +878,14 @@ pub fn get_authentication_v1_api_resources(
 }
 
 /// Use `<GetAuthenticationV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_authentication_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAuthenticationV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAuthenticationV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -877,6 +917,7 @@ impl crate::Response for GetAuthenticationV1APIResourcesResponse {
 
 // Generated from operation getAuthenticationV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAuthenticationV1beta1APIResourcesResponse`]`>` constructor, or [`GetAuthenticationV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -893,12 +934,14 @@ pub fn get_authentication_v1beta1_api_resources(
 }
 
 /// Use `<GetAuthenticationV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_authentication_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAuthenticationV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAuthenticationV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -930,6 +973,7 @@ impl crate::Response for GetAuthenticationV1beta1APIResourcesResponse {
 
 // Generated from operation getAuthorizationAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAuthorizationAPIGroupResponse`]`>` constructor, or [`GetAuthorizationAPIGroupResponse`] directly, to parse the HTTP response.
@@ -946,12 +990,14 @@ pub fn get_authorization_api_group(
 }
 
 /// Use `<GetAuthorizationAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_authorization_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAuthorizationAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAuthorizationAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -983,6 +1029,7 @@ impl crate::Response for GetAuthorizationAPIGroupResponse {
 
 // Generated from operation getAuthorizationV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAuthorizationV1APIResourcesResponse`]`>` constructor, or [`GetAuthorizationV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -999,12 +1046,14 @@ pub fn get_authorization_v1_api_resources(
 }
 
 /// Use `<GetAuthorizationV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_authorization_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAuthorizationV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAuthorizationV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1036,6 +1085,7 @@ impl crate::Response for GetAuthorizationV1APIResourcesResponse {
 
 // Generated from operation getAuthorizationV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAuthorizationV1beta1APIResourcesResponse`]`>` constructor, or [`GetAuthorizationV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1052,12 +1102,14 @@ pub fn get_authorization_v1beta1_api_resources(
 }
 
 /// Use `<GetAuthorizationV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_authorization_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAuthorizationV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAuthorizationV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1089,6 +1141,7 @@ impl crate::Response for GetAuthorizationV1beta1APIResourcesResponse {
 
 // Generated from operation getAutoscalingAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAutoscalingAPIGroupResponse`]`>` constructor, or [`GetAutoscalingAPIGroupResponse`] directly, to parse the HTTP response.
@@ -1105,12 +1158,14 @@ pub fn get_autoscaling_api_group(
 }
 
 /// Use `<GetAutoscalingAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_autoscaling_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAutoscalingAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAutoscalingAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1142,6 +1197,7 @@ impl crate::Response for GetAutoscalingAPIGroupResponse {
 
 // Generated from operation getAutoscalingV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAutoscalingV1APIResourcesResponse`]`>` constructor, or [`GetAutoscalingV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1158,12 +1214,14 @@ pub fn get_autoscaling_v1_api_resources(
 }
 
 /// Use `<GetAutoscalingV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_autoscaling_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAutoscalingV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAutoscalingV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1195,6 +1253,7 @@ impl crate::Response for GetAutoscalingV1APIResourcesResponse {
 
 // Generated from operation getAutoscalingV2beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAutoscalingV2beta1APIResourcesResponse`]`>` constructor, or [`GetAutoscalingV2beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1211,12 +1270,14 @@ pub fn get_autoscaling_v2beta1_api_resources(
 }
 
 /// Use `<GetAutoscalingV2beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_autoscaling_v2beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAutoscalingV2beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAutoscalingV2beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1248,6 +1309,7 @@ impl crate::Response for GetAutoscalingV2beta1APIResourcesResponse {
 
 // Generated from operation getAutoscalingV2beta2APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetAutoscalingV2beta2APIResourcesResponse`]`>` constructor, or [`GetAutoscalingV2beta2APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1264,12 +1326,14 @@ pub fn get_autoscaling_v2beta2_api_resources(
 }
 
 /// Use `<GetAutoscalingV2beta2APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_autoscaling_v2beta2_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetAutoscalingV2beta2APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetAutoscalingV2beta2APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1301,6 +1365,7 @@ impl crate::Response for GetAutoscalingV2beta2APIResourcesResponse {
 
 // Generated from operation getBatchAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetBatchAPIGroupResponse`]`>` constructor, or [`GetBatchAPIGroupResponse`] directly, to parse the HTTP response.
@@ -1317,12 +1382,14 @@ pub fn get_batch_api_group(
 }
 
 /// Use `<GetBatchAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_batch_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetBatchAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetBatchAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1354,6 +1421,7 @@ impl crate::Response for GetBatchAPIGroupResponse {
 
 // Generated from operation getBatchV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetBatchV1APIResourcesResponse`]`>` constructor, or [`GetBatchV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1370,12 +1438,14 @@ pub fn get_batch_v1_api_resources(
 }
 
 /// Use `<GetBatchV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_batch_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetBatchV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetBatchV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1407,6 +1477,7 @@ impl crate::Response for GetBatchV1APIResourcesResponse {
 
 // Generated from operation getBatchV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetBatchV1beta1APIResourcesResponse`]`>` constructor, or [`GetBatchV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1423,12 +1494,14 @@ pub fn get_batch_v1beta1_api_resources(
 }
 
 /// Use `<GetBatchV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_batch_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetBatchV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetBatchV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1460,6 +1533,7 @@ impl crate::Response for GetBatchV1beta1APIResourcesResponse {
 
 // Generated from operation getBatchV2alpha1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetBatchV2alpha1APIResourcesResponse`]`>` constructor, or [`GetBatchV2alpha1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1476,12 +1550,14 @@ pub fn get_batch_v2alpha1_api_resources(
 }
 
 /// Use `<GetBatchV2alpha1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_batch_v2alpha1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetBatchV2alpha1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetBatchV2alpha1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1513,6 +1589,7 @@ impl crate::Response for GetBatchV2alpha1APIResourcesResponse {
 
 // Generated from operation getCertificatesAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetCertificatesAPIGroupResponse`]`>` constructor, or [`GetCertificatesAPIGroupResponse`] directly, to parse the HTTP response.
@@ -1529,12 +1606,14 @@ pub fn get_certificates_api_group(
 }
 
 /// Use `<GetCertificatesAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_certificates_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetCertificatesAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetCertificatesAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1566,6 +1645,7 @@ impl crate::Response for GetCertificatesAPIGroupResponse {
 
 // Generated from operation getCertificatesV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetCertificatesV1beta1APIResourcesResponse`]`>` constructor, or [`GetCertificatesV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1582,12 +1662,14 @@ pub fn get_certificates_v1beta1_api_resources(
 }
 
 /// Use `<GetCertificatesV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_certificates_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetCertificatesV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetCertificatesV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1619,6 +1701,7 @@ impl crate::Response for GetCertificatesV1beta1APIResourcesResponse {
 
 // Generated from operation getCodeVersion
 
+#[cfg(feature = "api")]
 /// get the code version
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetCodeVersionResponse`]`>` constructor, or [`GetCodeVersionResponse`] directly, to parse the HTTP response.
@@ -1635,12 +1718,14 @@ pub fn get_code_version(
 }
 
 /// Use `<GetCodeVersionResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_code_version`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetCodeVersionResponse {
     Ok(crate::v1_14::apimachinery::pkg::version::Info),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetCodeVersionResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1672,6 +1757,7 @@ impl crate::Response for GetCodeVersionResponse {
 
 // Generated from operation getCoordinationAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetCoordinationAPIGroupResponse`]`>` constructor, or [`GetCoordinationAPIGroupResponse`] directly, to parse the HTTP response.
@@ -1688,12 +1774,14 @@ pub fn get_coordination_api_group(
 }
 
 /// Use `<GetCoordinationAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_coordination_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetCoordinationAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetCoordinationAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1725,6 +1813,7 @@ impl crate::Response for GetCoordinationAPIGroupResponse {
 
 // Generated from operation getCoordinationV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetCoordinationV1APIResourcesResponse`]`>` constructor, or [`GetCoordinationV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1741,12 +1830,14 @@ pub fn get_coordination_v1_api_resources(
 }
 
 /// Use `<GetCoordinationV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_coordination_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetCoordinationV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetCoordinationV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1778,6 +1869,7 @@ impl crate::Response for GetCoordinationV1APIResourcesResponse {
 
 // Generated from operation getCoordinationV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetCoordinationV1beta1APIResourcesResponse`]`>` constructor, or [`GetCoordinationV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1794,12 +1886,14 @@ pub fn get_coordination_v1beta1_api_resources(
 }
 
 /// Use `<GetCoordinationV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_coordination_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetCoordinationV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetCoordinationV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1831,6 +1925,7 @@ impl crate::Response for GetCoordinationV1beta1APIResourcesResponse {
 
 // Generated from operation getCoreAPIVersions
 
+#[cfg(feature = "api")]
 /// get available API versions
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetCoreAPIVersionsResponse`]`>` constructor, or [`GetCoreAPIVersionsResponse`] directly, to parse the HTTP response.
@@ -1847,12 +1942,14 @@ pub fn get_core_api_versions(
 }
 
 /// Use `<GetCoreAPIVersionsResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_core_api_versions`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetCoreAPIVersionsResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIVersions),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetCoreAPIVersionsResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1884,6 +1981,7 @@ impl crate::Response for GetCoreAPIVersionsResponse {
 
 // Generated from operation getCoreV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetCoreV1APIResourcesResponse`]`>` constructor, or [`GetCoreV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -1900,12 +1998,14 @@ pub fn get_core_v1_api_resources(
 }
 
 /// Use `<GetCoreV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_core_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetCoreV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetCoreV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1937,6 +2037,7 @@ impl crate::Response for GetCoreV1APIResourcesResponse {
 
 // Generated from operation getEventsAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetEventsAPIGroupResponse`]`>` constructor, or [`GetEventsAPIGroupResponse`] directly, to parse the HTTP response.
@@ -1953,12 +2054,14 @@ pub fn get_events_api_group(
 }
 
 /// Use `<GetEventsAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_events_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetEventsAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetEventsAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -1990,6 +2093,7 @@ impl crate::Response for GetEventsAPIGroupResponse {
 
 // Generated from operation getEventsV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetEventsV1beta1APIResourcesResponse`]`>` constructor, or [`GetEventsV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2006,12 +2110,14 @@ pub fn get_events_v1beta1_api_resources(
 }
 
 /// Use `<GetEventsV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_events_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetEventsV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetEventsV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2043,6 +2149,7 @@ impl crate::Response for GetEventsV1beta1APIResourcesResponse {
 
 // Generated from operation getExtensionsAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetExtensionsAPIGroupResponse`]`>` constructor, or [`GetExtensionsAPIGroupResponse`] directly, to parse the HTTP response.
@@ -2059,12 +2166,14 @@ pub fn get_extensions_api_group(
 }
 
 /// Use `<GetExtensionsAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_extensions_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetExtensionsAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetExtensionsAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2096,6 +2205,7 @@ impl crate::Response for GetExtensionsAPIGroupResponse {
 
 // Generated from operation getExtensionsV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetExtensionsV1beta1APIResourcesResponse`]`>` constructor, or [`GetExtensionsV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2112,12 +2222,14 @@ pub fn get_extensions_v1beta1_api_resources(
 }
 
 /// Use `<GetExtensionsV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_extensions_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetExtensionsV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetExtensionsV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2149,6 +2261,7 @@ impl crate::Response for GetExtensionsV1beta1APIResourcesResponse {
 
 // Generated from operation getNetworkingAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetNetworkingAPIGroupResponse`]`>` constructor, or [`GetNetworkingAPIGroupResponse`] directly, to parse the HTTP response.
@@ -2165,12 +2278,14 @@ pub fn get_networking_api_group(
 }
 
 /// Use `<GetNetworkingAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_networking_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetNetworkingAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetNetworkingAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2202,6 +2317,7 @@ impl crate::Response for GetNetworkingAPIGroupResponse {
 
 // Generated from operation getNetworkingV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetNetworkingV1APIResourcesResponse`]`>` constructor, or [`GetNetworkingV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2218,12 +2334,14 @@ pub fn get_networking_v1_api_resources(
 }
 
 /// Use `<GetNetworkingV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_networking_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetNetworkingV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetNetworkingV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2255,6 +2373,7 @@ impl crate::Response for GetNetworkingV1APIResourcesResponse {
 
 // Generated from operation getNetworkingV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetNetworkingV1beta1APIResourcesResponse`]`>` constructor, or [`GetNetworkingV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2271,12 +2390,14 @@ pub fn get_networking_v1beta1_api_resources(
 }
 
 /// Use `<GetNetworkingV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_networking_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetNetworkingV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetNetworkingV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2308,6 +2429,7 @@ impl crate::Response for GetNetworkingV1beta1APIResourcesResponse {
 
 // Generated from operation getNodeAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetNodeAPIGroupResponse`]`>` constructor, or [`GetNodeAPIGroupResponse`] directly, to parse the HTTP response.
@@ -2324,12 +2446,14 @@ pub fn get_node_api_group(
 }
 
 /// Use `<GetNodeAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_node_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetNodeAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetNodeAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2361,6 +2485,7 @@ impl crate::Response for GetNodeAPIGroupResponse {
 
 // Generated from operation getNodeV1alpha1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetNodeV1alpha1APIResourcesResponse`]`>` constructor, or [`GetNodeV1alpha1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2377,12 +2502,14 @@ pub fn get_node_v1alpha1_api_resources(
 }
 
 /// Use `<GetNodeV1alpha1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_node_v1alpha1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetNodeV1alpha1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetNodeV1alpha1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2414,6 +2541,7 @@ impl crate::Response for GetNodeV1alpha1APIResourcesResponse {
 
 // Generated from operation getNodeV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetNodeV1beta1APIResourcesResponse`]`>` constructor, or [`GetNodeV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2430,12 +2558,14 @@ pub fn get_node_v1beta1_api_resources(
 }
 
 /// Use `<GetNodeV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_node_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetNodeV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetNodeV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2467,6 +2597,7 @@ impl crate::Response for GetNodeV1beta1APIResourcesResponse {
 
 // Generated from operation getPolicyAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetPolicyAPIGroupResponse`]`>` constructor, or [`GetPolicyAPIGroupResponse`] directly, to parse the HTTP response.
@@ -2483,12 +2614,14 @@ pub fn get_policy_api_group(
 }
 
 /// Use `<GetPolicyAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_policy_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetPolicyAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetPolicyAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2520,6 +2653,7 @@ impl crate::Response for GetPolicyAPIGroupResponse {
 
 // Generated from operation getPolicyV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetPolicyV1beta1APIResourcesResponse`]`>` constructor, or [`GetPolicyV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2536,12 +2670,14 @@ pub fn get_policy_v1beta1_api_resources(
 }
 
 /// Use `<GetPolicyV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_policy_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetPolicyV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetPolicyV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2573,6 +2709,7 @@ impl crate::Response for GetPolicyV1beta1APIResourcesResponse {
 
 // Generated from operation getRbacAuthorizationAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetRbacAuthorizationAPIGroupResponse`]`>` constructor, or [`GetRbacAuthorizationAPIGroupResponse`] directly, to parse the HTTP response.
@@ -2589,12 +2726,14 @@ pub fn get_rbac_authorization_api_group(
 }
 
 /// Use `<GetRbacAuthorizationAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_rbac_authorization_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetRbacAuthorizationAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetRbacAuthorizationAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2626,6 +2765,7 @@ impl crate::Response for GetRbacAuthorizationAPIGroupResponse {
 
 // Generated from operation getRbacAuthorizationV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetRbacAuthorizationV1APIResourcesResponse`]`>` constructor, or [`GetRbacAuthorizationV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2642,12 +2782,14 @@ pub fn get_rbac_authorization_v1_api_resources(
 }
 
 /// Use `<GetRbacAuthorizationV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_rbac_authorization_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetRbacAuthorizationV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetRbacAuthorizationV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2679,6 +2821,7 @@ impl crate::Response for GetRbacAuthorizationV1APIResourcesResponse {
 
 // Generated from operation getRbacAuthorizationV1alpha1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetRbacAuthorizationV1alpha1APIResourcesResponse`]`>` constructor, or [`GetRbacAuthorizationV1alpha1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2695,12 +2838,14 @@ pub fn get_rbac_authorization_v1alpha1_api_resources(
 }
 
 /// Use `<GetRbacAuthorizationV1alpha1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_rbac_authorization_v1alpha1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetRbacAuthorizationV1alpha1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetRbacAuthorizationV1alpha1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2732,6 +2877,7 @@ impl crate::Response for GetRbacAuthorizationV1alpha1APIResourcesResponse {
 
 // Generated from operation getRbacAuthorizationV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetRbacAuthorizationV1beta1APIResourcesResponse`]`>` constructor, or [`GetRbacAuthorizationV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2748,12 +2894,14 @@ pub fn get_rbac_authorization_v1beta1_api_resources(
 }
 
 /// Use `<GetRbacAuthorizationV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_rbac_authorization_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetRbacAuthorizationV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetRbacAuthorizationV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2785,6 +2933,7 @@ impl crate::Response for GetRbacAuthorizationV1beta1APIResourcesResponse {
 
 // Generated from operation getSchedulingAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetSchedulingAPIGroupResponse`]`>` constructor, or [`GetSchedulingAPIGroupResponse`] directly, to parse the HTTP response.
@@ -2801,12 +2950,14 @@ pub fn get_scheduling_api_group(
 }
 
 /// Use `<GetSchedulingAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_scheduling_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetSchedulingAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetSchedulingAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2838,6 +2989,7 @@ impl crate::Response for GetSchedulingAPIGroupResponse {
 
 // Generated from operation getSchedulingV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetSchedulingV1APIResourcesResponse`]`>` constructor, or [`GetSchedulingV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2854,12 +3006,14 @@ pub fn get_scheduling_v1_api_resources(
 }
 
 /// Use `<GetSchedulingV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_scheduling_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetSchedulingV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetSchedulingV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2891,6 +3045,7 @@ impl crate::Response for GetSchedulingV1APIResourcesResponse {
 
 // Generated from operation getSchedulingV1alpha1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetSchedulingV1alpha1APIResourcesResponse`]`>` constructor, or [`GetSchedulingV1alpha1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2907,12 +3062,14 @@ pub fn get_scheduling_v1alpha1_api_resources(
 }
 
 /// Use `<GetSchedulingV1alpha1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_scheduling_v1alpha1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetSchedulingV1alpha1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetSchedulingV1alpha1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2944,6 +3101,7 @@ impl crate::Response for GetSchedulingV1alpha1APIResourcesResponse {
 
 // Generated from operation getSchedulingV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetSchedulingV1beta1APIResourcesResponse`]`>` constructor, or [`GetSchedulingV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -2960,12 +3118,14 @@ pub fn get_scheduling_v1beta1_api_resources(
 }
 
 /// Use `<GetSchedulingV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_scheduling_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetSchedulingV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetSchedulingV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -2997,6 +3157,7 @@ impl crate::Response for GetSchedulingV1beta1APIResourcesResponse {
 
 // Generated from operation getSettingsAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetSettingsAPIGroupResponse`]`>` constructor, or [`GetSettingsAPIGroupResponse`] directly, to parse the HTTP response.
@@ -3013,12 +3174,14 @@ pub fn get_settings_api_group(
 }
 
 /// Use `<GetSettingsAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_settings_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetSettingsAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetSettingsAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -3050,6 +3213,7 @@ impl crate::Response for GetSettingsAPIGroupResponse {
 
 // Generated from operation getSettingsV1alpha1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetSettingsV1alpha1APIResourcesResponse`]`>` constructor, or [`GetSettingsV1alpha1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -3066,12 +3230,14 @@ pub fn get_settings_v1alpha1_api_resources(
 }
 
 /// Use `<GetSettingsV1alpha1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_settings_v1alpha1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetSettingsV1alpha1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetSettingsV1alpha1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -3103,6 +3269,7 @@ impl crate::Response for GetSettingsV1alpha1APIResourcesResponse {
 
 // Generated from operation getStorageAPIGroup
 
+#[cfg(feature = "api")]
 /// get information of a group
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetStorageAPIGroupResponse`]`>` constructor, or [`GetStorageAPIGroupResponse`] directly, to parse the HTTP response.
@@ -3119,12 +3286,14 @@ pub fn get_storage_api_group(
 }
 
 /// Use `<GetStorageAPIGroupResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_storage_api_group`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetStorageAPIGroupResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIGroup),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetStorageAPIGroupResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -3156,6 +3325,7 @@ impl crate::Response for GetStorageAPIGroupResponse {
 
 // Generated from operation getStorageV1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetStorageV1APIResourcesResponse`]`>` constructor, or [`GetStorageV1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -3172,12 +3342,14 @@ pub fn get_storage_v1_api_resources(
 }
 
 /// Use `<GetStorageV1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_storage_v1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetStorageV1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetStorageV1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -3209,6 +3381,7 @@ impl crate::Response for GetStorageV1APIResourcesResponse {
 
 // Generated from operation getStorageV1alpha1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetStorageV1alpha1APIResourcesResponse`]`>` constructor, or [`GetStorageV1alpha1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -3225,12 +3398,14 @@ pub fn get_storage_v1alpha1_api_resources(
 }
 
 /// Use `<GetStorageV1alpha1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_storage_v1alpha1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetStorageV1alpha1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetStorageV1alpha1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -3262,6 +3437,7 @@ impl crate::Response for GetStorageV1alpha1APIResourcesResponse {
 
 // Generated from operation getStorageV1beta1APIResources
 
+#[cfg(feature = "api")]
 /// get available resources
 ///
 /// Use the returned [`crate::ResponseBody`]`<`[`GetStorageV1beta1APIResourcesResponse`]`>` constructor, or [`GetStorageV1beta1APIResourcesResponse`] directly, to parse the HTTP response.
@@ -3278,12 +3454,14 @@ pub fn get_storage_v1beta1_api_resources(
 }
 
 /// Use `<GetStorageV1beta1APIResourcesResponse as Response>::try_from_parts` to parse the HTTP response body of [`get_storage_v1beta1_api_resources`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum GetStorageV1beta1APIResourcesResponse {
     Ok(crate::v1_14::apimachinery::pkg::apis::meta::v1::APIResourceList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for GetStorageV1beta1APIResourcesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -3315,6 +3493,7 @@ impl crate::Response for GetStorageV1beta1APIResourcesResponse {
 
 // Generated from operation logFileHandler
 
+#[cfg(feature = "api")]
 /// Use the returned [`crate::ResponseBody`]`<`[`LogFileHandlerResponse`]`>` constructor, or [`LogFileHandlerResponse`] directly, to parse the HTTP response.
 ///
 /// # Arguments
@@ -3338,11 +3517,13 @@ pub fn log_file_handler(
 }
 
 /// Use `<LogFileHandlerResponse as Response>::try_from_parts` to parse the HTTP response body of [`log_file_handler`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum LogFileHandlerResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for LogFileHandlerResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -3366,6 +3547,7 @@ impl crate::Response for LogFileHandlerResponse {
 
 // Generated from operation logFileListHandler
 
+#[cfg(feature = "api")]
 /// Use the returned [`crate::ResponseBody`]`<`[`LogFileListHandlerResponse`]`>` constructor, or [`LogFileListHandlerResponse`] directly, to parse the HTTP response.
 pub fn log_file_list_handler(
 ) -> Result<(http::Request<Vec<u8>>, fn(http::StatusCode) -> crate::ResponseBody<LogFileListHandlerResponse>), crate::RequestError> {
@@ -3380,11 +3562,13 @@ pub fn log_file_list_handler(
 }
 
 /// Use `<LogFileListHandlerResponse as Response>::try_from_parts` to parse the HTTP response body of [`log_file_list_handler`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum LogFileListHandlerResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for LogFileListHandlerResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

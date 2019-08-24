@@ -14,6 +14,7 @@ pub struct NetworkPolicy {
 
 // Generated from operation createNetworkingV1NamespacedNetworkPolicy
 
+#[cfg(feature = "api")]
 impl NetworkPolicy {
     /// create a NetworkPolicy
     ///
@@ -58,6 +59,7 @@ impl NetworkPolicy {
 }
 
 /// Optional parameters of [`NetworkPolicy::create_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedNetworkPolicyOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -65,6 +67,7 @@ pub struct CreateNamespacedNetworkPolicyOptional<'a> {
 }
 
 /// Use `<CreateNamespacedNetworkPolicyResponse as Response>::try_from_parts` to parse the HTTP response body of [`NetworkPolicy::create_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedNetworkPolicyResponse {
     Ok(crate::v1_9::api::networking::v1::NetworkPolicy),
@@ -73,6 +76,7 @@ pub enum CreateNamespacedNetworkPolicyResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedNetworkPolicyResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -120,6 +124,7 @@ impl crate::Response for CreateNamespacedNetworkPolicyResponse {
 
 // Generated from operation deleteNetworkingV1CollectionNamespacedNetworkPolicy
 
+#[cfg(feature = "api")]
 impl NetworkPolicy {
     /// delete collection of NetworkPolicy
     ///
@@ -161,6 +166,7 @@ impl NetworkPolicy {
 }
 
 /// Use `<DeleteCollectionNamespacedNetworkPolicyResponse as Response>::try_from_parts` to parse the HTTP response body of [`NetworkPolicy::delete_collection_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedNetworkPolicyResponse {
     OkStatus(crate::v1_9::apimachinery::pkg::apis::meta::v1::Status),
@@ -168,6 +174,7 @@ pub enum DeleteCollectionNamespacedNetworkPolicyResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedNetworkPolicyResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -212,6 +219,7 @@ impl crate::Response for DeleteCollectionNamespacedNetworkPolicyResponse {
 
 // Generated from operation deleteNetworkingV1NamespacedNetworkPolicy
 
+#[cfg(feature = "api")]
 impl NetworkPolicy {
     /// delete a NetworkPolicy
     ///
@@ -251,6 +259,7 @@ impl NetworkPolicy {
 }
 
 /// Use `<DeleteNamespacedNetworkPolicyResponse as Response>::try_from_parts` to parse the HTTP response body of [`NetworkPolicy::delete_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedNetworkPolicyResponse {
     OkStatus(crate::v1_9::apimachinery::pkg::apis::meta::v1::Status),
@@ -258,6 +267,7 @@ pub enum DeleteNamespacedNetworkPolicyResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedNetworkPolicyResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -302,6 +312,7 @@ impl crate::Response for DeleteNamespacedNetworkPolicyResponse {
 
 // Generated from operation listNetworkingV1NamespacedNetworkPolicy
 
+#[cfg(feature = "api")]
 impl NetworkPolicy {
     /// list or watch objects of kind NetworkPolicy
     ///
@@ -339,12 +350,14 @@ impl NetworkPolicy {
 }
 
 /// Use `<ListNamespacedNetworkPolicyResponse as Response>::try_from_parts` to parse the HTTP response body of [`NetworkPolicy::list_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedNetworkPolicyResponse {
     Ok(crate::v1_9::api::networking::v1::NetworkPolicyList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedNetworkPolicyResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -376,6 +389,7 @@ impl crate::Response for ListNamespacedNetworkPolicyResponse {
 
 // Generated from operation listNetworkingV1NetworkPolicyForAllNamespaces
 
+#[cfg(feature = "api")]
 impl NetworkPolicy {
     /// list or watch objects of kind NetworkPolicy
     ///
@@ -406,12 +420,14 @@ impl NetworkPolicy {
 }
 
 /// Use `<ListNetworkPolicyForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`NetworkPolicy::list_network_policy_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNetworkPolicyForAllNamespacesResponse {
     Ok(crate::v1_9::api::networking::v1::NetworkPolicyList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNetworkPolicyForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -443,6 +459,7 @@ impl crate::Response for ListNetworkPolicyForAllNamespacesResponse {
 
 // Generated from operation patchNetworkingV1NamespacedNetworkPolicy
 
+#[cfg(feature = "api")]
 impl NetworkPolicy {
     /// partially update the specified NetworkPolicy
     ///
@@ -492,12 +509,14 @@ impl NetworkPolicy {
 }
 
 /// Use `<PatchNamespacedNetworkPolicyResponse as Response>::try_from_parts` to parse the HTTP response body of [`NetworkPolicy::patch_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedNetworkPolicyResponse {
     Ok(crate::v1_9::api::networking::v1::NetworkPolicy),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedNetworkPolicyResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -529,6 +548,7 @@ impl crate::Response for PatchNamespacedNetworkPolicyResponse {
 
 // Generated from operation readNetworkingV1NamespacedNetworkPolicy
 
+#[cfg(feature = "api")]
 impl NetworkPolicy {
     /// read the specified NetworkPolicy
     ///
@@ -583,6 +603,7 @@ impl NetworkPolicy {
 }
 
 /// Optional parameters of [`NetworkPolicy::read_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedNetworkPolicyOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -594,12 +615,14 @@ pub struct ReadNamespacedNetworkPolicyOptional<'a> {
 }
 
 /// Use `<ReadNamespacedNetworkPolicyResponse as Response>::try_from_parts` to parse the HTTP response body of [`NetworkPolicy::read_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedNetworkPolicyResponse {
     Ok(crate::v1_9::api::networking::v1::NetworkPolicy),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedNetworkPolicyResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -631,6 +654,7 @@ impl crate::Response for ReadNamespacedNetworkPolicyResponse {
 
 // Generated from operation replaceNetworkingV1NamespacedNetworkPolicy
 
+#[cfg(feature = "api")]
 impl NetworkPolicy {
     /// replace the specified NetworkPolicy
     ///
@@ -681,6 +705,7 @@ impl NetworkPolicy {
 }
 
 /// Optional parameters of [`NetworkPolicy::replace_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedNetworkPolicyOptional<'a> {
     /// If 'true', then the output is pretty printed.
@@ -688,6 +713,7 @@ pub struct ReplaceNamespacedNetworkPolicyOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedNetworkPolicyResponse as Response>::try_from_parts` to parse the HTTP response body of [`NetworkPolicy::replace_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedNetworkPolicyResponse {
     Ok(crate::v1_9::api::networking::v1::NetworkPolicy),
@@ -695,6 +721,7 @@ pub enum ReplaceNamespacedNetworkPolicyResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedNetworkPolicyResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -734,6 +761,7 @@ impl crate::Response for ReplaceNamespacedNetworkPolicyResponse {
 
 // Generated from operation watchNetworkingV1NamespacedNetworkPolicy
 
+#[cfg(feature = "api")]
 impl NetworkPolicy {
     /// list or watch objects of kind NetworkPolicy
     ///
@@ -771,12 +799,14 @@ impl NetworkPolicy {
 }
 
 /// Use `<WatchNamespacedNetworkPolicyResponse as Response>::try_from_parts` to parse the HTTP response body of [`NetworkPolicy::watch_namespaced_network_policy`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedNetworkPolicyResponse {
     Ok(crate::v1_9::apimachinery::pkg::apis::meta::v1::WatchEvent<NetworkPolicy>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedNetworkPolicyResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -810,6 +840,7 @@ impl crate::Response for WatchNamespacedNetworkPolicyResponse {
 
 // Generated from operation watchNetworkingV1NetworkPolicyForAllNamespaces
 
+#[cfg(feature = "api")]
 impl NetworkPolicy {
     /// list or watch objects of kind NetworkPolicy
     ///
@@ -840,12 +871,14 @@ impl NetworkPolicy {
 }
 
 /// Use `<WatchNetworkPolicyForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`NetworkPolicy::watch_network_policy_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNetworkPolicyForAllNamespacesResponse {
     Ok(crate::v1_9::apimachinery::pkg::apis::meta::v1::WatchEvent<NetworkPolicy>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNetworkPolicyForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {

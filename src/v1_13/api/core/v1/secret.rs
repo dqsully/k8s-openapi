@@ -20,6 +20,7 @@ pub struct Secret {
 
 // Generated from operation createCoreV1NamespacedSecret
 
+#[cfg(feature = "api")]
 impl Secret {
     /// create a Secret
     ///
@@ -72,6 +73,7 @@ impl Secret {
 }
 
 /// Optional parameters of [`Secret::create_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct CreateNamespacedSecretOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -83,6 +85,7 @@ pub struct CreateNamespacedSecretOptional<'a> {
 }
 
 /// Use `<CreateNamespacedSecretResponse as Response>::try_from_parts` to parse the HTTP response body of [`Secret::create_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum CreateNamespacedSecretResponse {
     Ok(crate::v1_13::api::core::v1::Secret),
@@ -91,6 +94,7 @@ pub enum CreateNamespacedSecretResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for CreateNamespacedSecretResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -138,6 +142,7 @@ impl crate::Response for CreateNamespacedSecretResponse {
 
 // Generated from operation deleteCoreV1CollectionNamespacedSecret
 
+#[cfg(feature = "api")]
 impl Secret {
     /// delete collection of Secret
     ///
@@ -179,6 +184,7 @@ impl Secret {
 }
 
 /// Use `<DeleteCollectionNamespacedSecretResponse as Response>::try_from_parts` to parse the HTTP response body of [`Secret::delete_collection_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteCollectionNamespacedSecretResponse {
     OkStatus(crate::v1_13::apimachinery::pkg::apis::meta::v1::Status),
@@ -186,6 +192,7 @@ pub enum DeleteCollectionNamespacedSecretResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteCollectionNamespacedSecretResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -230,6 +237,7 @@ impl crate::Response for DeleteCollectionNamespacedSecretResponse {
 
 // Generated from operation deleteCoreV1NamespacedSecret
 
+#[cfg(feature = "api")]
 impl Secret {
     /// delete a Secret
     ///
@@ -269,6 +277,7 @@ impl Secret {
 }
 
 /// Use `<DeleteNamespacedSecretResponse as Response>::try_from_parts` to parse the HTTP response body of [`Secret::delete_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum DeleteNamespacedSecretResponse {
     OkStatus(crate::v1_13::apimachinery::pkg::apis::meta::v1::Status),
@@ -277,6 +286,7 @@ pub enum DeleteNamespacedSecretResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for DeleteNamespacedSecretResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -329,6 +339,7 @@ impl crate::Response for DeleteNamespacedSecretResponse {
 
 // Generated from operation listCoreV1NamespacedSecret
 
+#[cfg(feature = "api")]
 impl Secret {
     /// list or watch objects of kind Secret
     ///
@@ -366,12 +377,14 @@ impl Secret {
 }
 
 /// Use `<ListNamespacedSecretResponse as Response>::try_from_parts` to parse the HTTP response body of [`Secret::list_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListNamespacedSecretResponse {
     Ok(crate::v1_13::api::core::v1::SecretList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListNamespacedSecretResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -403,6 +416,7 @@ impl crate::Response for ListNamespacedSecretResponse {
 
 // Generated from operation listCoreV1SecretForAllNamespaces
 
+#[cfg(feature = "api")]
 impl Secret {
     /// list or watch objects of kind Secret
     ///
@@ -433,12 +447,14 @@ impl Secret {
 }
 
 /// Use `<ListSecretForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`Secret::list_secret_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ListSecretForAllNamespacesResponse {
     Ok(crate::v1_13::api::core::v1::SecretList),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ListSecretForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -470,6 +486,7 @@ impl crate::Response for ListSecretForAllNamespacesResponse {
 
 // Generated from operation patchCoreV1NamespacedSecret
 
+#[cfg(feature = "api")]
 impl Secret {
     /// partially update the specified Secret
     ///
@@ -519,12 +536,14 @@ impl Secret {
 }
 
 /// Use `<PatchNamespacedSecretResponse as Response>::try_from_parts` to parse the HTTP response body of [`Secret::patch_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum PatchNamespacedSecretResponse {
     Ok(crate::v1_13::api::core::v1::Secret),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for PatchNamespacedSecretResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -556,6 +575,7 @@ impl crate::Response for PatchNamespacedSecretResponse {
 
 // Generated from operation readCoreV1NamespacedSecret
 
+#[cfg(feature = "api")]
 impl Secret {
     /// read the specified Secret
     ///
@@ -610,6 +630,7 @@ impl Secret {
 }
 
 /// Optional parameters of [`Secret::read_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReadNamespacedSecretOptional<'a> {
     /// Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
@@ -621,12 +642,14 @@ pub struct ReadNamespacedSecretOptional<'a> {
 }
 
 /// Use `<ReadNamespacedSecretResponse as Response>::try_from_parts` to parse the HTTP response body of [`Secret::read_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReadNamespacedSecretResponse {
     Ok(crate::v1_13::api::core::v1::Secret),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReadNamespacedSecretResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -658,6 +681,7 @@ impl crate::Response for ReadNamespacedSecretResponse {
 
 // Generated from operation replaceCoreV1NamespacedSecret
 
+#[cfg(feature = "api")]
 impl Secret {
     /// replace the specified Secret
     ///
@@ -712,6 +736,7 @@ impl Secret {
 }
 
 /// Optional parameters of [`Secret::replace_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Clone, Copy, Debug, Default)]
 pub struct ReplaceNamespacedSecretOptional<'a> {
     /// When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -721,6 +746,7 @@ pub struct ReplaceNamespacedSecretOptional<'a> {
 }
 
 /// Use `<ReplaceNamespacedSecretResponse as Response>::try_from_parts` to parse the HTTP response body of [`Secret::replace_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum ReplaceNamespacedSecretResponse {
     Ok(crate::v1_13::api::core::v1::Secret),
@@ -728,6 +754,7 @@ pub enum ReplaceNamespacedSecretResponse {
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for ReplaceNamespacedSecretResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -767,6 +794,7 @@ impl crate::Response for ReplaceNamespacedSecretResponse {
 
 // Generated from operation watchCoreV1NamespacedSecret
 
+#[cfg(feature = "api")]
 impl Secret {
     /// list or watch objects of kind Secret
     ///
@@ -804,12 +832,14 @@ impl Secret {
 }
 
 /// Use `<WatchNamespacedSecretResponse as Response>::try_from_parts` to parse the HTTP response body of [`Secret::watch_namespaced_secret`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchNamespacedSecretResponse {
     Ok(crate::v1_13::apimachinery::pkg::apis::meta::v1::WatchEvent<Secret>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchNamespacedSecretResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
@@ -843,6 +873,7 @@ impl crate::Response for WatchNamespacedSecretResponse {
 
 // Generated from operation watchCoreV1SecretForAllNamespaces
 
+#[cfg(feature = "api")]
 impl Secret {
     /// list or watch objects of kind Secret
     ///
@@ -873,12 +904,14 @@ impl Secret {
 }
 
 /// Use `<WatchSecretForAllNamespacesResponse as Response>::try_from_parts` to parse the HTTP response body of [`Secret::watch_secret_for_all_namespaces`]
+#[cfg(feature = "api")]
 #[derive(Debug)]
 pub enum WatchSecretForAllNamespacesResponse {
     Ok(crate::v1_13::apimachinery::pkg::apis::meta::v1::WatchEvent<Secret>),
     Other(Result<Option<serde_json::Value>, serde_json::Error>),
 }
 
+#[cfg(feature = "api")]
 impl crate::Response for WatchSecretForAllNamespacesResponse {
     fn try_from_parts(status_code: http::StatusCode, buf: &[u8]) -> Result<(Self, usize), crate::ResponseError> {
         match status_code {
