@@ -46,25 +46,17 @@ impl LocalSubjectAccessReview {
         let __url = format!("/apis/authorization.k8s.io/v1beta1/namespaces/{namespace}/localsubjectaccessreviews?",
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
-        }
-        if let Some(include_uninitialized) = include_uninitialized {
-            __query_pairs.append_pair("includeUninitialized", &include_uninitialized.to_string());
-        }
-        if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
-        }
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::post(__url);
-        let __body = serde_json::to_vec(body).map_err(crate::RequestError::Json)?;
-        __request.header(http::header::CONTENT_TYPE, http::header::HeaderValue::from_static("application/json"));
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request(
+            crate::http::Method::POST,
+            std::borrow::Cow::Owned(__url),
+            &[
+                ("dryRun", dry_run.as_ref().map(|value| value as _)),
+                ("includeUninitialized", include_uninitialized.as_ref().map(|value| value as _)),
+                ("pretty", pretty.as_ref().map(|value| value as _)),
+            ],
+            Some(("application/json", body)),
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 

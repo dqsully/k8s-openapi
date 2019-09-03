@@ -1668,112 +1668,115 @@ pub fn write_operation(
 		if have_query_parameters {
 			write!(out, "?")?;
 		}
-		writeln!(out, r#"".to_owned();"#)?;
+		writeln!(out, r#"";"#)?;
 	}
 
-	if have_query_parameters {
-		writeln!(out, "{}    let mut __query_pairs = {}::url::form_urlencoded::Serializer::new(__url);", indent, crate_root)?;
-		if let Some((parameter_name, _, _)) = &list_or_patch_or_watch_optional_parameter {
-			writeln!(out, "{}    {}.__serialize(&mut __query_pairs);", indent, parameter_name)?;
+	if list_or_patch_or_watch_optional_parameter.is_some() {
+		writeln!(out, "{}    let __request = {}::__build_request2(", indent, crate_root)?;
+	}
+	else {
+		writeln!(out, "{}    let __request = {}::__build_request(", indent, crate_root)?;
+	}
+
+	{
+		let method = match operation.method {
+			swagger20::Method::Delete => "DELETE",
+			swagger20::Method::Get => "GET",
+			swagger20::Method::Patch => "PATCH",
+			swagger20::Method::Post => "POST",
+			swagger20::Method::Put => "PUT",
+		};
+		writeln!(out, "{}        {}::http::Method::{},", indent, crate_root, method)?;
+	}
+
+	{
+		match (have_path_parameters, list_or_patch_or_watch_optional_parameter.is_some()) {
+			(true, true) => writeln!(out, "{}        __url,", indent)?,
+			(true, false) => writeln!(out, "{}        std::borrow::Cow::Owned(__url),", indent)?,
+			(false, true) => writeln!(out, "{}        __url.to_owned(),", indent)?,
+			(false, false) => writeln!(out, "{}        std::borrow::Cow::Borrowed(__url),", indent)?,
 		}
-		else {
-			for (parameter_name, parameter_type, parameter) in &parameters {
-				if parameter.location == swagger20::ParameterLocation::Query {
+	}
+
+	{
+		if have_query_parameters {
+			if let Some((parameter_name, _, _)) = &list_or_patch_or_watch_optional_parameter {
+				writeln!(out, "{}        |__query_pairs| {}.__serialize(__query_pairs),", indent, parameter_name)?;
+			}
+			else {
+				writeln!(out, "{}        &[", indent)?;
+
+				for (parameter_name, _, parameter) in &parameters {
+					if parameter.location != swagger20::ParameterLocation::Query {
+						continue;
+					}
+
 					if parameter.required {
-						match parameter.schema.kind {
-							swagger20::SchemaKind::Ty(swagger20::Type::Boolean) |
-							swagger20::SchemaKind::Ty(swagger20::Type::Integer { .. }) |
-							swagger20::SchemaKind::Ty(swagger20::Type::Number { .. }) =>
-								writeln!(out, r#"{}    __query_pairs.append_pair("{}", &{}.to_string());"#, indent, parameter.name, parameter_name)?,
-
-							swagger20::SchemaKind::Ty(swagger20::Type::String { .. }) =>
-								writeln!(out, r#"{}    __query_pairs.append_pair("{}", &{});"#, indent, parameter.name, parameter_name)?,
-
-							_ => return Err(format!("parameter {} is in the query string but is a {:?}", parameter.name, parameter_type).into()),
-						}
+						writeln!(out, r#"{}            ("{}", Some({})),"#, indent, parameter.name, parameter_name)?;
 					}
 					else {
-						writeln!(out, "{}    if let Some({}) = {} {{", indent, parameter_name, parameter_name)?;
-						match parameter.schema.kind {
-							swagger20::SchemaKind::Ty(swagger20::Type::Boolean) |
-							swagger20::SchemaKind::Ty(swagger20::Type::Integer { .. }) |
-							swagger20::SchemaKind::Ty(swagger20::Type::Number { .. }) =>
-								writeln!(out, r#"{}        __query_pairs.append_pair("{}", &{}.to_string());"#, indent, parameter.name, parameter_name)?,
-
-							swagger20::SchemaKind::Ty(swagger20::Type::String { .. }) =>
-								writeln!(out, r#"{}        __query_pairs.append_pair("{}", {});"#, indent, parameter.name, parameter_name)?,
-
-							_ => return Err(format!("parameter {} is in the query string but is a {:?}", parameter.name, parameter_type).into()),
-						}
-						writeln!(out, "{}    }}", indent)?;
+						writeln!(out, r#"{}            ("{}", {}.as_ref().map(|value| value as _)),"#, indent, parameter.name, parameter_name)?;
 					}
 				}
+
+				writeln!(out, "{}        ],", indent)?;
 			}
 		}
-		writeln!(out, "{}    let __url = __query_pairs.finish();", indent)?;
+		else {
+			writeln!(out, "{}        &[],", indent)?;
+		}
 	}
-	writeln!(out)?;
 
-	let method = match operation.method {
-		swagger20::Method::Delete => "delete",
-		swagger20::Method::Get => "get",
-		swagger20::Method::Patch => "patch",
-		swagger20::Method::Post => "post",
-		swagger20::Method::Put => "put",
-	};
+	{
+		let body_parameter =
+			delete_optional_parameter.as_ref()
+			.or_else(|| parameters.iter().find(|(_, _, parameter)| parameter.location == swagger20::ParameterLocation::Body));
 
-	writeln!(out, "{}    let mut __request = http::Request::{}(__url);", indent, method)?;
+		if let Some((parameter_name, parameter_type, parameter)) = body_parameter {
+			if !parameter.required {
+				return Err(format!("parameter {} is a body parameter but not required", parameter.name).into());
+			}
 
-	let body_parameter =
-		delete_optional_parameter.as_ref()
-		.or_else(|| parameters.iter().find(|(_, _, parameter)| parameter.location == swagger20::ParameterLocation::Body));
+			write!(out, "{}        Some((", indent)?;
 
-	write!(out, "{}    let __body = ", indent)?;
-	if let Some((parameter_name, parameter_type, parameter)) = body_parameter {
-		if parameter.required {
+			let is_patch =
+				if let swagger20::SchemaKind::Ref(ref_path) = &parameter.schema.kind {
+					ref_path.path == "io.k8s.apimachinery.pkg.apis.meta.v1.Patch"
+				}
+				else {
+					false
+				};
+			if is_patch {
+				let patch_type = get_rust_type(&parameter.schema.kind, replace_namespaces, crate_root, mod_root)?;
+				writeln!(out, "match {} {{", parameter_name)?;
+				writeln!(out, r#"{}            {}::Json(_) => "application/json-patch+json","#, indent, patch_type)?;
+				writeln!(out, r#"{}            {}::Merge(_) => "application/merge-patch+json","#, indent, patch_type)?;
+				writeln!(out, r#"{}            {}::StrategicMerge(_) => "application/strategic-merge-patch+json","#, indent, patch_type)?;
+				write!(out, "{}        }}, ", indent)?;
+			}
+			else {
+				write!(out, r#""application/json", "#)?;
+			}
+
 			if parameter_type.starts_with('&') {
-				writeln!(out, "serde_json::to_vec({}).map_err({}::RequestError::Json)?;", parameter_name, crate_root)?;
+				writeln!(out, "{})),", parameter_name)?;
 			}
 			else {
-				writeln!(out, "serde_json::to_vec(&{}).map_err({}::RequestError::Json)?;", parameter_name, crate_root)?;
+				writeln!(out, "&{})),", parameter_name)?;
 			}
 		}
 		else {
-			writeln!(out)?;
-			writeln!(out, "{}.unwrap_or(Ok(vec![]), |value| serde_json::to_vec(value).map_err({}::RequestError::Json))?;", parameter_name, crate_root)?;
+			writeln!(out, r#"{}        None,"#, indent)?;
 		}
+	}
 
-		let is_patch =
-			if let swagger20::SchemaKind::Ref(ref_path) = &parameter.schema.kind {
-				ref_path.path == "io.k8s.apimachinery.pkg.apis.meta.v1.Patch"
-			}
-			else {
-				false
-			};
-		if is_patch {
-			let patch_type = get_rust_type(&parameter.schema.kind, replace_namespaces, crate_root, mod_root)?;
-			writeln!(out, "{}    __request.header(http::header::CONTENT_TYPE, http::header::HeaderValue::from_static(match {} {{", indent, parameter_name)?;
-			writeln!(out, r#"{}        {}::Json(_) => "application/json-patch+json","#, indent, patch_type)?;
-			writeln!(out, r#"{}        {}::Merge(_) => "application/merge-patch+json","#, indent, patch_type)?;
-			writeln!(out, r#"{}        {}::StrategicMerge(_) => "application/strategic-merge-patch+json","#, indent, patch_type)?;
-			writeln!(out, "{}    }}));", indent)?;
-		}
-		else {
-			writeln!(out, r#"{}    __request.header(http::header::CONTENT_TYPE, http::header::HeaderValue::from_static("application/json"));"#, indent)?;
-		}
-	}
-	else {
-		writeln!(out, "vec![];")?;
-	}
+	writeln!(out, "{}    )?;", indent)?;
 
 	if operation_result_name.is_some() {
-		writeln!(out, "{}    match __request.body(__body) {{", indent)?;
-		writeln!(out, "{}        Ok(request) => Ok((request, {}::ResponseBody::new)),", indent, crate_root)?;
-		writeln!(out, "{}        Err(err) => Err({}::RequestError::Http(err)),", indent, crate_root)?;
-		writeln!(out, "{}    }}", indent)?;
+		writeln!(out, "{}    Ok((__request, {}::ResponseBody::new))", indent, crate_root)?;
 	}
 	else {
-		writeln!(out, "{}    __request.body(__body).map_err({}::RequestError::Http)", indent, crate_root)?;
+		writeln!(out, "{}    Ok(__request)", indent)?;
 	}
 	writeln!(out, "{}}}", indent)?;
 

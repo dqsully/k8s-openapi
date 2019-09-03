@@ -46,25 +46,17 @@ impl PodDisruptionBudget {
         let __url = format!("/apis/policy/v1beta1/namespaces/{namespace}/poddisruptionbudgets?",
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
-        }
-        if let Some(include_uninitialized) = include_uninitialized {
-            __query_pairs.append_pair("includeUninitialized", &include_uninitialized.to_string());
-        }
-        if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
-        }
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::post(__url);
-        let __body = serde_json::to_vec(body).map_err(crate::RequestError::Json)?;
-        __request.header(http::header::CONTENT_TYPE, http::header::HeaderValue::from_static("application/json"));
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request(
+            crate::http::Method::POST,
+            std::borrow::Cow::Owned(__url),
+            &[
+                ("dryRun", dry_run.as_ref().map(|value| value as _)),
+                ("includeUninitialized", include_uninitialized.as_ref().map(|value| value as _)),
+                ("pretty", pretty.as_ref().map(|value| value as _)),
+            ],
+            Some(("application/json", body)),
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -165,17 +157,13 @@ impl PodDisruptionBudget {
         let __url = format!("/apis/policy/v1beta1/namespaces/{namespace}/poddisruptionbudgets?",
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        list_optional.__serialize(&mut __query_pairs);
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::delete(__url);
-        let __body = serde_json::to_vec(&delete_optional).map_err(crate::RequestError::Json)?;
-        __request.header(http::header::CONTENT_TYPE, http::header::HeaderValue::from_static("application/json"));
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request2(
+            crate::http::Method::DELETE,
+            __url,
+            |__query_pairs| list_optional.__serialize(__query_pairs),
+            Some(("application/json", &delete_optional)),
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -261,14 +249,13 @@ impl PodDisruptionBudget {
             name = crate::url::percent_encoding::percent_encode(name.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-
-        let mut __request = http::Request::delete(__url);
-        let __body = serde_json::to_vec(&optional).map_err(crate::RequestError::Json)?;
-        __request.header(http::header::CONTENT_TYPE, http::header::HeaderValue::from_static("application/json"));
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request(
+            crate::http::Method::DELETE,
+            std::borrow::Cow::Owned(__url),
+            &[],
+            Some(("application/json", &optional)),
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -359,16 +346,13 @@ impl PodDisruptionBudget {
         let __url = format!("/apis/policy/v1beta1/namespaces/{namespace}/poddisruptionbudgets?",
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        optional.__serialize(&mut __query_pairs);
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::get(__url);
-        let __body = vec![];
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request2(
+            crate::http::Method::GET,
+            __url,
+            |__query_pairs| optional.__serialize(__query_pairs),
+            None,
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -428,17 +412,14 @@ impl PodDisruptionBudget {
     pub fn list_pod_disruption_budget_for_all_namespaces(
         optional: crate::v1_12::ListOptional<'_>,
     ) -> Result<(http::Request<Vec<u8>>, fn(http::StatusCode) -> crate::ResponseBody<ListPodDisruptionBudgetForAllNamespacesResponse>), crate::RequestError> {
-        let __url = "/apis/policy/v1beta1/poddisruptionbudgets?".to_owned();
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        optional.__serialize(&mut __query_pairs);
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::get(__url);
-        let __body = vec![];
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __url = "/apis/policy/v1beta1/poddisruptionbudgets?";
+        let __request = crate::__build_request2(
+            crate::http::Method::GET,
+            __url.to_owned(),
+            |__query_pairs| optional.__serialize(__query_pairs),
+            None,
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -513,21 +494,17 @@ impl PodDisruptionBudget {
             name = crate::url::percent_encoding::percent_encode(name.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        optional.__serialize(&mut __query_pairs);
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::patch(__url);
-        let __body = serde_json::to_vec(body).map_err(crate::RequestError::Json)?;
-        __request.header(http::header::CONTENT_TYPE, http::header::HeaderValue::from_static(match body {
-            crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::Json(_) => "application/json-patch+json",
-            crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::Merge(_) => "application/merge-patch+json",
-            crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::StrategicMerge(_) => "application/strategic-merge-patch+json",
-        }));
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request2(
+            crate::http::Method::PATCH,
+            __url,
+            |__query_pairs| optional.__serialize(__query_pairs),
+            Some((match body {
+                crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::Json(_) => "application/json-patch+json",
+                crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::Merge(_) => "application/merge-patch+json",
+                crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::StrategicMerge(_) => "application/strategic-merge-patch+json",
+            }, body)),
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -602,21 +579,17 @@ impl PodDisruptionBudget {
             name = crate::url::percent_encoding::percent_encode(name.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        optional.__serialize(&mut __query_pairs);
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::patch(__url);
-        let __body = serde_json::to_vec(body).map_err(crate::RequestError::Json)?;
-        __request.header(http::header::CONTENT_TYPE, http::header::HeaderValue::from_static(match body {
-            crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::Json(_) => "application/json-patch+json",
-            crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::Merge(_) => "application/merge-patch+json",
-            crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::StrategicMerge(_) => "application/strategic-merge-patch+json",
-        }));
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request2(
+            crate::http::Method::PATCH,
+            __url,
+            |__query_pairs| optional.__serialize(__query_pairs),
+            Some((match body {
+                crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::Json(_) => "application/json-patch+json",
+                crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::Merge(_) => "application/merge-patch+json",
+                crate::v1_12::apimachinery::pkg::apis::meta::v1::Patch::StrategicMerge(_) => "application/strategic-merge-patch+json",
+            }, body)),
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -693,24 +666,17 @@ impl PodDisruptionBudget {
             name = crate::url::percent_encoding::percent_encode(name.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        if let Some(exact) = exact {
-            __query_pairs.append_pair("exact", &exact.to_string());
-        }
-        if let Some(export) = export {
-            __query_pairs.append_pair("export", &export.to_string());
-        }
-        if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
-        }
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::get(__url);
-        let __body = vec![];
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request(
+            crate::http::Method::GET,
+            std::borrow::Cow::Owned(__url),
+            &[
+                ("exact", exact.as_ref().map(|value| value as _)),
+                ("export", export.as_ref().map(|value| value as _)),
+                ("pretty", pretty.as_ref().map(|value| value as _)),
+            ],
+            None,
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -797,18 +763,15 @@ impl PodDisruptionBudget {
             name = crate::url::percent_encoding::percent_encode(name.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
-        }
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::get(__url);
-        let __body = vec![];
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request(
+            crate::http::Method::GET,
+            std::borrow::Cow::Owned(__url),
+            &[
+                ("pretty", pretty.as_ref().map(|value| value as _)),
+            ],
+            None,
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -895,22 +858,16 @@ impl PodDisruptionBudget {
             name = crate::url::percent_encoding::percent_encode(name.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
-        }
-        if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
-        }
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::put(__url);
-        let __body = serde_json::to_vec(body).map_err(crate::RequestError::Json)?;
-        __request.header(http::header::CONTENT_TYPE, http::header::HeaderValue::from_static("application/json"));
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request(
+            crate::http::Method::PUT,
+            std::borrow::Cow::Owned(__url),
+            &[
+                ("dryRun", dry_run.as_ref().map(|value| value as _)),
+                ("pretty", pretty.as_ref().map(|value| value as _)),
+            ],
+            Some(("application/json", body)),
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -1008,22 +965,16 @@ impl PodDisruptionBudget {
             name = crate::url::percent_encoding::percent_encode(name.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        if let Some(dry_run) = dry_run {
-            __query_pairs.append_pair("dryRun", dry_run);
-        }
-        if let Some(pretty) = pretty {
-            __query_pairs.append_pair("pretty", pretty);
-        }
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::put(__url);
-        let __body = serde_json::to_vec(body).map_err(crate::RequestError::Json)?;
-        __request.header(http::header::CONTENT_TYPE, http::header::HeaderValue::from_static("application/json"));
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request(
+            crate::http::Method::PUT,
+            std::borrow::Cow::Owned(__url),
+            &[
+                ("dryRun", dry_run.as_ref().map(|value| value as _)),
+                ("pretty", pretty.as_ref().map(|value| value as _)),
+            ],
+            Some(("application/json", body)),
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -1110,16 +1061,13 @@ impl PodDisruptionBudget {
         let __url = format!("/apis/policy/v1beta1/namespaces/{namespace}/poddisruptionbudgets?",
             namespace = crate::url::percent_encoding::percent_encode(namespace.as_bytes(), crate::url::percent_encoding::PATH_SEGMENT_ENCODE_SET),
         );
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        optional.__serialize(&mut __query_pairs);
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::get(__url);
-        let __body = vec![];
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __request = crate::__build_request2(
+            crate::http::Method::GET,
+            __url,
+            |__query_pairs| optional.__serialize(__query_pairs),
+            None,
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
@@ -1181,17 +1129,14 @@ impl PodDisruptionBudget {
     pub fn watch_pod_disruption_budget_for_all_namespaces(
         optional: crate::v1_12::WatchOptional<'_>,
     ) -> Result<(http::Request<Vec<u8>>, fn(http::StatusCode) -> crate::ResponseBody<WatchPodDisruptionBudgetForAllNamespacesResponse>), crate::RequestError> {
-        let __url = "/apis/policy/v1beta1/poddisruptionbudgets?".to_owned();
-        let mut __query_pairs = crate::url::form_urlencoded::Serializer::new(__url);
-        optional.__serialize(&mut __query_pairs);
-        let __url = __query_pairs.finish();
-
-        let mut __request = http::Request::get(__url);
-        let __body = vec![];
-        match __request.body(__body) {
-            Ok(request) => Ok((request, crate::ResponseBody::new)),
-            Err(err) => Err(crate::RequestError::Http(err)),
-        }
+        let __url = "/apis/policy/v1beta1/poddisruptionbudgets?";
+        let __request = crate::__build_request2(
+            crate::http::Method::GET,
+            __url.to_owned(),
+            |__query_pairs| optional.__serialize(__query_pairs),
+            None,
+        )?;
+        Ok((__request, crate::ResponseBody::new))
     }
 }
 
