@@ -4,7 +4,7 @@
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct SubjectAccessReviewSpec {
     /// Extra corresponds to the user.Info.GetExtra() method from the authenticator.  Since that is input to the authorizer it needs a reflection here.
-    pub extra: Option<std::collections::BTreeMap<String, Vec<String>>>,
+    pub extra: Option<std::collections::BTreeMap<String, Option<Vec<String>>>>,
 
     /// Groups is the groups you're testing for.
     pub group: Option<Vec<String>>,
@@ -73,7 +73,7 @@ impl<'de> serde::Deserialize<'de> for SubjectAccessReviewSpec {
             }
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
-                let mut value_extra: Option<std::collections::BTreeMap<String, Vec<String>>> = None;
+                let mut value_extra: Option<std::collections::BTreeMap<String, Option<Vec<String>>>> = None;
                 let mut value_group: Option<Vec<String>> = None;
                 let mut value_non_resource_attributes: Option<crate::v1_11::api::authorization::v1beta1::NonResourceAttributes> = None;
                 let mut value_resource_attributes: Option<crate::v1_11::api::authorization::v1beta1::ResourceAttributes> = None;

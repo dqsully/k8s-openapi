@@ -10,7 +10,7 @@ pub struct VolumeAttachmentStatus {
     pub attached: bool,
 
     /// Upon successful attach, this field is populated with any information returned by the attach operation that must be passed into subsequent WaitForAttach or Mount calls. This field must only be set by the entity completing the attach operation, i.e. the external-attacher.
-    pub attachment_metadata: Option<std::collections::BTreeMap<String, String>>,
+    pub attachment_metadata: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// The last error encountered during detach operation, if any. This field must only be set by the entity completing the detach operation, i.e. the external-attacher.
     pub detach_error: Option<crate::v1_13::api::storage::v1beta1::VolumeError>,
@@ -65,7 +65,7 @@ impl<'de> serde::Deserialize<'de> for VolumeAttachmentStatus {
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
                 let mut value_attach_error: Option<crate::v1_13::api::storage::v1beta1::VolumeError> = None;
                 let mut value_attached: Option<bool> = None;
-                let mut value_attachment_metadata: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_attachment_metadata: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_detach_error: Option<crate::v1_13::api::storage::v1beta1::VolumeError> = None;
 
                 while let Some(key) = serde::de::MapAccess::next_key::<Field>(&mut map)? {

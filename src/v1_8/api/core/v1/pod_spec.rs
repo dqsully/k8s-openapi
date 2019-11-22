@@ -43,7 +43,7 @@ pub struct PodSpec {
     pub node_name: Option<String>,
 
     /// NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
-    pub node_selector: Option<std::collections::BTreeMap<String, String>>,
+    pub node_selector: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// The priority value. Various system components use this field to find the priority of the pod. When Priority Admission Controller is enabled, it prevents users from setting this field. The admission controller populates this field from PriorityClassName. The higher the value, the higher the priority.
     pub priority: Option<i32>,
@@ -181,7 +181,7 @@ impl<'de> serde::Deserialize<'de> for PodSpec {
                 let mut value_image_pull_secrets: Option<Vec<crate::v1_8::api::core::v1::LocalObjectReference>> = None;
                 let mut value_init_containers: Option<Vec<crate::v1_8::api::core::v1::Container>> = None;
                 let mut value_node_name: Option<String> = None;
-                let mut value_node_selector: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_node_selector: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_priority: Option<i32> = None;
                 let mut value_priority_class_name: Option<String> = None;
                 let mut value_restart_policy: Option<String> = None;

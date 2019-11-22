@@ -10,7 +10,7 @@ pub struct FlexPersistentVolumeSource {
     pub fs_type: Option<String>,
 
     /// Optional: Extra command options if any.
-    pub options: Option<std::collections::BTreeMap<String, String>>,
+    pub options: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
     pub read_only: Option<bool>,
@@ -70,7 +70,7 @@ impl<'de> serde::Deserialize<'de> for FlexPersistentVolumeSource {
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
                 let mut value_driver: Option<String> = None;
                 let mut value_fs_type: Option<String> = None;
-                let mut value_options: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_options: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_read_only: Option<bool> = None;
                 let mut value_secret_ref: Option<crate::v1_12::api::core::v1::SecretReference> = None;
 

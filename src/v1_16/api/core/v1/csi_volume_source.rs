@@ -16,7 +16,7 @@ pub struct CSIVolumeSource {
     pub read_only: Option<bool>,
 
     /// VolumeAttributes stores driver-specific properties that are passed to the CSI driver. Consult your driver's documentation for supported values.
-    pub volume_attributes: Option<std::collections::BTreeMap<String, String>>,
+    pub volume_attributes: Option<std::collections::BTreeMap<String, Option<String>>>,
 }
 
 impl<'de> serde::Deserialize<'de> for CSIVolumeSource {
@@ -72,7 +72,7 @@ impl<'de> serde::Deserialize<'de> for CSIVolumeSource {
                 let mut value_fs_type: Option<String> = None;
                 let mut value_node_publish_secret_ref: Option<crate::v1_16::api::core::v1::LocalObjectReference> = None;
                 let mut value_read_only: Option<bool> = None;
-                let mut value_volume_attributes: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_volume_attributes: Option<std::collections::BTreeMap<String, Option<String>>> = None;
 
                 while let Some(key) = serde::de::MapAccess::next_key::<Field>(&mut map)? {
                     match key {

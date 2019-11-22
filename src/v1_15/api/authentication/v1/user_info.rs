@@ -4,7 +4,7 @@
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct UserInfo {
     /// Any additional information provided by the authenticator.
-    pub extra: Option<std::collections::BTreeMap<String, Vec<String>>>,
+    pub extra: Option<std::collections::BTreeMap<String, Option<Vec<String>>>>,
 
     /// The names of groups this user is a part of.
     pub groups: Option<Vec<String>>,
@@ -63,7 +63,7 @@ impl<'de> serde::Deserialize<'de> for UserInfo {
             }
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
-                let mut value_extra: Option<std::collections::BTreeMap<String, Vec<String>>> = None;
+                let mut value_extra: Option<std::collections::BTreeMap<String, Option<Vec<String>>>> = None;
                 let mut value_groups: Option<Vec<String>> = None;
                 let mut value_uid: Option<String> = None;
                 let mut value_username: Option<String> = None;

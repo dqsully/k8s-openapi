@@ -4,7 +4,7 @@
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct ObjectMeta {
     /// Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
-    pub annotations: Option<std::collections::BTreeMap<String, String>>,
+    pub annotations: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request.
     pub cluster_name: Option<String>,
@@ -36,7 +36,7 @@ pub struct ObjectMeta {
     pub generation: Option<i64>,
 
     /// Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-    pub labels: Option<std::collections::BTreeMap<String, String>>,
+    pub labels: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
     pub managed_fields: Option<Vec<crate::v1_16::apimachinery::pkg::apis::meta::v1::ManagedFieldsEntry>>,
@@ -139,7 +139,7 @@ impl<'de> serde::Deserialize<'de> for ObjectMeta {
             }
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
-                let mut value_annotations: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_annotations: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_cluster_name: Option<String> = None;
                 let mut value_creation_timestamp: Option<crate::v1_16::apimachinery::pkg::apis::meta::v1::Time> = None;
                 let mut value_deletion_grace_period_seconds: Option<i64> = None;
@@ -147,7 +147,7 @@ impl<'de> serde::Deserialize<'de> for ObjectMeta {
                 let mut value_finalizers: Option<Vec<String>> = None;
                 let mut value_generate_name: Option<String> = None;
                 let mut value_generation: Option<i64> = None;
-                let mut value_labels: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_labels: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_managed_fields: Option<Vec<crate::v1_16::apimachinery::pkg::apis::meta::v1::ManagedFieldsEntry>> = None;
                 let mut value_name: Option<String> = None;
                 let mut value_namespace: Option<String> = None;

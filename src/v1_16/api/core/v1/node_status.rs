@@ -7,10 +7,10 @@ pub struct NodeStatus {
     pub addresses: Option<Vec<crate::v1_16::api::core::v1::NodeAddress>>,
 
     /// Allocatable represents the resources of a node that are available for scheduling. Defaults to Capacity.
-    pub allocatable: Option<std::collections::BTreeMap<String, crate::v1_16::apimachinery::pkg::api::resource::Quantity>>,
+    pub allocatable: Option<std::collections::BTreeMap<String, Option<crate::v1_16::apimachinery::pkg::api::resource::Quantity>>>,
 
     /// Capacity represents the total resources of a node. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity
-    pub capacity: Option<std::collections::BTreeMap<String, crate::v1_16::apimachinery::pkg::api::resource::Quantity>>,
+    pub capacity: Option<std::collections::BTreeMap<String, Option<crate::v1_16::apimachinery::pkg::api::resource::Quantity>>>,
 
     /// Conditions is an array of current observed node conditions. More info: https://kubernetes.io/docs/concepts/nodes/node/#condition
     pub conditions: Option<Vec<crate::v1_16::api::core::v1::NodeCondition>>,
@@ -99,8 +99,8 @@ impl<'de> serde::Deserialize<'de> for NodeStatus {
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
                 let mut value_addresses: Option<Vec<crate::v1_16::api::core::v1::NodeAddress>> = None;
-                let mut value_allocatable: Option<std::collections::BTreeMap<String, crate::v1_16::apimachinery::pkg::api::resource::Quantity>> = None;
-                let mut value_capacity: Option<std::collections::BTreeMap<String, crate::v1_16::apimachinery::pkg::api::resource::Quantity>> = None;
+                let mut value_allocatable: Option<std::collections::BTreeMap<String, Option<crate::v1_16::apimachinery::pkg::api::resource::Quantity>>> = None;
+                let mut value_capacity: Option<std::collections::BTreeMap<String, Option<crate::v1_16::apimachinery::pkg::api::resource::Quantity>>> = None;
                 let mut value_conditions: Option<Vec<crate::v1_16::api::core::v1::NodeCondition>> = None;
                 let mut value_config: Option<crate::v1_16::api::core::v1::NodeConfigStatus> = None;
                 let mut value_daemon_endpoints: Option<crate::v1_16::api::core::v1::NodeDaemonEndpoints> = None;

@@ -10,7 +10,7 @@ pub struct DeploymentRollback {
     pub rollback_to: crate::v1_12::api::apps::v1beta1::RollbackConfig,
 
     /// The annotations to be updated to a deployment
-    pub updated_annotations: Option<std::collections::BTreeMap<String, String>>,
+    pub updated_annotations: Option<std::collections::BTreeMap<String, Option<String>>>,
 }
 
 // Begin apps/v1beta1/DeploymentRollback
@@ -214,7 +214,7 @@ impl<'de> serde::Deserialize<'de> for DeploymentRollback {
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
                 let mut value_name: Option<String> = None;
                 let mut value_rollback_to: Option<crate::v1_12::api::apps::v1beta1::RollbackConfig> = None;
-                let mut value_updated_annotations: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_updated_annotations: Option<std::collections::BTreeMap<String, Option<String>>> = None;
 
                 while let Some(key) = serde::de::MapAccess::next_key::<Field>(&mut map)? {
                     match key {

@@ -22,7 +22,7 @@ pub struct Endpoint {
     ///   endpoint is located. This should match the corresponding node label.
     /// * topology.kubernetes.io/region: the value indicates the region where the
     ///   endpoint is located. This should match the corresponding node label.
-    pub topology: Option<std::collections::BTreeMap<String, String>>,
+    pub topology: Option<std::collections::BTreeMap<String, Option<String>>>,
 }
 
 impl<'de> serde::Deserialize<'de> for Endpoint {
@@ -78,7 +78,7 @@ impl<'de> serde::Deserialize<'de> for Endpoint {
                 let mut value_conditions: Option<crate::v1_16::api::discovery::v1alpha1::EndpointConditions> = None;
                 let mut value_hostname: Option<String> = None;
                 let mut value_target_ref: Option<crate::v1_16::api::core::v1::ObjectReference> = None;
-                let mut value_topology: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_topology: Option<std::collections::BTreeMap<String, Option<String>>> = None;
 
                 while let Some(key) = serde::de::MapAccess::next_key::<Field>(&mut map)? {
                     match key {

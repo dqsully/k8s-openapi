@@ -15,7 +15,7 @@ pub struct StorageClass {
     pub mount_options: Option<Vec<String>>,
 
     /// Parameters holds the parameters for the provisioner that should create volumes of this storage class.
-    pub parameters: Option<std::collections::BTreeMap<String, String>>,
+    pub parameters: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// Provisioner indicates the type of the provisioner.
     pub provisioner: String,
@@ -821,7 +821,7 @@ impl<'de> serde::Deserialize<'de> for StorageClass {
                 let mut value_allow_volume_expansion: Option<bool> = None;
                 let mut value_metadata: Option<crate::v1_10::apimachinery::pkg::apis::meta::v1::ObjectMeta> = None;
                 let mut value_mount_options: Option<Vec<String>> = None;
-                let mut value_parameters: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_parameters: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_provisioner: Option<String> = None;
                 let mut value_reclaim_policy: Option<String> = None;
                 let mut value_volume_binding_mode: Option<String> = None;

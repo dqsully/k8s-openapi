@@ -25,7 +25,7 @@ pub struct CSIPersistentVolumeSource {
     pub read_only: Option<bool>,
 
     /// Attributes of the volume to publish.
-    pub volume_attributes: Option<std::collections::BTreeMap<String, String>>,
+    pub volume_attributes: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// VolumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to refer to the volume on all subsequent calls. Required.
     pub volume_handle: String,
@@ -95,7 +95,7 @@ impl<'de> serde::Deserialize<'de> for CSIPersistentVolumeSource {
                 let mut value_node_publish_secret_ref: Option<crate::v1_16::api::core::v1::SecretReference> = None;
                 let mut value_node_stage_secret_ref: Option<crate::v1_16::api::core::v1::SecretReference> = None;
                 let mut value_read_only: Option<bool> = None;
-                let mut value_volume_attributes: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_volume_attributes: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_volume_handle: Option<String> = None;
 
                 while let Some(key) = serde::de::MapAccess::next_key::<Field>(&mut map)? {

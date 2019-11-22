@@ -4,7 +4,7 @@
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct Scheduling {
     /// nodeSelector lists labels that must be present on nodes that support this RuntimeClass. Pods using this RuntimeClass can only be scheduled to a node matched by this selector. The RuntimeClass nodeSelector is merged with a pod's existing nodeSelector. Any conflicts will cause the pod to be rejected in admission.
-    pub node_selector: Option<std::collections::BTreeMap<String, String>>,
+    pub node_selector: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// tolerations are appended (excluding duplicates) to pods running with this RuntimeClass during admission, effectively unioning the set of nodes tolerated by the pod and the RuntimeClass.
     pub tolerations: Option<Vec<crate::v1_16::api::core::v1::Toleration>>,
@@ -53,7 +53,7 @@ impl<'de> serde::Deserialize<'de> for Scheduling {
             }
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
-                let mut value_node_selector: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_node_selector: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_tolerations: Option<Vec<crate::v1_16::api::core::v1::Toleration>> = None;
 
                 while let Some(key) = serde::de::MapAccess::next_key::<Field>(&mut map)? {

@@ -52,10 +52,10 @@ pub struct PodSpec {
     pub node_name: Option<String>,
 
     /// NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
-    pub node_selector: Option<std::collections::BTreeMap<String, String>>,
+    pub node_selector: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// Overhead represents the resource overhead associated with running a pod for a given RuntimeClass. This field will be autopopulated at admission time by the RuntimeClass admission controller. If the RuntimeClass admission controller is enabled, overhead must not be set in Pod create requests. The RuntimeClass admission controller will reject Pod create requests which have the overhead already set. If RuntimeClass is configured and selected in the PodSpec, Overhead will be set to the value defined in the corresponding RuntimeClass, otherwise it will remain unset and treated as zero. More info: https://git.k8s.io/enhancements/keps/sig-node/20190226-pod-overhead.md This field is alpha-level as of Kubernetes v1.16, and is only honored by servers that enable the PodOverhead feature.
-    pub overhead: Option<std::collections::BTreeMap<String, crate::v1_16::apimachinery::pkg::api::resource::Quantity>>,
+    pub overhead: Option<std::collections::BTreeMap<String, Option<crate::v1_16::apimachinery::pkg::api::resource::Quantity>>>,
 
     /// PreemptionPolicy is the Policy for preempting pods with lower priority. One of Never, PreemptLowerPriority. Defaults to PreemptLowerPriority if unset. This field is alpha-level and is only honored by servers that enable the NonPreemptingPriority feature.
     pub preemption_policy: Option<String>,
@@ -229,8 +229,8 @@ impl<'de> serde::Deserialize<'de> for PodSpec {
                 let mut value_image_pull_secrets: Option<Vec<crate::v1_16::api::core::v1::LocalObjectReference>> = None;
                 let mut value_init_containers: Option<Vec<crate::v1_16::api::core::v1::Container>> = None;
                 let mut value_node_name: Option<String> = None;
-                let mut value_node_selector: Option<std::collections::BTreeMap<String, String>> = None;
-                let mut value_overhead: Option<std::collections::BTreeMap<String, crate::v1_16::apimachinery::pkg::api::resource::Quantity>> = None;
+                let mut value_node_selector: Option<std::collections::BTreeMap<String, Option<String>>> = None;
+                let mut value_overhead: Option<std::collections::BTreeMap<String, Option<crate::v1_16::apimachinery::pkg::api::resource::Quantity>>> = None;
                 let mut value_preemption_policy: Option<String> = None;
                 let mut value_priority: Option<i32> = None;
                 let mut value_priority_class_name: Option<String> = None;

@@ -17,9 +17,9 @@ pub struct JSONSchemaProps {
 
     pub default: Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSON>,
 
-    pub definitions: Option<std::collections::BTreeMap<String, crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>>,
+    pub definitions: Option<std::collections::BTreeMap<String, Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>>>,
 
-    pub dependencies: Option<std::collections::BTreeMap<String, crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaPropsOrStringArray>>,
+    pub dependencies: Option<std::collections::BTreeMap<String, Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaPropsOrStringArray>>>,
 
     pub description: Option<String>,
 
@@ -63,9 +63,9 @@ pub struct JSONSchemaProps {
 
     pub pattern: Option<String>,
 
-    pub pattern_properties: Option<std::collections::BTreeMap<String, crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>>,
+    pub pattern_properties: Option<std::collections::BTreeMap<String, Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>>>,
 
-    pub properties: Option<std::collections::BTreeMap<String, crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>>,
+    pub properties: Option<std::collections::BTreeMap<String, Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>>>,
 
     pub required: Option<Vec<String>>,
 
@@ -194,8 +194,8 @@ impl<'de> serde::Deserialize<'de> for JSONSchemaProps {
                 let mut value_all_of: Option<Vec<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>> = None;
                 let mut value_any_of: Option<Vec<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>> = None;
                 let mut value_default: Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSON> = None;
-                let mut value_definitions: Option<std::collections::BTreeMap<String, crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>> = None;
-                let mut value_dependencies: Option<std::collections::BTreeMap<String, crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaPropsOrStringArray>> = None;
+                let mut value_definitions: Option<std::collections::BTreeMap<String, Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>>> = None;
+                let mut value_dependencies: Option<std::collections::BTreeMap<String, Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaPropsOrStringArray>>> = None;
                 let mut value_description: Option<String> = None;
                 let mut value_enum_: Option<Vec<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSON>> = None;
                 let mut value_example: Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSON> = None;
@@ -217,8 +217,8 @@ impl<'de> serde::Deserialize<'de> for JSONSchemaProps {
                 let mut value_not: Option<Box<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>> = None;
                 let mut value_one_of: Option<Vec<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>> = None;
                 let mut value_pattern: Option<String> = None;
-                let mut value_pattern_properties: Option<std::collections::BTreeMap<String, crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>> = None;
-                let mut value_properties: Option<std::collections::BTreeMap<String, crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>> = None;
+                let mut value_pattern_properties: Option<std::collections::BTreeMap<String, Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>>> = None;
+                let mut value_properties: Option<std::collections::BTreeMap<String, Option<crate::v1_10::apiextensions_apiserver::pkg::apis::apiextensions::v1beta1::JSONSchemaProps>>> = None;
                 let mut value_required: Option<Vec<String>> = None;
                 let mut value_title: Option<String> = None;
                 let mut value_type_: Option<String> = None;

@@ -49,7 +49,7 @@ pub struct PodSpec {
     pub node_name: Option<String>,
 
     /// NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
-    pub node_selector: Option<std::collections::BTreeMap<String, String>>,
+    pub node_selector: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// PreemptionPolicy is the Policy for preempting pods with lower priority. One of Never, PreemptLowerPriority. Defaults to PreemptLowerPriority if unset. This field is alpha-level and is only honored by servers that enable the NonPreemptingPriority feature.
     pub preemption_policy: Option<String>,
@@ -213,7 +213,7 @@ impl<'de> serde::Deserialize<'de> for PodSpec {
                 let mut value_image_pull_secrets: Option<Vec<crate::v1_15::api::core::v1::LocalObjectReference>> = None;
                 let mut value_init_containers: Option<Vec<crate::v1_15::api::core::v1::Container>> = None;
                 let mut value_node_name: Option<String> = None;
-                let mut value_node_selector: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_node_selector: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_preemption_policy: Option<String> = None;
                 let mut value_priority: Option<i32> = None;
                 let mut value_priority_class_name: Option<String> = None;

@@ -4,10 +4,10 @@
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct ConfigMap {
     /// BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet.
-    pub binary_data: Option<std::collections::BTreeMap<String, crate::ByteString>>,
+    pub binary_data: Option<std::collections::BTreeMap<String, Option<crate::ByteString>>>,
 
     /// Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process.
-    pub data: Option<std::collections::BTreeMap<String, String>>,
+    pub data: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
     pub metadata: Option<crate::v1_12::apimachinery::pkg::apis::meta::v1::ObjectMeta>,
@@ -1017,8 +1017,8 @@ impl<'de> serde::Deserialize<'de> for ConfigMap {
             }
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
-                let mut value_binary_data: Option<std::collections::BTreeMap<String, crate::ByteString>> = None;
-                let mut value_data: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_binary_data: Option<std::collections::BTreeMap<String, Option<crate::ByteString>>> = None;
+                let mut value_data: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_metadata: Option<crate::v1_12::apimachinery::pkg::apis::meta::v1::ObjectMeta> = None;
 
                 while let Some(key) = serde::de::MapAccess::next_key::<Field>(&mut map)? {

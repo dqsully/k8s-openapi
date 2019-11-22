@@ -4,13 +4,13 @@
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct Secret {
     /// Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here. Described in https://tools.ietf.org/html/rfc4648#section-4
-    pub data: Option<std::collections::BTreeMap<String, crate::ByteString>>,
+    pub data: Option<std::collections::BTreeMap<String, Option<crate::ByteString>>>,
 
     /// Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
     pub metadata: Option<crate::v1_14::apimachinery::pkg::apis::meta::v1::ObjectMeta>,
 
     /// stringData allows specifying non-binary secret data in string form. It is provided as a write-only convenience method. All keys and values are merged into the data field on write, overwriting any existing values. It is never output when reading from the API.
-    pub string_data: Option<std::collections::BTreeMap<String, String>>,
+    pub string_data: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// Used to facilitate programmatic handling of secret data.
     pub type_: Option<String>,
@@ -1028,9 +1028,9 @@ impl<'de> serde::Deserialize<'de> for Secret {
             }
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
-                let mut value_data: Option<std::collections::BTreeMap<String, crate::ByteString>> = None;
+                let mut value_data: Option<std::collections::BTreeMap<String, Option<crate::ByteString>>> = None;
                 let mut value_metadata: Option<crate::v1_14::apimachinery::pkg::apis::meta::v1::ObjectMeta> = None;
-                let mut value_string_data: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_string_data: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_type_: Option<String> = None;
 
                 while let Some(key) = serde::de::MapAccess::next_key::<Field>(&mut map)? {

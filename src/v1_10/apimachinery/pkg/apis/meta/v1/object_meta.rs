@@ -4,7 +4,7 @@
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct ObjectMeta {
     /// Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
-    pub annotations: Option<std::collections::BTreeMap<String, String>>,
+    pub annotations: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request.
     pub cluster_name: Option<String>,
@@ -41,7 +41,7 @@ pub struct ObjectMeta {
     pub initializers: Option<crate::v1_10::apimachinery::pkg::apis::meta::v1::Initializers>,
 
     /// Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-    pub labels: Option<std::collections::BTreeMap<String, String>>,
+    pub labels: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
     pub name: Option<String>,
@@ -139,7 +139,7 @@ impl<'de> serde::Deserialize<'de> for ObjectMeta {
             }
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
-                let mut value_annotations: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_annotations: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_cluster_name: Option<String> = None;
                 let mut value_creation_timestamp: Option<crate::v1_10::apimachinery::pkg::apis::meta::v1::Time> = None;
                 let mut value_deletion_grace_period_seconds: Option<i64> = None;
@@ -148,7 +148,7 @@ impl<'de> serde::Deserialize<'de> for ObjectMeta {
                 let mut value_generate_name: Option<String> = None;
                 let mut value_generation: Option<i64> = None;
                 let mut value_initializers: Option<crate::v1_10::apimachinery::pkg::apis::meta::v1::Initializers> = None;
-                let mut value_labels: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_labels: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_name: Option<String> = None;
                 let mut value_namespace: Option<String> = None;
                 let mut value_owner_references: Option<Vec<crate::v1_10::apimachinery::pkg::apis::meta::v1::OwnerReference>> = None;

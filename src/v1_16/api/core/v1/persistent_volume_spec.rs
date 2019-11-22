@@ -16,7 +16,7 @@ pub struct PersistentVolumeSpec {
     pub azure_file: Option<crate::v1_16::api::core::v1::AzureFilePersistentVolumeSource>,
 
     /// A description of the persistent volume's resources and capacity. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity
-    pub capacity: Option<std::collections::BTreeMap<String, crate::v1_16::apimachinery::pkg::api::resource::Quantity>>,
+    pub capacity: Option<std::collections::BTreeMap<String, Option<crate::v1_16::apimachinery::pkg::api::resource::Quantity>>>,
 
     /// CephFS represents a Ceph FS mount on the host that shares a pod's lifetime
     pub cephfs: Option<crate::v1_16::api::core::v1::CephFSPersistentVolumeSource>,
@@ -197,7 +197,7 @@ impl<'de> serde::Deserialize<'de> for PersistentVolumeSpec {
                 let mut value_aws_elastic_block_store: Option<crate::v1_16::api::core::v1::AWSElasticBlockStoreVolumeSource> = None;
                 let mut value_azure_disk: Option<crate::v1_16::api::core::v1::AzureDiskVolumeSource> = None;
                 let mut value_azure_file: Option<crate::v1_16::api::core::v1::AzureFilePersistentVolumeSource> = None;
-                let mut value_capacity: Option<std::collections::BTreeMap<String, crate::v1_16::apimachinery::pkg::api::resource::Quantity>> = None;
+                let mut value_capacity: Option<std::collections::BTreeMap<String, Option<crate::v1_16::apimachinery::pkg::api::resource::Quantity>>> = None;
                 let mut value_cephfs: Option<crate::v1_16::api::core::v1::CephFSPersistentVolumeSource> = None;
                 let mut value_cinder: Option<crate::v1_16::api::core::v1::CinderPersistentVolumeSource> = None;
                 let mut value_claim_ref: Option<crate::v1_16::api::core::v1::ObjectReference> = None;

@@ -4,7 +4,7 @@
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct ResourceQuotaSpec {
     /// hard is the set of desired hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
-    pub hard: Option<std::collections::BTreeMap<String, crate::v1_13::apimachinery::pkg::api::resource::Quantity>>,
+    pub hard: Option<std::collections::BTreeMap<String, Option<crate::v1_13::apimachinery::pkg::api::resource::Quantity>>>,
 
     /// scopeSelector is also a collection of filters like scopes that must match each object tracked by a quota but expressed using ScopeSelectorOperator in combination with possible values. For a resource to match, both scopes AND scopeSelector (if specified in spec), must be matched.
     pub scope_selector: Option<crate::v1_13::api::core::v1::ScopeSelector>,
@@ -58,7 +58,7 @@ impl<'de> serde::Deserialize<'de> for ResourceQuotaSpec {
             }
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
-                let mut value_hard: Option<std::collections::BTreeMap<String, crate::v1_13::apimachinery::pkg::api::resource::Quantity>> = None;
+                let mut value_hard: Option<std::collections::BTreeMap<String, Option<crate::v1_13::apimachinery::pkg::api::resource::Quantity>>> = None;
                 let mut value_scope_selector: Option<crate::v1_13::api::core::v1::ScopeSelector> = None;
                 let mut value_scopes: Option<Vec<String>> = None;
 

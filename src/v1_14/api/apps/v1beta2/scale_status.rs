@@ -7,7 +7,7 @@ pub struct ScaleStatus {
     pub replicas: i32,
 
     /// label query over pods that should match the replicas count. More info: http://kubernetes.io/docs/user-guide/labels#label-selectors
-    pub selector: Option<std::collections::BTreeMap<String, String>>,
+    pub selector: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// label selector for pods that should match the replicas count. This is a serializated version of both map-based and more expressive set-based selectors. This is done to avoid introspection in the clients. The string will be in the same format as the query-param syntax. If the target type only supports map-based selectors, both this field and map-based selector field are populated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
     pub target_selector: Option<String>,
@@ -59,7 +59,7 @@ impl<'de> serde::Deserialize<'de> for ScaleStatus {
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
                 let mut value_replicas: Option<i32> = None;
-                let mut value_selector: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_selector: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_target_selector: Option<String> = None;
 
                 while let Some(key) = serde::de::MapAccess::next_key::<Field>(&mut map)? {

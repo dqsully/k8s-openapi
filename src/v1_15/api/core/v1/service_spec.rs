@@ -31,7 +31,7 @@ pub struct ServiceSpec {
     pub publish_not_ready_addresses: Option<bool>,
 
     /// Route service traffic to pods with label keys and values matching this selector. If empty or not present, the service is assumed to have an external process managing its endpoints, which Kubernetes will not modify. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName. More info: https://kubernetes.io/docs/concepts/services-networking/service/
-    pub selector: Option<std::collections::BTreeMap<String, String>>,
+    pub selector: Option<std::collections::BTreeMap<String, Option<String>>>,
 
     /// Supports "ClientIP" and "None". Used to maintain session affinity. Enable client IP based session affinity. Must be ClientIP or None. Defaults to None. More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
     pub session_affinity: Option<String>,
@@ -117,7 +117,7 @@ impl<'de> serde::Deserialize<'de> for ServiceSpec {
                 let mut value_load_balancer_source_ranges: Option<Vec<String>> = None;
                 let mut value_ports: Option<Vec<crate::v1_15::api::core::v1::ServicePort>> = None;
                 let mut value_publish_not_ready_addresses: Option<bool> = None;
-                let mut value_selector: Option<std::collections::BTreeMap<String, String>> = None;
+                let mut value_selector: Option<std::collections::BTreeMap<String, Option<String>>> = None;
                 let mut value_session_affinity: Option<String> = None;
                 let mut value_session_affinity_config: Option<crate::v1_15::api::core::v1::SessionAffinityConfig> = None;
                 let mut value_type_: Option<String> = None;

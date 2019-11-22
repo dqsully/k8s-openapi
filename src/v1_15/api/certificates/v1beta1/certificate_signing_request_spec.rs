@@ -4,7 +4,7 @@
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct CertificateSigningRequestSpec {
     /// Extra information about the requesting user. See user.Info interface for details.
-    pub extra: Option<std::collections::BTreeMap<String, Vec<String>>>,
+    pub extra: Option<std::collections::BTreeMap<String, Option<Vec<String>>>>,
 
     /// Group information about the requesting user. See user.Info interface for details.
     pub groups: Option<Vec<String>>,
@@ -74,7 +74,7 @@ impl<'de> serde::Deserialize<'de> for CertificateSigningRequestSpec {
             }
 
             fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error> where A: serde::de::MapAccess<'de> {
-                let mut value_extra: Option<std::collections::BTreeMap<String, Vec<String>>> = None;
+                let mut value_extra: Option<std::collections::BTreeMap<String, Option<Vec<String>>>> = None;
                 let mut value_groups: Option<Vec<String>> = None;
                 let mut value_request: Option<crate::ByteString> = None;
                 let mut value_uid: Option<String> = None;
